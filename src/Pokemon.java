@@ -6,6 +6,8 @@ public class Pokemon {
 
 		
 		System.out.println("hola");
+		
+		System.out.println("Adios");
 	}
 
 }

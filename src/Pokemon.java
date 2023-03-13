@@ -5,7 +5,7 @@ public class Pokemon {
 		String h;
 
 		
-		
+		System.out.println("hola");
 	}
 
 }

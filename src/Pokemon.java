@@ -2,9 +2,12 @@
 public class Pokemon {
 
 	public static void main(String[] args) {
-		String h;
+
+		String saludoString= "hola ";
+		String nomString= "javi";
+
 		
-		int caca;
+		System.out.println(saludoString + nomString);
 
 		
 		

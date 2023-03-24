@@ -1,11 +1,11 @@
 package principal;
 
-public class Tipo {
+public class Objeto {
 
-	public Tipo(String string) {
+
+
+	public Objeto(String string) {
 		// TODO Auto-generated constructor stub
 	}
-
-	
 
 }

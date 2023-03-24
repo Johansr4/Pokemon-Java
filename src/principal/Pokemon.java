@@ -1,363 +1,180 @@
 package principal;
 
-
-
 import java.util.ArrayList;
+import java.util.Arrays;
 
 // metodo para aplicar objeto
 
-
+//enumerados
 
 public class Pokemon {
+	private String nombre;
+	private String mote;
+	private int vitalidad;
+	private int ataque;
+	private int defensa;
+	private int ataqueEspecial;
+	private int defensaEspecial;
+	private int velocidad;
+	private int estamina;
+	private int nivel;
+	private int fertilidad;
+	private char sexo; 
+	private Tipo[] tipos; // Array de objetos de tipo Tipo
+	private Estado estado;
+	private Objeto objeto; // Objeto de tipo Objeto
 
-private String nombre;
+	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
+			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo, Tipo[] tipos,
+			Estado estado, Objeto objeto) {
+		super();
 
-private String mote;
+		this.nombre = nombre;
+		this.mote = mote;
+		this.vitalidad = vitalidad;
+		this.ataque = ataque;
+		this.defensa = defensa;
+		this.ataqueEspecial = ataqueEspecial;
+		this.defensaEspecial = defensaEspecial;
+		this.velocidad = velocidad;
+		this.estamina = estamina;
+		this.nivel = nivel;
+		this.fertilidad = fertilidad;
+		this.sexo = sexo;
+		this.tipos = tipos;
+		this.estado = estado;
+		this.objeto = objeto;
+	}
 
-private int vitalidad;
+	public String getNombre() {
+		return nombre;
+	}
 
-private int ataque;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-private int defensa;
+	public String getMote() {
+		return mote;
+	}
 
-private int ataqueEspecial;
+	public void setMote(String mote) {
+		this.mote = mote;
+	}
 
-private int defensaEspecial;
+	public int getVitalidad() {
+		return vitalidad;
+	}
 
-private int velocidad;
+	public void setVitalidad(int vitalidad) {
+		this.vitalidad = vitalidad;
+	}
 
-private int estamina;
+	public int getAtaque() {
+		return ataque;
+	}
 
-private int nivel;
+	public void setAtaque(int ataque) {
+		this.ataque = ataque;
+	}
 
-private int fertilidad;
+	public int getDefensa() {
+		return defensa;
+	}
 
-private char sexo;
+	public void setDefensa(int defensa) {
+		this.defensa = defensa;
+	}
 
+	public int getAtaqueEspecial() {
+		return ataqueEspecial;
+	}
 
+	public void setAtaqueEspecial(int ataqueEspecial) {
+		this.ataqueEspecial = ataqueEspecial;
+	}
 
+	public int getDefensaEspecial() {
+		return defensaEspecial;
+	}
 
-private ArrayList<Movimiento> movimientos = new ArrayList();
+	public void setDefensaEspecial(int defensaEspecial) {
+		this.defensaEspecial = defensaEspecial;
+	}
 
-private ArrayList<Tipo> tipos = new ArrayList();
+	public int getVelocidad() {
+		return velocidad;
+	}
 
+	public void setVelocidad(int velocidad) {
+		this.velocidad = velocidad;
+	}
 
+	public int getEstamina() {
+		return estamina;
+	}
 
+	public void setEstamina(int estamina) {
+		this.estamina = estamina;
+	}
 
+	public int getNivel() {
+		return nivel;
+	}
 
-public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial,
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
+	}
 
-int velocidad, int estamina, char sexo, ArrayList<Movimiento> movimientos, ArrayList<Tipo> tipos) {
+	public int getFertilidad() {
+		return fertilidad;
+	}
 
-this.nombre = nombre;
+	public void setFertilidad(int fertilidad) {
+		this.fertilidad = fertilidad;
+	}
 
-this.mote = mote;
+	public char getSexo() {
+		return sexo;
+	}
 
-this.vitalidad = vitalidad;
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
 
-this.ataque = ataque;
+	public Tipo[] getTipos() {
+		return tipos;
+	}
 
-this.defensa = defensa;
+	public void setTipos(Tipo[] tipos) {
+		this.tipos = tipos;
+	}
 
-this.ataqueEspecial = ataqueEspecial;
+	public Estado getEstado() {
+		return estado;
+	}
 
-this.defensaEspecial = defensaEspecial;
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
 
-this.velocidad = velocidad;
+	public Objeto getObjeto() {
+		return objeto;
+	}
 
-this.estamina = estamina;
+	public void setObjeto(Objeto objeto) {
+		this.objeto = objeto;
+	}
 
-this.nivel = 1;
-
-this.fertilidad = 5;
-
-this.sexo = sexo;
-
-this.movimientos = movimientos;
-
-this.tipos = tipos;
+	@Override
+	public String toString() {
+		return "Pokemon [nombre=" + nombre + ", mote=" + mote + ", vitalidad=" + vitalidad + ", ataque=" + ataque
+				+ ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial + ", defensaEspecial=" + defensaEspecial
+				+ ", velocidad=" + velocidad + ", estamina=" + estamina + ", nivel=" + nivel + ", fertilidad="
+				+ fertilidad + ", sexo=" + sexo + ", tipos=" + Arrays.toString(tipos) + ", estado=" + estado
+				+ ", objeto=" + objeto + "]";
+	}
 
 }
-
-
-
-public String getNombre() {
-
-return nombre;
-
-}
-
-
-
-public void setNombre(String nombre) {
-
-this.nombre = nombre;
-
-}
-
-
-
-public String getMote() {
-
-return mote;
-
-}
-
-
-
-public void setMote(String mote) {
-
-this.mote = mote;
-
-}
-
-
-
-public int getVitalidad() {
-
-return vitalidad;
-
-}
-
-
-
-public void setVitalidad(int vitalidad) {
-
-this.vitalidad = vitalidad;
-
-}
-
-
-
-public int getAtaque() {
-
-return ataque;
-
-}
-
-
-
-public void setAtaque(int ataque) {
-
-this.ataque = ataque;
-
-}
-
-
-
-public int getDefensa() {
-
-return defensa;
-
-}
-
-
-
-public void setDefensa(int defensa) {
-
-this.defensa = defensa;
-
-}
-
-
-
-public int getAtaqueEspecial() {
-
-return ataqueEspecial;
-
-}
-
-
-
-public void setAtaqueEspecial(int ataqueEspecial) {
-
-this.ataqueEspecial = ataqueEspecial;
-
-}
-
-
-
-public int getDefensaEspecial() {
-
-return defensaEspecial;
-
-}
-
-
-public void setDefensaEspecial(int defensaEspecial) {
-
-this.defensaEspecial = defensaEspecial;
-
-}
-
-
-
-public int getVelocidad() {
-
-return velocidad;
-
-}
-
-
-
-public void setVelocidad(int velocidad) {
-
-this.velocidad = velocidad;
-
-}
-
-
-
-public int getEstamina() {
-
-return estamina;
-
-}
-
-
-
-public void setEstamina(int estamina) {
-
-this.estamina = estamina;
-
-}
-
-
-
-public int getNivel() {
-
-return nivel;
-
-}
-
-
-
-public void setNivel(int nivel) {
-
-this.nivel = nivel;
-
-}
-
-
-public int getFertilidad() {
-
-return fertilidad;
-
-}
-
-
-
-public void setFertilidad(int fertilidad) {
-
-this.fertilidad = fertilidad;
-
-}
-
-
-
-public char getSexo() {
-
-return sexo;
-
-}
-
-
-
-public void setSexo(char sexo) {
-
-this.sexo = sexo;
-
-}
-
-
-
-public ArrayList<Movimiento> getMovimientos;
-
-
-
-public void setMovimientos(ArrayList<Movimiento> movimientos) {
-
-this.movimientos = movimientos;
-
-}
-
-
-
-public ArrayList<Tipo> getTipos() {
-
-return tipos;
-
-}
-
-
-
-public void setTipos(ArrayList<Tipo> tipos) {
-
-this.tipos = tipos;
-
-}
-
-
-
-public void incrementarNivel() {
-
-nivel++;
-
-}
-
-
-
-public int resultadoFertilidad() {
-
- {
-
- return fertilidad+= (int)(Math.random() * 5) + 1;
-
-}
-}
-
-
-
-public void atacar(Pokemon enemigo, Movimiento movimiento) {
-
-// Aquí implementar la lógica de combate entre dos Pokemones usando el movimiento indicado
-
-// y actualizando sus respectivas estadísticas
-
-}
-
-
-
-public void reproducirse(Pokemon pareja) {
-
-if (fertilidad > 0 && pareja.getFertilidad() > 0) {
-
-fertilidad--;
-
-
-
-// Aquí implementar la lógica de cría entre dos Pokemones, generando un huevo
-
-}
-
-}
-
-
-
-public boolean esMasRapidoQue(Pokemon otroPokemon) {
-
-return velocidad > otroPokemon.getVelocidad();
-
-}
-
-}
-
-
-
-
-
-
-
-
 
 

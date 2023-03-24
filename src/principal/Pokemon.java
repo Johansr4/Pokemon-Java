@@ -4,6 +4,9 @@ package principal;
 
 import java.util.ArrayList;
 
+// metodo para aplicar objeto
+
+
 
 public class Pokemon {
 
@@ -34,9 +37,9 @@ private char sexo;
 
 
 
-private ArrayList<String> movimientos;
+private ArrayList<Movimiento> movimientos = new ArrayList();
 
-private ArrayList<String> tipos;
+private ArrayList<Tipo> tipos = new ArrayList();
 
 
 
@@ -44,7 +47,7 @@ private ArrayList<String> tipos;
 
 public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial,
 
-int velocidad, int estamina, char sexo, ArrayList<String> movimientos, ArrayList<String> tipos) {
+int velocidad, int estamina, char sexo, ArrayList<Movimiento> movimientos, ArrayList<Tipo> tipos) {
 
 this.nombre = nombre;
 
@@ -272,7 +275,7 @@ public ArrayList<Movimiento> getMovimientos;
 
 
 
-public void setMovimientos(ArrayList<String> movimientos) {
+public void setMovimientos(ArrayList<Movimiento> movimientos) {
 
 this.movimientos = movimientos;
 
@@ -280,7 +283,7 @@ this.movimientos = movimientos;
 
 
 
-public ArrayList<String> getTipos() {
+public ArrayList<Tipo> getTipos() {
 
 return tipos;
 
@@ -288,7 +291,7 @@ return tipos;
 
 
 
-public void setTipos(ArrayList<String> tipos) {
+public void setTipos(ArrayList<Tipo> tipos) {
 
 this.tipos = tipos;
 

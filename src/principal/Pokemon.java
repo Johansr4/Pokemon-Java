@@ -8,6 +8,8 @@ import java.util.Arrays;
 //enumerados
 
 public class Pokemon {
+
+	int experiencia;
 	private String nombre;
 	private String mote;
 	private int vitalidad;
@@ -19,16 +21,16 @@ public class Pokemon {
 	private int estamina;
 	private int nivel;
 	private int fertilidad;
-	private char sexo; 
-	private Tipo[] tipos; // Array de objetos de tipo Tipo
+	private char sexo;
+	private ArrayList<String> Tipo = new ArrayList<String>();
+	private ArrayList<String> Movimiento = new ArrayList<String>();
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
-			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo, Tipo[] tipos,
-			Estado estado, Objeto objeto) {
+			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo, ArrayList<String> tipos,
+			ArrayList<String> movimientos, Estado estado, Objeto objeto) {
 		super();
-
 		this.nombre = nombre;
 		this.mote = mote;
 		this.vitalidad = vitalidad;
@@ -41,7 +43,8 @@ public class Pokemon {
 		this.nivel = nivel;
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
-		this.tipos = tipos;
+		this.Tipo = tipos;
+		this.Movimiento = movimientos;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
@@ -143,11 +146,19 @@ public class Pokemon {
 	}
 
 	public Tipo[] getTipos() {
-		return tipos;
+		return getTipos();
 	}
 
-	public void setTipos(Tipo[] tipos) {
-		this.tipos = tipos;
+	public void setTipos(ArrayList<String> tipos) {
+		this.Tipo = tipos;
+	}
+
+	public ArrayList<String> getMovimientos() {
+		return Movimiento;
+	}
+
+	public void setMovimientos(ArrayList<String> movimientos) {
+		this.Movimiento = movimientos;
 	}
 
 	public Estado getEstado() {
@@ -166,15 +177,52 @@ public class Pokemon {
 		this.objeto = objeto;
 	}
 
-	@Override
-	public String toString() {
-		return "Pokemon [nombre=" + nombre + ", mote=" + mote + ", vitalidad=" + vitalidad + ", ataque=" + ataque
-				+ ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial + ", defensaEspecial=" + defensaEspecial
-				+ ", velocidad=" + velocidad + ", estamina=" + estamina + ", nivel=" + nivel + ", fertilidad="
-				+ fertilidad + ", sexo=" + sexo + ", tipos=" + Arrays.toString(tipos) + ", estado=" + estado
-				+ ", objeto=" + objeto + "]";
+	public int getExperiencia() {
+		return experiencia;
 	}
 
+	public void setExperiencia(int experiencia) {
+		this.experiencia = experiencia;
+	}
+
+	public void subirNivel() {
+		if (experiencia >= 10 * nivel) {
+			upgradestatsNivel();
+		}
+	}
+
+	public void upgradestatsNivel() {
+		nivel += 1;
+
+		vitalidad += (int) (Math.random() * 5) + 1;
+		ataque += (int) (Math.random() * 5) + 1;
+		defensa += (int) (Math.random() * 5) + 1;
+		ataqueEspecial += (int) (Math.random() * 5) + 1;
+		defensaEspecial += (int) (Math.random() * 5) + 1;
+		velocidad += (int) (Math.random() * 5) + 1;
+
+	}
+	
+	public void atacar() {
+		
+		//comprobar si tiene suficiente estamina 
+		
+		//Se necesitan algunos elementos que no tenemos actualmente
+		if(estamina>1) {
+			
+			
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Pokemon [experiencia=" + experiencia + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
+				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
+				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
+				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + Tipo
+				+ ", Movimiento=" + Movimiento + ", estado=" + estado + ", objeto=" + objeto + "]";
+	}
+
+	
+
 }
-
-

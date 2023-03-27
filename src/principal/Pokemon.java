@@ -191,11 +191,11 @@ public class Pokemon extends Movimiento {
 
 	public void subirNivel() {
 		if (experiencia >= 10 * nivel) {
-			upgradestatsNivel();
+			upgradeStatsNivel();
 		}
 	}
 
-	public void upgradestatsNivel() {
+	public void upgradeStatsNivel() {
 		nivel += 1;
 
 		vitalidad += (int) (Math.random() * 5) + 1;

@@ -35,8 +35,7 @@ public class Entrenador {
 		if (equipo.size() > 1) {
 			equipo.remove(pokemon);
 			caja.add(pokemon);
-			System.out.println(
-					nombre + " ha movido a " + pokemon.getNombre() + " del equipo principal al equipo de reserva.");
+			System.out.println(nombre + " ha movido a " + pokemon.getNombre() + " del equipo principal al equipo de reserva.");
 		} else {
 			System.out.println(nombre + ", no puedes tener un equipo principal vacío.");
 		}

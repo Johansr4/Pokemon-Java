@@ -8,4 +8,7 @@ public class Movimiento {
 		return estaminaMovimiento;
 	}
 
+
+	
+
 }

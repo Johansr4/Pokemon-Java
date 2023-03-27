@@ -4,11 +4,11 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-//javafx/Scene Builder y conexion bbdd
+//Javafx/Scene Builder y conexion bbdd
 
-// metodo para aplicar objeto
+// Metodo para aplicar objeto
 
-//enumerados
+//ENUMERADOS o INTRODUCIR VALORES NUEVOS EN BBDD
 
 public class Pokemon extends Movimiento {
 
@@ -25,15 +25,14 @@ public class Pokemon extends Movimiento {
 	private int nivel;
 	private int fertilidad;
 	private char sexo;
-	 ArrayList Tipos = new ArrayList();
-	 ArrayList Movimientos = new ArrayList();
+	ArrayList Tipos = new ArrayList();
+	ArrayList Movimientos = new ArrayList();
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
-	
-
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
-			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo, ArrayList<String> tipos,
+			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
+			ArrayList<String> tipos,
 			ArrayList<String> movimientos, Estado estado, Objeto objeto) {
 		super();
 		this.nombre = nombre;
@@ -207,21 +206,24 @@ public class Pokemon extends Movimiento {
 		velocidad += (int) (Math.random() * 5) + 1;
 
 	}
-	
+
 	public void atacar() {
 
-		//movimiento de ej en array mov
-		Movimientos.add("ataque r.")
+		// movimiento de ej en array mov
+		Movimientos.add("ataque r.");
 
-
-		if(getEstaminaMovimiento()>estamina) {
-
-			Movimientos.get(1)
-			
+		if (getEstaminaMovimiento() > estamina) {
+			Movimientos.get(1);
 		}
+	}
 
+	public void descansar() {
 
-	
+	}
+
+	public void aprenderMovimiento() {
+
+	}
 
 	@Override
 	public String toString() {
@@ -231,7 +233,5 @@ public class Pokemon extends Movimiento {
 				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + Tipos
 				+ ", Movimiento=" + Movimientos + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
-
-	
 
 }

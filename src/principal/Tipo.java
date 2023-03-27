@@ -42,3 +42,7 @@ public enum Tipo {
                     default:
                         return 1.0;
                 }
+            }
+        return 0;
+        }
+    }

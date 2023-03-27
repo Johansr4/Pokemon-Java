@@ -1,15 +1,18 @@
 package principal;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+//javafx/Scene Builder y conexion bbdd
 
 // metodo para aplicar objeto
 
 //enumerados
 
-public class Pokemon {
+public class Pokemon extends Movimiento {
 
-	int experiencia;
+	private int experiencia;
 	private String nombre;
 	private String mote;
 	private int vitalidad;
@@ -22,10 +25,12 @@ public class Pokemon {
 	private int nivel;
 	private int fertilidad;
 	private char sexo;
-	private ArrayList<String> Tipo = new ArrayList<String>();
-	private ArrayList<String> Movimiento = new ArrayList<String>();
+	 ArrayList Tipos = new ArrayList();
+	 ArrayList Movimientos = new ArrayList();
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
+
+	
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo, ArrayList<String> tipos,
@@ -43,8 +48,8 @@ public class Pokemon {
 		this.nivel = nivel;
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
-		this.Tipo = tipos;
-		this.Movimiento = movimientos;
+		this.Tipos = tipos;
+		this.Movimientos = movimientos;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
@@ -150,15 +155,15 @@ public class Pokemon {
 	}
 
 	public void setTipos(ArrayList<String> tipos) {
-		this.Tipo = tipos;
+		this.Tipos = tipos;
 	}
 
 	public ArrayList<String> getMovimientos() {
-		return Movimiento;
+		return Movimientos;
 	}
 
 	public void setMovimientos(ArrayList<String> movimientos) {
-		this.Movimiento = movimientos;
+		this.Movimientos = movimientos;
 	}
 
 	public Estado getEstado() {
@@ -204,23 +209,27 @@ public class Pokemon {
 	}
 	
 	public void atacar() {
-		
-		//comprobar si tiene suficiente estamina 
-		
-		//Se necesitan algunos elementos que no tenemos actualmente
-		if(estamina>1) {
-			
+
+		//movimiento de ej en array mov
+		Movimientos.add("ataque r.")
+
+
+		if(getEstaminaMovimiento()>estamina) {
+
+			Movimientos.get(1)
 			
 		}
-	}
+
+
+	
 
 	@Override
 	public String toString() {
 		return "Pokemon [experiencia=" + experiencia + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
 				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
-				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + Tipo
-				+ ", Movimiento=" + Movimiento + ", estado=" + estado + ", objeto=" + objeto + "]";
+				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + Tipos
+				+ ", Movimiento=" + Movimientos + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
 	

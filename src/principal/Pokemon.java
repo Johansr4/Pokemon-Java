@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 //ENUMERADOS o INTRODUCIR VALORES NUEVOS EN BBDD
 
-public class Pokemon extends Movimiento {
+public class Pokemon {
 
 	private int experiencia;
 	private String nombre;
@@ -212,12 +212,13 @@ public class Pokemon extends Movimiento {
 
 	public void atacar() {
 
-		// movimiento de ej en array mov
+		/* 
 		Movimientos.add("ataque r.");
 
 		if (getEstaminaMovimiento() > estamina) {
 			Movimientos.get(1);
 		}
+	 movimiento de ej en array mov*/
 	}
 
 	public void descansar() {

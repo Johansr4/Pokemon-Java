@@ -160,13 +160,13 @@ public class TablaTipoPokemon {
      * Muestra la eficacia de un tipo a un pokemon con dos tipos
      *
      * @param tipoAtacante
-     * @param tipo1Oponente
-     * @param tipo2Oponente
+     * @param tipo1ponente
+     * @param tipo2ponente
      */
-    public String mostrarEficaciaTipo(TipoPokemon tipoAtacante, TipoPokemon tipo1Oponente, TipoPokemon tipo2Oponente) {
+    public String mostrarEficaciaTipo(TipoPokemon tipoAtacante, TipoPokemon tipo1ponente, TipoPokemon tipo2ponente) {
         //multiplico las efectivadades
-        double efectividad = efectividadesPokemon[tipoAtacante.getIndice()][tipo1Oponente.getIndice()] 
-                * efectividadesPokemon[tipoAtacante.getIndice()][tipo2Oponente.getIndice()];
+        double efectividad = efectividadesPokemon[tipoAtacante.getIndice()][tipo1ponente.getIndice()] 
+                * efectividadesPokemon[tipoAtacante.getIndice()][tipo2ponente.getIndice()];
         return mostrarEficacia(efectividad);
     }
 

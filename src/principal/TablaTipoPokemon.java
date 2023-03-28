@@ -1,7 +1,5 @@
 package principal;
 
-
-
 import java.util.ArrayList;
 
 public class TablaTipoPokemon {
@@ -14,25 +12,28 @@ public class TablaTipoPokemon {
 
     private void rellenarDatosEfectividades() {
         double[][] efectividadesPokemon = {
-            /*ACERO   AGUA   BICHO   DRAGON   ELÉC   FANT   FUEGO   HADA   HIELO   LUCHA   NORMAL   PLANTA   PSI   ROCA   SINIE  TIERRA   VENENO   VOLADOR   */
-            {0.5, 0.5, 1, 1, 0.5, 1, 0.5, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1}, //ACERO
-            {1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 1, 1}, //AGUA
-            {0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 2, 2, 1, 2, 1, 0.5, 0.5}, //BICHO
-            {0.5, 1, 1, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, // DRAGÓN
-            {1, 2, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 0, 1, 2}, // ELÉCTRICO
-            {1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1, 2, 1, 0.5, 1, 1, 1}, // FANTASMA
-            {2, 0.5, 2, 0.5, 1, 1, 0.5, 1, 2, 1, 1, 2, 1, 0.5, 1, 1, 1, 1}, // FUEGO
-            {0.5, 1, 1, 2, 1, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 2, 1, 0.5, 1}, // HADA
-            {0.5, 0.5, 1, 2, 1, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 2, 1, 2}, // HIELO
-            {2, 1, 0.5, 1, 1, 0, 1, 0.5, 2, 1, 2, 1, 0.5, 2, 2, 1, 0.5, 0.5}, // LUCHA
-            {0.5, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1}, // NORMAL
-            {0.5, 2, 0.5, 0.5, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 0.5, 0.5}, // PLANTA
-            {0.5, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1, 0, 1, 2, 1}, // PSÍQUICO
-            {0.5, 1, 2, 1, 1, 1, 2, 1, 2, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 2}, // ROCA
-            {1, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 0.5, 1, 1, 1}, // SINIESTRO
-            {2, 1, 0.5, 1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 2, 0}, // TIERRA
-            {0, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 1}, // VENENO
-            {0.5, 1, 2, 1, 0.5, 1, 1, 1, 1, 2, 1, 2, 1, 0.5, 1, 1, 1, 1} // VOLADOR
+                /*
+                 * ACERO AGUA BICHO DRAGON ELÉC FANT FUEGO HADA HIELO LUCHA NORMAL PLANTA PSI
+                 * ROCA SINIE TIERRA VENENO VOLADOR
+                 */
+                { 0.5, 0.5, 1, 1, 0.5, 1, 0.5, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1 }, // ACERO
+                { 1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 1, 1 }, // AGUA
+                { 0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 2, 2, 1, 2, 1, 0.5, 0.5 }, // BICHO
+                { 0.5, 1, 1, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, // DRAGÓN
+                { 1, 2, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 0, 1, 2 }, // ELÉCTRICO
+                { 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1, 2, 1, 0.5, 1, 1, 1 }, // FANTASMA
+                { 2, 0.5, 2, 0.5, 1, 1, 0.5, 1, 2, 1, 1, 2, 1, 0.5, 1, 1, 1, 1 }, // FUEGO
+                { 0.5, 1, 1, 2, 1, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 2, 1, 0.5, 1 }, // HADA
+                { 0.5, 0.5, 1, 2, 1, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 2, 1, 2 }, // HIELO
+                { 2, 1, 0.5, 1, 1, 0, 1, 0.5, 2, 1, 2, 1, 0.5, 2, 2, 1, 0.5, 0.5 }, // LUCHA
+                { 0.5, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1 }, // NORMAL
+                { 0.5, 2, 0.5, 0.5, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 0.5, 0.5 }, // PLANTA
+                { 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1, 0, 1, 2, 1 }, // PSÍQUICO
+                { 0.5, 1, 2, 1, 1, 1, 2, 1, 2, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 2 }, // ROCA
+                { 1, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 0.5, 1, 1, 1 }, // SINIESTRO
+                { 2, 1, 0.5, 1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 2, 0 }, // TIERRA
+                { 0, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 1 }, // VENENO
+                { 0.5, 1, 2, 1, 0.5, 1, 1, 1, 1, 2, 1, 2, 1, 0.5, 1, 1, 1, 1 } // VOLADOR
         };
 
         this.efectividadesPokemon = efectividadesPokemon;
@@ -100,7 +101,7 @@ public class TablaTipoPokemon {
     public ArrayList<TipoPokemon> eficacias(TipoPokemon tipo) {
 
         ArrayList<TipoPokemon> eficacias = new ArrayList<>();
-        
+
         for (int j = 0; j < efectividadesPokemon.length; j++) {
 
             if (efectividadesPokemon[tipo.getIndice()][j] == EficaciasPokemon.ES_MUY_EFICAZ.getEficacia()) {
@@ -110,7 +111,7 @@ public class TablaTipoPokemon {
         }
 
         return eficacias;
-        
+
     }
 
     /**
@@ -136,8 +137,8 @@ public class TablaTipoPokemon {
      */
     private String mostrarEficacia(double eficacia) {
 
-        for (EficaciasPokemon eficaciaPokemon: EficaciasPokemon.values()) {
-            if(eficaciaPokemon.getEficacia() == eficacia){
+        for (EficaciasPokemon eficaciaPokemon : EficaciasPokemon.values()) {
+            if (eficaciaPokemon.getEficacia() == eficacia) {
                 return eficaciaPokemon.getMensaje();
             }
         }
@@ -164,10 +165,14 @@ public class TablaTipoPokemon {
      * @param tipo2ponente
      */
     public String mostrarEficaciaTipo(TipoPokemon tipoAtacante, TipoPokemon tipo1ponente, TipoPokemon tipo2ponente) {
-        //multiplico las efectivadades
-        double efectividad = efectividadesPokemon[tipoAtacante.getIndice()][tipo1ponente.getIndice()] 
+        // multiplico las efectivadades
+        double efectividad = efectividadesPokemon[tipoAtacante.getIndice()][tipo1ponente.getIndice()]
                 * efectividadesPokemon[tipoAtacante.getIndice()][tipo2ponente.getIndice()];
         return mostrarEficacia(efectividad);
+    }
+
+    public double[][] getEfectividadesPokemon() {
+        return efectividadesPokemon;
     }
 
 }

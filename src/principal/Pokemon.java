@@ -25,15 +25,15 @@ public class Pokemon {
 	private int nivel;
 	private int fertilidad = 5;
 	private char sexo;
-	ArrayList Tipos = new ArrayList();
-	ArrayList Movimientos = new ArrayList();
+	private TipoPokemon tipo;
+	private MovimientoPokemon Movimiento;
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
-			ArrayList<String> tipos,
-			ArrayList<String> movimientos, Estado estado, Objeto objeto) {
+			TipoPokemon tipos,
+			MovimientoPokemon movimientos, Estado estado, Objeto objeto) {
 		super();
 		this.nombre = nombre;
 		this.mote = mote;
@@ -47,8 +47,8 @@ public class Pokemon {
 		this.nivel = nivel;
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
-		this.Tipos = tipos;
-		this.Movimientos = movimientos;
+		this.tipo = tipos;
+		this.Movimiento = movimientos;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
@@ -149,23 +149,20 @@ public class Pokemon {
 		this.sexo = sexo;
 	}
 
-
-	public ArrayList getTipos() {
-		return Tipos;
+	public TipoPokemon getTipos() {
+		return tipo;
 	}
 
-	public void setTipos(ArrayList tipos) {
-		Tipos = tipos;
+	public void setTipos(TipoPokemon tipos) {
+		tipo = tipos;
 	}
 
-	
-
-	public ArrayList<String> getMovimientos() {
-		return Movimientos;
+	public MovimientoPokemon getMovimientos() {
+		return Movimiento;
 	}
 
-	public void setMovimientos(ArrayList<String> movimientos) {
-		this.Movimientos = movimientos;
+	public void setMovimientos(MovimientoPokemon movimientos) {
+		this.Movimiento = movimientos;
 	}
 
 	public Estado getEstado() {
@@ -212,13 +209,14 @@ public class Pokemon {
 
 	public void atacar() {
 
-		/* 
-		Movimientos.add("ataque r.");
-
-		if (getEstaminaMovimiento() > estamina) {
-			Movimientos.get(1);
-		}
-	 movimiento de ej en array mov*/
+		/*
+		 * Movimientos.add("ataque r.");
+		 * 
+		 * if (getEstaminaMovimiento() > estamina) {
+		 * Movimientos.get(1);
+		 * }
+		 * movimiento de ej en array mov
+		 */
 	}
 
 	public void descansar() {
@@ -234,12 +232,8 @@ public class Pokemon {
 		return "Pokemon [experiencia=" + experiencia + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
 				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
-				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + Tipos
-				+ ", Movimiento=" + Movimientos + ", estado=" + estado + ", objeto=" + objeto + "]";
+				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + tipo
+				+ ", Movimiento=" + Movimiento + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
-
-	
-
-	
 
 }

@@ -23,7 +23,7 @@ public class Pokemon extends Movimiento {
 	private int velocidad;
 	private int estamina;
 	private int nivel;
-	private int fertilidad;
+	private int fertilidad = 5;
 	private char sexo;
 	ArrayList Tipos = new ArrayList();
 	ArrayList Movimientos = new ArrayList();
@@ -149,13 +149,16 @@ public class Pokemon extends Movimiento {
 		this.sexo = sexo;
 	}
 
-	public Tipo[] getTipos() {
-		return getTipos();
+
+	public ArrayList getTipos() {
+		return Tipos;
 	}
 
-	public void setTipos(ArrayList<String> tipos) {
-		this.Tipos = tipos;
+	public void setTipos(ArrayList tipos) {
+		Tipos = tipos;
 	}
+
+	
 
 	public ArrayList<String> getMovimientos() {
 		return Movimientos;
@@ -233,5 +236,9 @@ public class Pokemon extends Movimiento {
 				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + Tipos
 				+ ", Movimiento=" + Movimientos + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
+
+	
+
+	
 
 }

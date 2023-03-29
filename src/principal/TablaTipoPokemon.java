@@ -156,6 +156,7 @@ public class TablaTipoPokemon {
      */
     public String mostrarEficaciaTipo(TipoPokemon tipoAtacante, TipoPokemon tipoOponente) {
         return mostrarEficacia(efectividadesPokemon[tipoAtacante.getIndice()][tipoOponente.getIndice()]);
+        
     }
 
     /**

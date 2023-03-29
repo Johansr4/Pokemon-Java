@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PruebasPokemon {
-
+	
 	/**
 	 * @param args
 	 */
@@ -17,7 +17,12 @@ public class PruebasPokemon {
 				TipoPokemon.AGUA, null,
 				Estado.NORMAL, objeto1);
 
+				
+
 		System.out.println(pokemon.toString());
+
+		TablaTipoPokemon tablaTipoPokemon = new TablaTipoPokemon();
+		System.out.println(tablaTipoPokemon.mostrarEficaciaTipo(TipoPokemon.AGUA, TipoPokemon.FUEGO, TipoPokemon.ROCA));
 
 	}
 

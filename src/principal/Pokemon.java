@@ -26,14 +26,14 @@ public class Pokemon {
 	private int fertilidad = 5;
 	private char sexo;
 	private TipoPokemon tipo;
-	private MovimientoPokemon Movimiento;
+	private String MovimientoPokemon[];
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
 			TipoPokemon tipos,
-			MovimientoPokemon movimientos, Estado estado, Objeto objeto) {
+			String[] movimientos, Estado estado, Objeto objeto) {
 		super();
 		this.nombre = nombre;
 		this.mote = mote;
@@ -48,7 +48,7 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
 		this.tipo = tipos;
-		this.Movimiento = movimientos;
+		this.MovimientoPokemon = movimientos;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
@@ -157,12 +157,12 @@ public class Pokemon {
 		tipo = tipos;
 	}
 
-	public MovimientoPokemon getMovimientos() {
-		return Movimiento;
+	public String[] getMovimientos() {
+		return MovimientoPokemon;
 	}
 
-	public void setMovimientos(MovimientoPokemon movimientos) {
-		this.Movimiento = movimientos;
+	public void setMovimientos(String[] movimientos) {
+		this.MovimientoPokemon = movimientos;
 	}
 
 	public Estado getEstado() {
@@ -190,22 +190,29 @@ public class Pokemon {
 	}
 
 	public void subirNivel() {
-		if (experiencia >= 10 * nivel) {
+		int contNivel=0;
+		if (experiencia >= 10 * this.nivel||contNivel%3==0) {
 			upgradeStatsNivel();
+
+
+
+
 		}
 	}
 
 	public void upgradeStatsNivel() {
 		nivel += 1;
 
-		vitalidad += (int) (Math.random() * 5) + 1;
-		ataque += (int) (Math.random() * 5) + 1;
-		defensa += (int) (Math.random() * 5) + 1;
-		ataqueEspecial += (int) (Math.random() * 5) + 1;
-		defensaEspecial += (int) (Math.random() * 5) + 1;
-		velocidad += (int) (Math.random() * 5) + 1;
+		this.vitalidad += (int) (Math.random() * 5) + 1;
+		this.ataque += (int) (Math.random() * 5) + 1;
+		this.defensa += (int) (Math.random() * 5) + 1;
+		this.ataqueEspecial += (int) (Math.random() * 5) + 1;
+		this.defensaEspecial += (int) (Math.random() * 5) + 1;
+		this.velocidad += (int) (Math.random() * 5) + 1;
 
 	}
+
+	
 
 	public void atacar() {
 
@@ -223,9 +230,7 @@ public class Pokemon {
 
 	}
 
-	public void aprenderMovimiento() {
-
-	}
+	
 
 	@Override
 	public String toString() {
@@ -233,7 +238,7 @@ public class Pokemon {
 				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
 				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + tipo
-				+ ", Movimiento=" + Movimiento + ", estado=" + estado + ", objeto=" + objeto + "]";
+				+ ", Movimiento=" + MovimientoPokemon + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
 }

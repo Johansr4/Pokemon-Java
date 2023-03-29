@@ -1,12 +1,12 @@
 package principal;
 
 public enum EficaciasPokemon {
-    NO_ES_MUY_EFICAZ("NO ES MUY EFICAZ", 0.5),
+    DESVENTAJA("NO ES MUY EFICAZ", 0.5),
     NEUTRO("NEUTRO", 1),
-    ES_MUY_EFICAZ("ES MUY EFICAZ", 2),
+    VENTAJA("ES MUY EFICAZ", 2),
     NO_AFECTA("NO AFECTA", 0),
-    DOBLEMENTE_EFICAZ("DOBLEMENTE EFICAZ", 4),
-    DOBLEMENTE_NO_MUY_EFICAZ("DOBLEMENTE NO MUY EFICAZ", 0.25);
+    DOBLE_VENTAJA("DOBLEMENTE EFICAZ", 4),
+    DOBLE_DESVENTAJA("DOBLEMENTE NO MUY EFICAZ", 0.25);
     
     private String mensaje;
     private double eficacia;

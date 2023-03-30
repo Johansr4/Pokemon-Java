@@ -11,6 +11,7 @@ public class TablaTipoPokemon {
     }
 
     private void rellenarDatosEfectividades() {
+        //
         double[][] efectividadesPokemon = {
                 /*
                  * ACERO AGUA BICHO DRAGON ELÉC FANT FUEGO HADA HIELO LUCHA NORMAL PLANTA PSI
@@ -58,7 +59,7 @@ public class TablaTipoPokemon {
 
         for (int i = 0; i < efectividadesPokemon.length; i++) {
 
-            if (efectividadesPokemon[i][tipo.getIndice()] == EficaciasPokemon.ES_MUY_EFICAZ.getEficacia()) {
+            if (efectividadesPokemon[i][tipo.getIndice()] == EficaciasPokemon.VENTAJA.getEficacia()) {
                 debilidades.add(this.getTipoPokemonAt(i));
             }
 
@@ -84,7 +85,7 @@ public class TablaTipoPokemon {
             efectividadFinal = efectividadesPokemon[i][tipo1.getIndice()]
                     * efectividadesPokemon[i][tipo2.getIndice()];
 
-            if (efectividadFinal >= EficaciasPokemon.ES_MUY_EFICAZ.getEficacia()) {
+            if (efectividadFinal >= EficaciasPokemon.VENTAJA.getEficacia()) {
                 debilidades.add(this.getTipoPokemonAt(i));
             }
         }
@@ -104,7 +105,7 @@ public class TablaTipoPokemon {
 
         for (int j = 0; j < efectividadesPokemon.length; j++) {
 
-            if (efectividadesPokemon[tipo.getIndice()][j] == EficaciasPokemon.ES_MUY_EFICAZ.getEficacia()) {
+            if (efectividadesPokemon[tipo.getIndice()][j] == EficaciasPokemon.VENTAJA.getEficacia()) {
                 eficacias.add(this.getTipoPokemonAt(j));
             }
 
@@ -155,6 +156,7 @@ public class TablaTipoPokemon {
      */
     public String mostrarEficaciaTipo(TipoPokemon tipoAtacante, TipoPokemon tipoOponente) {
         return mostrarEficacia(efectividadesPokemon[tipoAtacante.getIndice()][tipoOponente.getIndice()]);
+        
     }
 
     /**

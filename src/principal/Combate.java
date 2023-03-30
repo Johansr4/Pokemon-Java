@@ -2,23 +2,62 @@ package principal;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class Combate {
-	private Entrenador ganador;
-	private Entrenador jugador;
-	private Entrenador rival;
-	private int turno;
-	private int numKOsJugador;
-	private int numKOsRival;
+    private Entrenador jugador;
+    private Entrenador rival;
+    private int turno;
+    private int koJugador;
+    private int koRival;
+    private boolean retirado;
 
-	public Combate(Entrenador jugador, Entrenador rival) {
-		this.jugador = jugador;
-		this.rival = rival;
-		this.turno = 1;
-		this.numKOsJugador = 0;
-		this.numKOsRival = 0;
-		
-		
-	}
+    public Combate(Entrenador jugador, Entrenador rival) {
+        this.jugador = jugador;
+        this.rival = rival;
+        this.turno = 1;
+        this.koJugador = 0;
+        this.koRival = 0;
+        this.retirado = false;
+    }
+
+    public Entrenador getGanador() {
+        if (this.koJugador == 6) {
+            return this.rival;
+        } else if (this.koRival == 6 || this.retirado) {
+            return this.jugador;
+        } else {
+            return null;
+        }
+    }
+
+    public Entrenador getJugador() {
+        return this.jugador;
+    }
+
+    public Entrenador getRival() {
+        return this.rival;
+    }
+
+    public int getTurno() {
+        return this.turno;
+    }
+
+    public int getKoJugador() {
+        return this.koJugador;
+    }
+
+    public int getKoRival() {
+        return this.koRival;
+    }
+
+    public boolean isRetirado() {
+        return this.retirado;
+    }
+
+    public void setRetirado(boolean retirado) {
+        this.retirado = retirado;
+    }
 
 }
+

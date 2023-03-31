@@ -90,4 +90,13 @@ public class MovimientoPokemon {
     public int getDuracionMejora() {
         return duracionMejora;
     }
+
+    @Override
+    public String toString() {
+        return "MovimientoPokemon [tipo=" + tipo + ", nombre=" + nombre + ", potencia=" + potencia + ", estado="
+                + estado + ", duracionEstado=" + duracionEstado + ", mejora=" + mejora + ", duracionMejora="
+                + duracionMejora + "]";
+    }
+
+    
 }

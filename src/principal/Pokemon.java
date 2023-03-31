@@ -4,7 +4,8 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import principal.MovimientoPokemon.TipoMovimiento;
+
+
 
 //Javafx/Scene Builder y conexion bbdd
 
@@ -30,14 +31,13 @@ public class Pokemon {
 	private int fertilidad = 5;
 	private char sexo;
 	private TipoPokemon tipo;
-	private TipoMovimiento Movimiento;
+	private MovimientoPokemon Movimiento;
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
-			TipoPokemon tipos,
-			TipoMovimiento ataque2, Estado estado, Objeto objeto) {
+			TipoPokemon tipos,MovimientoPokemon movimientos, Estado estado, Objeto objeto) {
 		super();
 		this.nombre = nombre;
 		this.mote = mote;
@@ -52,10 +52,12 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
 		this.tipo = tipos;
-		this.Movimiento = ataque2;
+		this.Movimiento = movimientos;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
+
+
 
 	public String getNombre() {
 		return nombre;
@@ -161,11 +163,11 @@ public class Pokemon {
 		tipo = tipos;
 	}
 
-	public TipoMovimiento getMovimientos() {
+	public MovimientoPokemon getMovimientos() {
 		return Movimiento;
 	}
 
-	public void setMovimientos(TipoMovimiento movimientos) {
+	public void setMovimientos(MovimientoPokemon movimientos) {
 		this.Movimiento = movimientos;
 	}
 

@@ -4,6 +4,8 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import principal.MovimientoPokemon.TipoMovimiento;
+
 //Javafx/Scene Builder y conexion bbdd
 
 // Metodo para aplicar objeto
@@ -26,14 +28,14 @@ public class Pokemon {
 	private int fertilidad = 5;
 	private char sexo;
 	private TipoPokemon tipo;
-	private String MovimientoPokemon[];
+	private TipoMovimiento Movimiento;
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
 			TipoPokemon tipos,
-			String[] movimientos, Estado estado, Objeto objeto) {
+			TipoMovimiento ataque2, Estado estado, Objeto objeto) {
 		super();
 		this.nombre = nombre;
 		this.mote = mote;
@@ -48,7 +50,7 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
 		this.tipo = tipos;
-		this.MovimientoPokemon = movimientos;
+		this.Movimiento = ataque2;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
@@ -157,12 +159,12 @@ public class Pokemon {
 		tipo = tipos;
 	}
 
-	public String[] getMovimientos() {
-		return MovimientoPokemon;
+	public TipoMovimiento getMovimientos() {
+		return Movimiento;
 	}
 
-	public void setMovimientos(String[] movimientos) {
-		this.MovimientoPokemon = movimientos;
+	public void setMovimientos(TipoMovimiento movimientos) {
+		this.Movimiento = movimientos;
 	}
 
 	public Estado getEstado() {
@@ -238,7 +240,7 @@ public class Pokemon {
 				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
 				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", Tipo=" + tipo
-				+ ", Movimiento=" + MovimientoPokemon + ", estado=" + estado + ", objeto=" + objeto + "]";
+				+ ", Movimiento=" + Movimiento + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
 }

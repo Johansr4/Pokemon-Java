@@ -59,5 +59,13 @@ public class Combate {
         this.retirado = retirado;
     }
 
+    @Override
+    public String toString() {
+        return "Combate [jugador=" + jugador + ", rival=" + rival + ", turno=" + turno + ", koJugador=" + koJugador
+                + ", koRival=" + koRival + ", retirado=" + retirado + "]";
+    }
+
+    
+
 }
 

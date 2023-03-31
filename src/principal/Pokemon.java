@@ -12,6 +12,8 @@ import principal.MovimientoPokemon.TipoMovimiento;
 
 //ENUMERADOS o INTRODUCIR VALORES NUEVOS EN BBDD
 
+//hashmap en aprender ataque/movimiento
+
 public class Pokemon {
 
 	private int experiencia;
@@ -193,7 +195,7 @@ public class Pokemon {
 
 	public void subirNivel() {
 		int contNivel=0;
-		if (experiencia >= 10 * this.nivel||contNivel%3==0) {
+		if (experiencia >= (10 * (this.nivel))||contNivel%3==0) {
 			upgradeStatsNivel();
 
 
@@ -231,6 +233,11 @@ public class Pokemon {
 	public void descansar() {
 
 	}
+
+	/* public void aprenderAtaque(ataque,posicion) {
+		
+	}*/
+	
 
 	
 

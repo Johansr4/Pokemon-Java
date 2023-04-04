@@ -59,141 +59,209 @@ public class Pokemon {
 
 
 
+	public int getExperiencia() {
+		return experiencia;
+	}
+
+
+
+
+
+	public void setExperiencia(int experiencia) {
+		this.experiencia = experiencia;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
+
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+
+
 	public String getMote() {
 		return mote;
 	}
+
+
 
 	public void setMote(String mote) {
 		this.mote = mote;
 	}
 
+
+
 	public int getVitalidad() {
 		return vitalidad;
 	}
+
+
 
 	public void setVitalidad(int vitalidad) {
 		this.vitalidad = vitalidad;
 	}
 
+
+
 	public int getAtaque() {
 		return ataque;
 	}
+
+
 
 	public void setAtaque(int ataque) {
 		this.ataque = ataque;
 	}
 
+
+
 	public int getDefensa() {
 		return defensa;
 	}
+
+
 
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
 
+
+
 	public int getAtaqueEspecial() {
 		return ataqueEspecial;
 	}
+
+
 
 	public void setAtaqueEspecial(int ataqueEspecial) {
 		this.ataqueEspecial = ataqueEspecial;
 	}
 
+
+
 	public int getDefensaEspecial() {
 		return defensaEspecial;
 	}
+
+
 
 	public void setDefensaEspecial(int defensaEspecial) {
 		this.defensaEspecial = defensaEspecial;
 	}
 
+
+
 	public int getVelocidad() {
 		return velocidad;
 	}
+
+
 
 	public void setVelocidad(int velocidad) {
 		this.velocidad = velocidad;
 	}
 
+
+
 	public int getEstamina() {
 		return estamina;
 	}
+
+
 
 	public void setEstamina(int estamina) {
 		this.estamina = estamina;
 	}
 
+
+
 	public int getNivel() {
 		return nivel;
 	}
+
+
 
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
 
+
+
 	public int getFertilidad() {
 		return fertilidad;
 	}
+
+
 
 	public void setFertilidad(int fertilidad) {
 		this.fertilidad = fertilidad;
 	}
 
+
+
 	public char getSexo() {
 		return sexo;
 	}
+
+
 
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
 
-	public TipoPokemon getTipos() {
+
+
+	public TipoPokemon getTipo() {
 		return tipo;
 	}
 
-	public void setTipos(TipoPokemon tipos) {
-		tipo = tipos;
+
+
+	public void setTipo(TipoPokemon tipo) {
+		this.tipo = tipo;
 	}
 
-	public MovimientoPokemon getMovimientos() {
+
+
+	public MovimientoPokemon getMovimiento() {
 		return Movimiento;
 	}
 
-	public void setMovimientos(MovimientoPokemon movimientos) {
-		this.Movimiento = movimientos;
+
+
+	public void setMovimiento(MovimientoPokemon movimiento) {
+		Movimiento = movimiento;
 	}
+
+
 
 	public Estado getEstado() {
 		return estado;
 	}
 
+
+
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+
+
 
 	public Objeto getObjeto() {
 		return objeto;
 	}
 
+
+
 	public void setObjeto(Objeto objeto) {
 		this.objeto = objeto;
 	}
 
-	public int getExperiencia() {
-		return experiencia;
-	}
 
-	public void setExperiencia(int experiencia) {
-		this.experiencia = experiencia;
-	}
 
 	public void subirNivel() {
 		int contNivel=0;

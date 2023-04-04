@@ -3,9 +3,12 @@ package principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+import principal.MovimientoPokemon.TipoMovimiento;
 
 public class PruebasPokemon {
-	
+	static Scanner sc = new Scanner(System.in);
+
 	/**
 	 * @param args
 	 */
@@ -13,8 +16,10 @@ public class PruebasPokemon {
 
 		Objeto objeto1 = new Objeto("palo pokemon", 1);
 
+		MovimientoPokemon movimientoPokemon1 = new MovimientoPokemon("patada",1, TipoMovimiento.ATAQUE);
+
 		Pokemon pokemon = new Pokemon("Charmander", "Exterminador", 39, 52, 43, 60, 50, 65, 60, 5, 70, 'M',
-				TipoPokemon.ACERO,null,Estado.NORMAL, objeto1);
+				TipoPokemon.ACERO,movimientoPokemon1,Estado.NORMAL, objeto1);
 
 				
 

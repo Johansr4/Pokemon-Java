@@ -320,4 +320,18 @@ public class Pokemon {
 				+ ", Movimiento=" + Movimiento + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
+
+
+	public boolean puedeUsarObjeto(Objeto objeto2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	public void entrenar(int[] aumentosEstadisticas) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

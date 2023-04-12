@@ -104,7 +104,7 @@ public class Entrenador {
 		}
 
 		mochila.remove(objeto);
-		pokemon.usarObjeto(objeto);
+		pokemon.puedeUsarObjeto(objeto);
 		System.out.println(nombre + " ha usado " + objeto.getNombre() + " en " + pokemon.getNombre());
 	}
 

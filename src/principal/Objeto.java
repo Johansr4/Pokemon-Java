@@ -27,6 +27,14 @@ public class Objeto {
     public String toString() {
         return "Objeto [nombre=" + nombre + ", estadisticaPrueba=" + estadisticaPrueba + "]";
     }
+	public int getCosto() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public String getCantidad() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
     
 

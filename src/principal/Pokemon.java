@@ -4,9 +4,6 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
-
-
 //Javafx/Scene Builder y conexion bbdd
 
 // Metodo para aplicar objeto
@@ -37,7 +34,7 @@ public class Pokemon {
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
-			TipoPokemon tipos,MovimientoPokemon movimientos, Estado estado, Objeto objeto) {
+			TipoPokemon tipos, MovimientoPokemon movimientos, Estado estado, Objeto objeto) {
 		super();
 		this.nombre = nombre;
 		this.mote = mote;
@@ -57,15 +54,9 @@ public class Pokemon {
 		this.objeto = objeto;
 	}
 
-
-
 	public int getExperiencia() {
 		return experiencia;
 	}
-
-
-
-
 
 	public void setExperiencia(int experiencia) {
 		this.experiencia = experiencia;
@@ -75,201 +66,134 @@ public class Pokemon {
 		return nombre;
 	}
 
-
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-
 
 	public String getMote() {
 		return mote;
 	}
 
-
-
 	public void setMote(String mote) {
 		this.mote = mote;
 	}
-
-
 
 	public int getVitalidad() {
 		return vitalidad;
 	}
 
-
-
 	public void setVitalidad(int vitalidad) {
 		this.vitalidad = vitalidad;
 	}
-
-
 
 	public int getAtaque() {
 		return ataque;
 	}
 
-
-
 	public void setAtaque(int ataque) {
 		this.ataque = ataque;
 	}
-
-
 
 	public int getDefensa() {
 		return defensa;
 	}
 
-
-
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
-
-
 
 	public int getAtaqueEspecial() {
 		return ataqueEspecial;
 	}
 
-
-
 	public void setAtaqueEspecial(int ataqueEspecial) {
 		this.ataqueEspecial = ataqueEspecial;
 	}
-
-
 
 	public int getDefensaEspecial() {
 		return defensaEspecial;
 	}
 
-
-
 	public void setDefensaEspecial(int defensaEspecial) {
 		this.defensaEspecial = defensaEspecial;
 	}
-
-
 
 	public int getVelocidad() {
 		return velocidad;
 	}
 
-
-
 	public void setVelocidad(int velocidad) {
 		this.velocidad = velocidad;
 	}
-
-
 
 	public int getEstamina() {
 		return estamina;
 	}
 
-
-
 	public void setEstamina(int estamina) {
 		this.estamina = estamina;
 	}
-
-
 
 	public int getNivel() {
 		return nivel;
 	}
 
-
-
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
-
-
 
 	public int getFertilidad() {
 		return fertilidad;
 	}
 
-
-
 	public void setFertilidad(int fertilidad) {
 		this.fertilidad = fertilidad;
 	}
-
-
 
 	public char getSexo() {
 		return sexo;
 	}
 
-
-
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
-
-
 
 	public TipoPokemon getTipo() {
 		return tipo;
 	}
 
-
-
 	public void setTipo(TipoPokemon tipo) {
 		this.tipo = tipo;
 	}
-
-
 
 	public MovimientoPokemon getMovimiento() {
 		return Movimiento;
 	}
 
-
-
 	public void setMovimiento(MovimientoPokemon movimiento) {
 		Movimiento = movimiento;
 	}
-
-
 
 	public Estado getEstado() {
 		return estado;
 	}
 
-
-
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-
-
 
 	public Objeto getObjeto() {
 		return objeto;
 	}
 
-
-
 	public void setObjeto(Objeto objeto) {
 		this.objeto = objeto;
 	}
 
-
-
 	public void subirNivel() {
-		int contNivel=0;
-		if (experiencia >= (10 * (this.nivel))||contNivel%3==0) {
+		int contNivel = 0;
+		if (experiencia >= (10 * (this.nivel)) || contNivel % 3 == 0) {
 			upgradeStatsNivel();
-
-
-
 
 		}
 	}
@@ -285,8 +209,6 @@ public class Pokemon {
 		this.velocidad += (int) (Math.random() * 5) + 1;
 
 	}
-
-	
 
 	public void atacar() {
 
@@ -304,12 +226,11 @@ public class Pokemon {
 
 	}
 
-	/* public void aprenderAtaque(ataque,posicion) {
-		
-	}*/
-	
-
-	
+	/*
+	 * public void aprenderAtaque(ataque,posicion) {
+	 * 
+	 * }
+	 */
 
 	@Override
 	public String toString() {
@@ -320,18 +241,14 @@ public class Pokemon {
 				+ ", Movimiento=" + Movimiento + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
-
-
 	public boolean puedeUsarObjeto(Objeto objeto2) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-
-
 	public void entrenar(int[] aumentosEstadisticas) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

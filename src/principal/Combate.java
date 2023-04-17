@@ -12,6 +12,8 @@ public class Combate {
     private int koRival;
     private boolean retirado;
 
+    //Crea dos entrenadores para tener dinero 
+
     public Combate(Entrenador jugador, Entrenador rival) {
         this.jugador = jugador;
         this.rival = rival;
@@ -29,6 +31,8 @@ public class Combate {
         } else {
             return null;
         }
+
+       //dinero
     }
 
     public Entrenador getJugador() {

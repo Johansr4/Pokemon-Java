@@ -132,3 +132,4 @@ public class Entrenador {
 	public void mostrarDinero() {
         System.out.println(nombre + " tiene " + dinero + " monedas.");
     }
+}

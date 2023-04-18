@@ -140,11 +140,11 @@ public class Entrenador {
 
 	public void restarDinero(int i) {
 		// TODO Auto-generated method stub
-		
+	
 	}
 
 	public Object getEquipoPokemon() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubtt
 		return null;
 	}
 }

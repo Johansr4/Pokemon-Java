@@ -243,7 +243,7 @@ public class Pokemon {
 
 
 	//Selecciona el ataque y verifica si puede usarlo o no
-	public boolean atacar(int ataqueSeleccionado) {
+	public boolean atacar(Pokemon objetivo, int ataqueSeleccionado) {
 		System.out.println("Seleccionaste el ataque " + ataqueSeleccionado);
 	
 		// Verificar si el ataque seleccionado es válido (1, 2, 3 o 4)
@@ -271,20 +271,33 @@ public class Pokemon {
 				System.out.println("Realizando ataque con " + movimiento.getNombre());
 				// Restar el costo de estamina del movimiento del medidor de estamina del Pokémon
 				this.estamina -= movimiento.costoMovimiento();
-			}else{
+				
+				// Realizar el ataque en el Pokémon objetivo
+				objetivo.recibirAtaque(movimiento);
+				
+				return true;
+			} else {
+				System.out.println("No tienes suficiente estamina para usar este ataque.");
 				return false;
-
 			}
-			
+	
+		} else {
+			System.out.println("Ataque seleccionado inválido.");
+			return false;
 		}
-		return true;
-
-		
 	}
+	
+	public void recibirAtaque(MovimientoPokemon movimiento) {
+		// Implementar lógica para recibir el ataque en el Pokémon objetivo
+		// Actualizar los atributos del Pokémon objetivo según el movimiento recibido
+	}
+	
 
 	public void descansar() {
 
 	}
+
+	
 
 	/*
 	 * public void aprenderAtaque(ataque,posicion) {

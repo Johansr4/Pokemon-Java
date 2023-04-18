@@ -1,6 +1,5 @@
 package principal;
 
-import javax.management.ConstructorParameters;
 
 public class MovimientoPokemon {
 

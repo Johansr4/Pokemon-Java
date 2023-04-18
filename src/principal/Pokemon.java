@@ -35,8 +35,6 @@ public class Pokemon {
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
-	
-
 	public Pokemon(int experiencia, String nombre, String mote, int vitalidad, int ataque, int defensa,
 			int ataqueEspecial, int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
 			TipoPokemon tipo, MovimientoPokemon movimiento, MovimientoPokemon movimiento2,
@@ -63,247 +61,165 @@ public class Pokemon {
 		this.objeto = objeto;
 	}
 
-	
-
 	public int getExperiencia() {
 		return experiencia;
 	}
-
-
 
 	public void setExperiencia(int experiencia) {
 		this.experiencia = experiencia;
 	}
 
-
-
 	public String getNombre() {
 		return nombre;
 	}
-
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-
 	public String getMote() {
 		return mote;
 	}
-
-
 
 	public void setMote(String mote) {
 		this.mote = mote;
 	}
 
-
-
 	public int getVitalidad() {
 		return vitalidad;
 	}
-
-
 
 	public void setVitalidad(int vitalidad) {
 		this.vitalidad = vitalidad;
 	}
 
-
-
 	public int getAtaque() {
 		return ataque;
 	}
-
-
 
 	public void setAtaque(int ataque) {
 		this.ataque = ataque;
 	}
 
-
-
 	public int getDefensa() {
 		return defensa;
 	}
-
-
 
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
 
-
-
 	public int getAtaqueEspecial() {
 		return ataqueEspecial;
 	}
-
-
 
 	public void setAtaqueEspecial(int ataqueEspecial) {
 		this.ataqueEspecial = ataqueEspecial;
 	}
 
-
-
 	public int getDefensaEspecial() {
 		return defensaEspecial;
 	}
-
-
 
 	public void setDefensaEspecial(int defensaEspecial) {
 		this.defensaEspecial = defensaEspecial;
 	}
 
-
-
 	public int getVelocidad() {
 		return velocidad;
 	}
-
-
 
 	public void setVelocidad(int velocidad) {
 		this.velocidad = velocidad;
 	}
 
-
-
 	public int getEstamina() {
 		return estamina;
 	}
-
-
 
 	public void setEstamina(int estamina) {
 		this.estamina = estamina;
 	}
 
-
-
 	public int getNivel() {
 		return nivel;
 	}
-
-
 
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
 
-
-
 	public int getFertilidad() {
 		return fertilidad;
 	}
-
-
 
 	public void setFertilidad(int fertilidad) {
 		this.fertilidad = fertilidad;
 	}
 
-
-
 	public char getSexo() {
 		return sexo;
 	}
-
-
 
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
 
-
-
 	public TipoPokemon getTipo() {
 		return tipo;
 	}
-
-
 
 	public void setTipo(TipoPokemon tipo) {
 		this.tipo = tipo;
 	}
 
-
-
 	public MovimientoPokemon getMovimiento() {
 		return Movimiento;
 	}
-
-
 
 	public void setMovimiento(MovimientoPokemon movimiento) {
 		Movimiento = movimiento;
 	}
 
-
-
 	public MovimientoPokemon getMovimiento2() {
 		return Movimiento2;
 	}
-
-
 
 	public void setMovimiento2(MovimientoPokemon movimiento2) {
 		Movimiento2 = movimiento2;
 	}
 
-
-
 	public MovimientoPokemon getMovimiento3() {
 		return Movimiento3;
 	}
-
-
 
 	public void setMovimiento3(MovimientoPokemon movimiento3) {
 		Movimiento3 = movimiento3;
 	}
 
-
-
 	public MovimientoPokemon getMovimiento4() {
 		return Movimiento4;
 	}
-
-
 
 	public void setMovimiento4(MovimientoPokemon movimiento4) {
 		Movimiento4 = movimiento4;
 	}
 
-
-
 	public Estado getEstado() {
 		return estado;
 	}
-
-
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
 
-
-
 	public Objeto getObjeto() {
 		return objeto;
 	}
 
-
-
 	public void setObjeto(Objeto objeto) {
 		this.objeto = objeto;
 	}
-
-
 
 	public void subirNivel() {
 		int contNivel = 0;
@@ -325,16 +241,45 @@ public class Pokemon {
 
 	}
 
-	public void atacar() {
 
-		/*
-		 * Movimientos.add("ataque r.");
-		 * 
-		 * if (getEstaminaMovimiento() > estamina) {
-		 * Movimientos.get(1);
-		 * }
-		 * movimiento de ej en array mov
-		 */
+	//Selecciona el ataque y verifica si puede usarlo o no
+	public boolean atacar(int ataqueSeleccionado) {
+		System.out.println("Seleccionaste el ataque " + ataqueSeleccionado);
+	
+		// Verificar si el ataque seleccionado es válido (1, 2, 3 o 4)
+		if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
+			MovimientoPokemon movimiento = null;
+	
+			// Obtener el movimiento correspondiente al ataque seleccionado
+			switch (ataqueSeleccionado) {
+				case 1:
+					movimiento = Movimiento;
+					break;
+				case 2:
+					movimiento = Movimiento2;
+					break;
+				case 3:
+					movimiento = Movimiento3;
+					break;
+				case 4:
+					movimiento = Movimiento4;
+					break;
+			}
+	
+			// Verificar si el Pokémon tiene suficiente estamina para usar el movimiento
+			if (this.estamina >= movimiento.costoMovimiento()) {
+				System.out.println("Realizando ataque con " + movimiento.getNombre());
+				// Restar el costo de estamina del movimiento del medidor de estamina del Pokémon
+				this.estamina -= movimiento.costoMovimiento();
+			}else{
+				return false;
+
+			}
+			
+		}
+		return true;
+
+		
 	}
 
 	public void descansar() {
@@ -347,7 +292,6 @@ public class Pokemon {
 	 * }
 	 */
 
-
 	public boolean puedeUsarObjeto(Objeto objeto2) {
 		// TODO Auto-generated method stub
 		return false;
@@ -358,8 +302,6 @@ public class Pokemon {
 
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Pokemon [experiencia=" + experiencia + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
@@ -369,7 +311,5 @@ public class Pokemon {
 				+ ", Movimiento=" + Movimiento + ", Movimiento2=" + Movimiento2 + ", Movimiento3=" + Movimiento3
 				+ ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
-
-	
 
 }

@@ -132,4 +132,19 @@ public class Entrenador {
 	public void mostrarDinero() {
         System.out.println(nombre + " tiene " + dinero + " monedas.");
     }
+
+	public void sumarDinero(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void restarDinero(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getEquipoPokemon() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

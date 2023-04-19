@@ -298,6 +298,7 @@ public class Pokemon {
 	
 
 	public void descansar() {
+		setEstamina(100);
 
 	}
 

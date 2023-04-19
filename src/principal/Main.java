@@ -15,6 +15,9 @@ public class Main {
 
 		// Movimientos de prueba pre-establecidos
 
+		TablaTipoPokemon tablaTipoPokemon = new TablaTipoPokemon();
+	
+
 		MovimientoPokemon movimientoPokemon = new MovimientoPokemon("holasoyunataque", 50, TipoMovimiento.ATAQUE);
 		MovimientoPokemon movimientoPokemon2 = new MovimientoPokemon("holasoyunamejora", Mejora.DEFENSA, 4,
 				TipoMovimiento.ATAQUE);
@@ -46,6 +49,11 @@ public class Main {
 		pokemon.getTipo();
 		System.out.println("El pokemon del rival tiene estos puntos de vitalidad:");
 		System.out.println(pokemon2.getVitalidad());
+		System.out.println(tablaTipoPokemon.mostrarEficaciaTipo(pokemon.getTipo(), pokemon2.getTipo()));
+		
+		
+
+
 
 	}
 }

@@ -4,6 +4,8 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
+
 //Javafx/Scene Builder y conexion bbdd
 
 // Metodo para aplicar objeto
@@ -12,7 +14,7 @@ import java.util.Arrays;
 
 //hashmap en aprender ataque/movimiento
 
-public class Pokemon {
+public class Pokemon<Estado> {
 
 	private int experiencia;
 	private String nombre;
@@ -269,8 +271,9 @@ public class Pokemon {
 			// Verificar si el Pokémon tiene suficiente estamina para usar el movimiento
 			if (this.estamina >= movimiento.costoMovimiento()) {
 				System.out.println("Realizando ataque con " + movimiento.getNombre());
+				
 				// Restar el costo de estamina del movimiento del medidor de estamina del Pokémon
-				this.estamina -= movimiento.costoMovimiento();
+				this.estamina -= this.Movimiento.getPotencia();
 				
 				// Realizar el ataque en el Pokémon objetivo
 				objetivo.recibirAtaque(movimiento);
@@ -288,8 +291,7 @@ public class Pokemon {
 	}
 	
 	public void recibirAtaque(MovimientoPokemon movimiento) {
-		// Implementar lógica para recibir el ataque en el Pokémon objetivo
-		// Actualizar los atributos del Pokémon objetivo según el movimiento recibido
+		this.vitalidad-=movimiento.getPotencia();
 	}
 	
 

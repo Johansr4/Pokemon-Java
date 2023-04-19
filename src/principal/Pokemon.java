@@ -4,6 +4,8 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import principal.MovimientoPokemon.Estado;
+
 
 
 //Javafx/Scene Builder y conexion bbdd
@@ -14,7 +16,7 @@ import java.util.Arrays;
 
 //hashmap en aprender ataque/movimiento
 
-public class Pokemon<Estado> {
+public class Pokemon {
 
 	private int experiencia;
 	private String nombre;

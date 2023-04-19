@@ -50,6 +50,8 @@ public class Main {
 		System.out.println("El pokemon del rival tiene estos puntos de vitalidad:");
 		System.out.println(pokemon2.getVitalidad());
 		System.out.println(tablaTipoPokemon.mostrarEficaciaTipo(pokemon.getTipo(), pokemon2.getTipo()));
+
+		
 		
 		
 

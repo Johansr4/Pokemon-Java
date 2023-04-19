@@ -4,18 +4,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+
 public class Combate {
-	private Entrenador jugador;
-	private Entrenador rival;
+	private Entrenador entrenador;
+	private Entrenador entrenador2;
 	private int turno;
 	private int koJugador;
 	private int koRival;
 	private boolean retirado;
 	private int dinero;
 
+
 	public Combate() {
-		jugador = new Entrenador("jugador");
-		rival = new Entrenador("rival");
+
+		Entrenador entrenador= new Entrenador("YO", null, null, null, dinero, null);
+		
+		Entrenador entrenador2= new Entrenador("RIVAL", null, null, null, dinero, null);
 	}
 
 	public void iniciarCombate() {
@@ -63,12 +67,10 @@ public class Combate {
 	}
 
 	private void siguienteTurno() {
-		// TODO Auto-generated method stub
 
 	}
 
 	private boolean combateTerminado() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

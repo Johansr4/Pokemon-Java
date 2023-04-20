@@ -3,10 +3,9 @@ package principal;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import principal.MovimientoPokemon.Estado;
-
-
 
 //Javafx/Scene Builder y conexion bbdd
 
@@ -18,6 +17,7 @@ import principal.MovimientoPokemon.Estado;
 
 public class Pokemon {
 
+	
 	private int experiencia;
 	private String nombre;
 	private String mote;
@@ -39,6 +39,29 @@ public class Pokemon {
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
 
+	public Pokemon() {
+		this.experiencia = (int) (Math.random() * 10) + 1;
+		this.nombre = nombre;
+		this.mote = mote;
+		this.vitalidad = (int) (Math.random() * 10) + 1;
+		this.ataque = (int) (Math.random() * 10) + 1;
+		this.defensa = (int) (Math.random() * 10) + 1;
+		this.ataqueEspecial = (int) (Math.random() * 10) + 1;
+		this.defensaEspecial = (int) (Math.random() * 10) + 1;
+		this.velocidad = (int) (Math.random() * 10) + 1;
+		this.estamina = (int) (Math.random() * 10) + 1;
+		this.nivel = 1;
+		this.fertilidad = fertilidad;
+		this.sexo = sexo;
+		this.tipo = tipo;
+		this.Movimiento = Movimiento;
+		this.Movimiento = Movimiento2;
+		this.Movimiento = Movimiento3;
+		this.Movimiento = Movimiento4;
+		this.estado = estado;
+		this.objeto = objeto;
+	}
+
 	public Pokemon(int experiencia, String nombre, String mote, int vitalidad, int ataque, int defensa,
 			int ataqueEspecial, int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
 			TipoPokemon tipo, MovimientoPokemon movimiento, MovimientoPokemon movimiento2,
@@ -57,10 +80,10 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
 		this.tipo = tipo;
-		Movimiento = movimiento;
-		Movimiento2 = movimiento2;
-		Movimiento3 = movimiento3;
-		Movimiento4 = movimiento4;
+		this.Movimiento = Movimiento;
+		this.Movimiento = Movimiento2;
+		this.Movimiento = Movimiento3;
+		this.Movimiento = Movimiento4;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
@@ -226,9 +249,10 @@ public class Pokemon {
 	}
 
 	public void subirNivel() {
-		int contNivel = 0;
-		if (experiencia >= (10 * (this.nivel)) || contNivel % 3 == 0) {
+
+		if (experiencia >= (10 * (this.nivel))) {
 			upgradeStatsNivel();
+			aprenderAtaque(Movimiento, ataque);
 
 		}
 	}
@@ -245,19 +269,67 @@ public class Pokemon {
 
 	}
 
+	public void aprenderAtaque(MovimientoPokemon movimientoPokemon, int ataqueSeleccionado) {
 
-	//Selecciona el ataque y verifica si puede usarlo o no
+		if (nivel % 3 == 0) {
+			System.out.println("¡El Pokémon ha aprendido un nuevo ataque!");
+			System.out.println("¿Quieres sustituir uno de los ataques actuales por el nuevo?");
+			System.out.println("1. Sí");
+			System.out.println("2. No");
+			try (Scanner scanner = new Scanner(System.in)) {
+				int opcion = scanner.nextInt();
+				if (opcion == 1) {
+					if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
+						MovimientoPokemon movimiento = null;
+
+						// Obtener el movimiento correspondiente al ataque seleccionado
+
+						switch (ataqueSeleccionado) {
+							case 1:
+								movimiento = Movimiento;
+								break;
+							case 2:
+								movimiento = Movimiento2;
+								break;
+							case 3:
+								movimiento = Movimiento3;
+								break;
+							case 4:
+								movimiento = Movimiento4;
+								break;
+						}
+					}
+					
+					} else {
+						System.out.println("Opción inválida. No se realizó ningún cambio.");
+					}
+			}
+			} else {
+				System.out.println("El nuevo ataque no se ha aprendido.");
+			}
+		}
+	
+
+	// Selecciona el ataque y verifica si puede usarlo o no
+
+	/**
+	 * 
+	 * @param objetivo
+	 * @param ataqueSeleccionado
+	 * @return
+	 */
 	public boolean atacar(Pokemon objetivo, int ataqueSeleccionado) {
 		System.out.println("Seleccionaste el ataque " + ataqueSeleccionado);
-	
+
 		// Verificar si el ataque seleccionado es válido (1, 2, 3 o 4)
 		if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
 			MovimientoPokemon movimiento = null;
-	
+
 			// Obtener el movimiento correspondiente al ataque seleccionado
+
 			switch (ataqueSeleccionado) {
 				case 1:
-					movimiento = Movimiento;
+					movimiento = movimiento;
 					break;
 				case 2:
 					movimiento = Movimiento2;
@@ -269,46 +341,39 @@ public class Pokemon {
 					movimiento = Movimiento4;
 					break;
 			}
-	
+
 			// Verificar si el Pokémon tiene suficiente estamina para usar el movimiento
-			if (this.estamina >= movimiento.costoMovimiento()) {
+			if (getEstamina() >= movimiento.costoMovimiento()) {
+
 				System.out.println("Realizando ataque con " + movimiento.getNombre());
-				
-				// Restar el costo de estamina del movimiento del medidor de estamina del Pokémon
+
+				// Restar el costo de estamina del movimiento del medidor de estamina del
+				// Pokémon
 				this.estamina -= this.Movimiento.getPotencia();
-				
+
 				// Realizar el ataque en el Pokémon objetivo
 				objetivo.recibirAtaque(movimiento);
-				
+
 				return true;
 			} else {
 				System.out.println("No tienes suficiente estamina para usar este ataque.");
 				return false;
 			}
-	
+
 		} else {
 			System.out.println("Ataque seleccionado inválido.");
 			return false;
 		}
 	}
-	
+
 	public void recibirAtaque(MovimientoPokemon movimiento) {
-		this.vitalidad-=movimiento.getPotencia();
+		this.vitalidad -= movimiento.getPotencia();
 	}
-	
 
 	public void descansar() {
 		setEstamina(100);
 
 	}
-
-	
-
-	/*
-	 * public void aprenderAtaque(ataque,posicion) {
-	 * 
-	 * }
-	 */
 
 	public boolean puedeUsarObjeto(Objeto objeto2) {
 		// TODO Auto-generated method stub

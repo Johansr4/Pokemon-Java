@@ -14,7 +14,6 @@ public class Entrenador {
 
 	
 
-
 	public Entrenador(String nombre, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja, ArrayList<Objeto> mochila,
 			int dinero, Random rand) {
 		this.nombre = nombre;
@@ -89,7 +88,7 @@ public class Entrenador {
 	}
 
 	public void moverAPrincipal(Pokemon pokemon) {
-		if (equipo.size() < 6) {
+		if (this.equipo.size() < 6) {
 			equipo.add(pokemon);
 			caja.remove(pokemon);
 			System.out.println(
@@ -118,7 +117,7 @@ public class Entrenador {
 		switch (tipoEntrenamiento) {
 		case "pesado":
 			costoEntrenamiento = 20 * nivel;
-			aumentosEstadisticas[0] = 5;
+			pokemon.getVelocidad()=pokemon.getVelocidad()+=5;
 			aumentosEstadisticas[1] = 5;
 			aumentosEstadisticas[3] = 5;
 			break;

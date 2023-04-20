@@ -1,5 +1,7 @@
 package principal;
 
+//Texto de lo ocurrido en dicho turno
+
 public class Turno {
 	private int numeroTurno;
 	private String accionEntrenador;

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import javax.management.ConstructorParameters;
+
 
 public class Combate {
 	private Entrenador entrenador;
@@ -15,12 +17,23 @@ public class Combate {
 	private int dinero;
 
 
-	public Combate() {
 
-		Entrenador entrenador= new Entrenador("YO", null, null, null, dinero, null);
+
+/**
+ * 
+ * @param entrenador
+ * @param entrenador2
+ */
+
+	
+	public void Combates(Entrenador entrenador, Entrenador entrenador2) {
+
 		
-		Entrenador entrenador2= new Entrenador("RIVAL", null, null, null, dinero, null);
 	}
+	
+	
+	
+	
 
 	public void iniciarCombate() {
 		System.out.println("¡Empieza el combate!");

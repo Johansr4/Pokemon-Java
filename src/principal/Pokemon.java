@@ -32,7 +32,7 @@ public class Pokemon {
 	private int fertilidad = 5;
 	private char sexo;
 	private TipoPokemon tipo;
-	private MovimientoPokemon Movimiento;
+	private MovimientoPokemon Movimiento1;
 	private MovimientoPokemon Movimiento2;
 	private MovimientoPokemon Movimiento3;
 	private MovimientoPokemon Movimiento4;
@@ -54,10 +54,10 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
 		this.tipo = tipo;
-		this.Movimiento = Movimiento;
-		this.Movimiento = Movimiento2;
-		this.Movimiento = Movimiento3;
-		this.Movimiento = Movimiento4;
+		this.Movimiento1 = Movimiento1;
+		this.Movimiento2 = Movimiento2;
+		this.Movimiento3 = Movimiento3;
+		this.Movimiento4 = Movimiento4;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
@@ -80,13 +80,15 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
 		this.tipo = tipo;
-		this.Movimiento = Movimiento;
-		this.Movimiento = Movimiento2;
-		this.Movimiento = Movimiento3;
-		this.Movimiento = Movimiento4;
+		this.Movimiento1 = Movimiento1;
+		this.Movimiento2 = Movimiento2;
+		this.Movimiento3 = Movimiento3;
+		this.Movimiento4 = Movimiento4;
 		this.estado = estado;
 		this.objeto = objeto;
 	}
+
+	
 
 	public int getExperiencia() {
 		return experiencia;
@@ -200,12 +202,12 @@ public class Pokemon {
 		this.tipo = tipo;
 	}
 
-	public MovimientoPokemon getMovimiento() {
-		return Movimiento;
+	public MovimientoPokemon getMovimiento1() {
+		return Movimiento1;
 	}
 
-	public void setMovimiento(MovimientoPokemon movimiento) {
-		Movimiento = movimiento;
+	public void setMovimiento1(MovimientoPokemon movimiento1) {
+		Movimiento1 = movimiento1;
 	}
 
 	public MovimientoPokemon getMovimiento2() {
@@ -252,7 +254,7 @@ public class Pokemon {
 
 		if (experiencia >= (10 * (this.nivel))) {
 			upgradeStatsNivel();
-			aprenderAtaque(Movimiento, ataque);
+			//aprenderAtaque(MovimientoPokemon, ataque);
 
 		}
 	}
@@ -286,7 +288,7 @@ public class Pokemon {
 
 						switch (ataqueSeleccionado) {
 							case 1:
-								movimiento = Movimiento;
+								movimiento = Movimiento1;
 								break;
 							case 2:
 								movimiento = Movimiento2;
@@ -315,56 +317,31 @@ public class Pokemon {
 	/**
 	 * 
 	 * @param objetivo
+	 * @param movimiento 
 	 * @param ataqueSeleccionado
 	 * @return
 	 */
-	public boolean atacar(Pokemon objetivo, int ataqueSeleccionado) {
-		System.out.println("Seleccionaste el ataque " + ataqueSeleccionado);
+	public void atacar(Pokemon objetivo, MovimientoPokemon movimiento) {
+		System.out.println("Seleccionaste el ataque " + movimiento);
 
-		// Verificar si el ataque seleccionado es válido (1, 2, 3 o 4)
-		if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
-			MovimientoPokemon movimiento = null;
-
-			// Obtener el movimiento correspondiente al ataque seleccionado
-
-			switch (ataqueSeleccionado) {
-				case 1:
-					movimiento = movimiento;
-					break;
-				case 2:
-					movimiento = Movimiento2;
-					break;
-				case 3:
-					movimiento = Movimiento3;
-					break;
-				case 4:
-					movimiento = Movimiento4;
-					break;
-			}
-
-			// Verificar si el Pokémon tiene suficiente estamina para usar el movimiento
-			if (getEstamina() >= movimiento.costoMovimiento()) {
-
-				System.out.println("Realizando ataque con " + movimiento.getNombre());
-
-				// Restar el costo de estamina del movimiento del medidor de estamina del
-				// Pokémon
-				this.estamina -= this.Movimiento.getPotencia();
-
-				// Realizar el ataque en el Pokémon objetivo
-				objetivo.recibirAtaque(movimiento);
-
-				return true;
-			} else {
-				System.out.println("No tienes suficiente estamina para usar este ataque.");
-				return false;
-			}
-
+	
+		// Verificar si el Pokémon tiene suficiente estamina para usar el movimiento
+		if (getEstamina() >= movimiento.costoMovimiento()) {
+	
+			System.out.println("Realizando ataque con " + movimiento.getNombre());
+	
+			// Restar el costo de estamina del movimiento del medidor de estamina del Pokémon
+			this.estamina -= movimiento.getPotencia();
+	
+			// Realizar el ataque en el Pokémon objetivo
+			objetivo.recibirAtaque(movimiento);
+	
 		} else {
-			System.out.println("Ataque seleccionado inválido.");
-			return false;
+			System.out.println("No tienes suficiente estamina para usar este ataque.");
 		}
 	}
+	
+
 
 	public void recibirAtaque(MovimientoPokemon movimiento) {
 		this.vitalidad -= movimiento.getPotencia();
@@ -391,7 +368,7 @@ public class Pokemon {
 				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
 				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", tipo=" + tipo
-				+ ", Movimiento=" + Movimiento + ", Movimiento2=" + Movimiento2 + ", Movimiento3=" + Movimiento3
+				+ ", Movimiento=" + Movimiento1 + ", Movimiento2=" + Movimiento2 + ", Movimiento3=" + Movimiento3
 				+ ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 

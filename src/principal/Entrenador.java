@@ -117,7 +117,7 @@ public class Entrenador {
 		switch (tipoEntrenamiento) {
 		case "pesado":
 			costoEntrenamiento = 20 * nivel;
-			pokemon.getVelocidad()=pokemon.getVelocidad()+=5;
+			pokemon.setAtaque(pokemon.getAtaque() + 5);
 			aumentosEstadisticas[1] = 5;
 			aumentosEstadisticas[3] = 5;
 			break;

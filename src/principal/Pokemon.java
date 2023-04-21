@@ -331,7 +331,7 @@ public class Pokemon {
 			System.out.println("Realizando ataque con " + movimiento.getNombre());
 	
 			// Restar el costo de estamina del movimiento del medidor de estamina del Pokémon
-			this.estamina -= movimiento.getPotencia();
+			this.estamina -= movimiento.costoMovimiento();
 	
 			// Realizar el ataque en el Pokémon objetivo
 			objetivo.recibirAtaque(movimiento);

@@ -16,20 +16,19 @@ public class Main {
 
 		TablaTipoPokemon tablaTipoPokemon = new TablaTipoPokemon();
 
-		MovimientoPokemon movimientoPokemon = new MovimientoPokemon("holasoyunataque", 50, TipoMovimiento.ATAQUE);
-		MovimientoPokemon movimientoPokemon2 = new MovimientoPokemon("holasoyunamejora", Mejora.DEFENSA, 4,
+		MovimientoPokemon movimientoPokemon = new MovimientoPokemon("ATAQUE1", 50, TipoMovimiento.ATAQUE);
+		MovimientoPokemon movimientoPokemon2 = new MovimientoPokemon("ATAQUE2", Mejora.DEFENSA, 4,
 				TipoMovimiento.ATAQUE);
-		MovimientoPokemon movimientoPokemon3 = new MovimientoPokemon("holasoyunamejora", Mejora.VELOCIDAD, 4,
-				TipoMovimiento.MEJORA);
-		MovimientoPokemon movimientoPokemon4 = new MovimientoPokemon("holasoyunestado", Estado.CONGELADO, 0,
+		MovimientoPokemon movimientoPokemon3 = new MovimientoPokemon("ATAQUE3", 5, TipoMovimiento.ATAQUE);
+		MovimientoPokemon movimientoPokemon4 = new MovimientoPokemon("ATAQUE4", Estado.CONGELADO, 0,
 				TipoMovimiento.ATAQUE);
-		MovimientoPokemon movimientoPokemon5 = new MovimientoPokemon("holasoyunamejora", Mejora.VELOCIDAD, 4,
+		MovimientoPokemon movimientoPokemon5 = new MovimientoPokemon("ATAQUE5", Mejora.VELOCIDAD, 4,
 				TipoMovimiento.ATAQUE);
 
 		// TU POKEMON
 
 		Pokemon pokemon = new Pokemon(40, "charmander", "charrrr", 400, 30, 20, 0, 0, 0, 100, 4, 0, 'h',
-				TipoPokemon.FUEGO, movimientoPokemon, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4,
+				TipoPokemon.PLANTA, movimientoPokemon, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4,
 				Estado.CONGELADO, objeto1);
 
 		// POKEMON RIVAL
@@ -46,6 +45,7 @@ public class Main {
 		System.out.println("El pokemon del rival tiene estos puntos de vitalidad:");
 		System.out.println(pokemon2.getVitalidad());
 		System.out.println(tablaTipoPokemon.mostrarEficaciaTipo(pokemon.getTipo(), pokemon2.getTipo()));
+		System.out.println(pokemon.getEstamina());
 
 	}
 }

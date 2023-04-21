@@ -6,7 +6,6 @@ import java.util.Random;
 
 import javax.management.ConstructorParameters;
 
-
 public class Combate {
 	private Entrenador entrenador;
 	private Entrenador entrenador2;
@@ -16,24 +15,15 @@ public class Combate {
 	private boolean retirado;
 	private int dinero;
 
+	/**
+	 * 
+	 * @param entrenador
+	 * @param entrenador2
+	 */
 
-
-
-/**
- * 
- * @param entrenador
- * @param entrenador2
- */
-
-	
 	public void Combates(Entrenador entrenador, Entrenador entrenador2) {
 
-		
 	}
-	
-	
-	
-	
 
 	public void iniciarCombate() {
 		System.out.println("¡Empieza el combate!");
@@ -65,20 +55,21 @@ public class Combate {
 
 	private void terminarCombate() {
 		// No tengo ni idea de como quitar este error
-		if (jugador.getEquipoPokemon().getKoRival()) {
+		if (entrenador.getEquipoPokemon().getKoRival()) {
 			// El jugador pierde el combate
 			System.out.println("El jugador ha perdido el combate.");
-			rival.sumarDinero(100); // El rival gana 100 de dinero
-			jugador.restarDinero(50); // El jugador pierde 50 de dinero
+			entrenador2.sumarDinero(100); // El rival gana 100 de dinero
+			entrenador.restarDinero(50); // El jugador pierde 50 de dinero
 		} else {
 			// El jugador gana el combate
 			System.out.println("El jugador ha ganado el combate.");
-			jugador.sumarDinero(100); // El jugador gana 100 de dinero
-			rival.restarDinero(50); // El rival pierde 50 de dinero
+			entrenador.sumarDinero(100); // El jugador gana 100 de dinero
+			entrenador2.restarDinero(50); // El rival pierde 50 de dinero
 		}
 
 	}
 
+	
 	private void siguienteTurno() {
 
 	}
@@ -88,8 +79,8 @@ public class Combate {
 	}
 
 	public Combate(Entrenador jugador, Entrenador rival) {
-		this.jugador = jugador;
-		this.rival = rival;
+		this.entrenador = jugador;
+		this.entrenador2 = rival;
 		this.turno = 1;
 		this.koJugador = 0;
 		this.koRival = 0;
@@ -98,20 +89,20 @@ public class Combate {
 
 	public Entrenador getGanador() {
 		if (this.koJugador == 6) {
-			return this.rival;
+			return this.entrenador2;
 		} else if (this.koRival == 6 || this.retirado) {
-			return this.jugador;
+			return this.entrenador;
 		} else {
 			return null;
 		}
 	}
 
 	public Entrenador getJugador() {
-		return this.jugador;
+		return this.entrenador;
 	}
 
 	public Entrenador getRival() {
-		return this.rival;
+		return this.entrenador2;
 	}
 
 	public int getTurno() {
@@ -136,8 +127,8 @@ public class Combate {
 
 	@Override
 	public String toString() {
-		return "Combate [jugador=" + jugador + ", rival=" + rival + ", turno=" + turno + ", koJugador=" + koJugador
-				+ ", koRival=" + koRival + ", retirado=" + retirado + "]";
+		return "Combate [jugador=" + entrenador + ", rival=" + entrenador2 + ", turno=" + turno + ", koJugador="
+				+ koJugador + ", koRival=" + koRival + ", retirado=" + retirado + "]";
 	}
 
 }

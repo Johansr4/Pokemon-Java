@@ -9,31 +9,32 @@ public class Entrenador {
 	private ArrayList<Pokemon> caja;
 	private ArrayList<Objeto> mochila;
 	private int dinero;
-	private Random rand;
 	private static final int COSTO_POR_NIVEL_DE_ENTRENAMIENTO = 20;
+
+	
+	
+
+	
 
 	
 
 	public Entrenador(String nombre, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja, ArrayList<Objeto> mochila,
-			int dinero, Random rand) {
+			int dinero) {
 		this.nombre = nombre;
 		this.equipo = equipo;
 		this.caja = caja;
 		this.mochila = mochila;
-		this.dinero = dinero;
-		this.rand = rand;
+		this.dinero = (int) (Math.random() * 200) + 800;
 	}
+	
 
 	public Entrenador(String nombre) {
 		this.nombre = nombre;
 		this.equipo = new ArrayList<Pokemon>();
 		this.caja = new ArrayList<Pokemon>();
 		this.mochila = new ArrayList<Objeto>();
-		this.rand = new Random();
-		this.dinero = rand.nextInt(201) + 800;
+		this.dinero = (int) (Math.random() * 200) + 800;
 	}
-
-	
 
 	public String getNombre() {
 		return nombre;
@@ -75,13 +76,7 @@ public class Entrenador {
 		this.dinero = dinero;
 	}
 
-	public Random getRand() {
-		return rand;
-	}
-
-	public void setRand(Random rand) {
-		this.rand = rand;
-	}
+	
 
 	public static int getCostoPorNivelDeEntrenamiento() {
 		return COSTO_POR_NIVEL_DE_ENTRENAMIENTO;
@@ -109,39 +104,52 @@ public class Entrenador {
 		}
 	}
 
-	public void entrenar(Pokemon pokemon, String tipoEntrenamiento) {
+	public void entrenar(Pokemon pokemon, int tipoEntrenamiento) {
+
 		int nivel = pokemon.getNivel();
-		int costoEntrenamiento = 0;
-		int[] aumentosEstadisticas = new int[4];
 
 		switch (tipoEntrenamiento) {
-		case "pesado":
-			costoEntrenamiento = 20 * nivel;
-			pokemon.setAtaque(pokemon.getAtaque() + 5);
-			aumentosEstadisticas[1] = 5;
-			aumentosEstadisticas[3] = 5;
-			break;
-		case "furioso":
-			costoEntrenamiento = 30 * nivel;
-			aumentosEstadisticas[2] = 5;
-			aumentosEstadisticas[3] = 5;
-			break;
-		case "resistente":
-			costoEntrenamiento = 25 * nivel;
-			aumentosEstadisticas[0] = 3;
-			aumentosEstadisticas[2] = 3;
-			break;
-		default:
-			System.out.println("Tipo de entrenamiento no válido");
-			return;
-		}
-		if (dinero < costoEntrenamiento) {
-			System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
-			return;
+			// PESADO
+			case 1:
+
+				if (this.dinero > (20 * nivel)) {
+					this.dinero -= (20 * nivel);
+					pokemon.setAtaque(pokemon.getAtaque() + 5);
+				} else {
+					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+				}
+				break;
+			// FURIOSO
+			case 2:
+				if (this.dinero > (30 * nivel)) {
+					this.dinero -= (30 * nivel);
+					pokemon.setAtaque(pokemon.getAtaque() + 5);
+				} else {
+					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+				}
+				break;
+			// FUNCIONAL
+			case 3:
+				if (this.dinero > (40 * nivel)) {
+					this.dinero -= (40 * nivel);
+					pokemon.setAtaque(pokemon.getAtaque() + 5);
+				} else {
+					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+				}
+				break;
+			// ONIRICO
+			case 4:
+				if (this.dinero > (40 * nivel)) {
+					this.dinero -= (40 * nivel);
+					pokemon.setAtaque(pokemon.getAtaque() + 5);
+				} else {
+					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+				}
+			default:
+				System.out.println("Tipo de entrenamiento no válido");
+				return;
 		}
 
-		dinero -= costoEntrenamiento;
-		pokemon.entrenar(aumentosEstadisticas);
 		System.out.println(nombre + " ha entrenado a " + pokemon.getNombre() + " en el tipo de entrenamiento "
 				+ tipoEntrenamiento);
 	}
@@ -196,21 +204,29 @@ public class Entrenador {
 	}
 
 	public void mostrarDinero() {
-        System.out.println(nombre + " tiene " + dinero + " monedas.");
-    }
+		System.out.println(nombre + " tiene " + dinero + " monedas.");
+	}
 
 	public void sumarDinero(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void restarDinero(int i) {
 		// TODO Auto-generated method stub
-	
+
 	}
 
 	public Object getEquipoPokemon() {
 		// TODO Auto-generated method stubtt
 		return null;
 	}
+
+	@Override
+	public String toString() {
+		return "Entrenador [nombre=" + nombre + ", equipo=" + equipo + ", caja=" + caja + ", mochila=" + mochila
+				+ ", dinero=" + dinero + "]";
+	}
+
+	
 }

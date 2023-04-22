@@ -33,6 +33,7 @@ public class MovimientoPokemon {
      * @param tipo
      */
 
+
     public MovimientoPokemon(String nombre, int potencia, TipoMovimiento tipo) {
         this.nombre = nombre;
         this.potencia = potencia;

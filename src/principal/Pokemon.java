@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import principal.MovimientoPokemon.Estado;
+import principal.MovimientoPokemon.TipoMovimiento;
 
 //Javafx/Scene Builder y conexion bbdd
 
@@ -17,7 +18,6 @@ import principal.MovimientoPokemon.Estado;
 
 public class Pokemon {
 
-	
 	private int experiencia;
 	private String nombre;
 	private String mote;
@@ -87,8 +87,6 @@ public class Pokemon {
 		this.estado = estado;
 		this.objeto = objeto;
 	}
-
-	
 
 	public int getExperiencia() {
 		return experiencia;
@@ -254,7 +252,7 @@ public class Pokemon {
 
 		if (experiencia >= (10 * (this.nivel))) {
 			upgradeStatsNivel();
-			//aprenderAtaque(MovimientoPokemon, ataque);
+			// aprenderAtaque(MovimientoPokemon, ataque);
 
 		}
 	}
@@ -271,77 +269,69 @@ public class Pokemon {
 
 	}
 
-	public void aprenderAtaque(MovimientoPokemon movimientoPokemon, int ataqueSeleccionado) {
+	public void aprenderAtaque(Pokemon pkEvolucion, int ataqueSeleccionado) {
 
 		if (nivel % 3 == 0) {
 			System.out.println("¡El Pokémon ha aprendido un nuevo ataque!");
-			System.out.println("¿Quieres sustituir uno de los ataques actuales por el nuevo?");
-			System.out.println("1. Sí");
-			System.out.println("2. No");
-			try (Scanner scanner = new Scanner(System.in)) {
-				int opcion = scanner.nextInt();
-				if (opcion == 1) {
-					if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
-						MovimientoPokemon movimiento = null;
+			
+			if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
+				MovimientoPokemon movimiento = new MovimientoPokemon("ATAQUE APRENDIDO", 2, TipoMovimiento.ATAQUE);
 
-						// Obtener el movimiento correspondiente al ataque seleccionado
+				// Obtener el a sobreponer
 
-						switch (ataqueSeleccionado) {
-							case 1:
-								movimiento = Movimiento1;
-								break;
-							case 2:
-								movimiento = Movimiento2;
-								break;
-							case 3:
-								movimiento = Movimiento3;
-								break;
-							case 4:
-								movimiento = Movimiento4;
-								break;
-						}
-					}
-					
-					} else {
+				switch (ataqueSeleccionado) {
+					case 1:
+					pkEvolucion.setMovimiento1(movimiento) ;
+						break;
+					case 2:
+					pkEvolucion.setMovimiento2(movimiento);
+						break;
+					case 3:
+					pkEvolucion.setMovimiento3(movimiento);
+						break;
+					case 4:
+					pkEvolucion.setMovimiento4(movimiento);
+						break;
+					default:
 						System.out.println("Opción inválida. No se realizó ningún cambio.");
-					}
-			}
+						break;
+				}
 			} else {
-				System.out.println("El nuevo ataque no se ha aprendido.");
+				System.out.println("Opción inválida. No se realizó ningún cambio.");
 			}
+		} else {
+			System.out.println("El Pokémon no puede aprender un nuevo ataque en este momento.");
 		}
-	
+	}
 
 	// Selecciona el ataque y verifica si puede usarlo o no
 
 	/**
 	 * 
 	 * @param objetivo
-	 * @param movimiento 
+	 * @param movimiento
 	 * @param ataqueSeleccionado
 	 * @return
 	 */
 	public void atacar(Pokemon objetivo, MovimientoPokemon movimiento) {
 		System.out.println("Seleccionaste el ataque " + movimiento);
 
-	
 		// Verificar si el Pokémon tiene suficiente estamina para usar el movimiento
 		if (getEstamina() >= movimiento.costoMovimiento()) {
-	
+
 			System.out.println("Realizando ataque con " + movimiento.getNombre());
-	
-			// Restar el costo de estamina del movimiento del medidor de estamina del Pokémon
+
+			// Restar el costo de estamina del movimiento del medidor de estamina del
+			// Pokémon
 			this.estamina -= movimiento.costoMovimiento();
-	
+
 			// Realizar el ataque en el Pokémon objetivo
 			objetivo.recibirAtaque(movimiento);
-	
+
 		} else {
 			System.out.println("No tienes suficiente estamina para usar este ataque.");
 		}
 	}
-	
-
 
 	public void recibirAtaque(MovimientoPokemon movimiento) {
 		this.vitalidad -= movimiento.getPotencia();
@@ -355,11 +345,6 @@ public class Pokemon {
 	public boolean puedeUsarObjeto(Objeto objeto2) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	public void entrenar(int[] aumentosEstadisticas) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

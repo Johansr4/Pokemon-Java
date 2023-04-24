@@ -102,10 +102,5 @@ public class Objeto {
 		return null;
 
 	}
-	Objeto pesa = new Objeto("Pesa", "Ataque/Defensa", 20, 20, 0, -20, 0, -20, -20, 0, 20, 0);
-	Objeto pluma = new Objeto("Pluma", "Velocidad", 0, -20, -20, 30, 0, 0, -20, -20, -30, 0);
-	Objeto chaleco = new Objeto("Chaleco", "Defensa/Defensa Especial", 0, -15, 20, 0, 0, -15, 20, 20, 0, 0);
-	Objeto baston = new Objeto("Baston", "Estamina", 0, 0, 0, -15, 20, 0, 0, 0, 15, 0);
-	Objeto pilas = new Objeto("Pilas", "Recuperación de estamina", 0, 0, -30, 0, 50, 0, 0, -30, 0, 0);
-
+	
 }

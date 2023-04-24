@@ -147,9 +147,11 @@ public class Entrenador {
 				+ tipoEntrenamiento);
 	}
 
-	public Pokemon criarPokemon(Pokemon padre, Pokemon madre) {
+	public void criarPokemon(Pokemon padre, Pokemon madre) {
 
 		Pokemon pokemonCria = new Pokemon();
+
+		pokemonCria.setMote("NOMBRE TEST");
 		// Obtener el mote mezclado
 		String moteMezclado = padre.getMote().substring(0, padre.getMote().length() / 2)
 				+ madre.getMote().substring(madre.getMote().length() / 2);
@@ -179,7 +181,7 @@ public class Entrenador {
 
 		// Obtener las mejores características
 		if (padre.getAtaqueEspecial() > madre.getAtaqueEspecial()) {
-            pokemonCria = madre;
+            pokemonCria = padre;
         } else if (padre.getAtaqueEspecial() < madre.getAtaqueEspecial()) {
             pokemonCria = madre;
         } else {
@@ -233,7 +235,7 @@ public class Entrenador {
 
 
 		if (padre.getAtaque() > madre.getAtaque()) {
-            pokemonCria = madre;
+            pokemonCria = padre;
         } else if (padre.getAtaque() < madre.getAtaque()) {
             pokemonCria = madre;
         } else {
@@ -244,7 +246,7 @@ public class Entrenador {
                 pokemonCria = madre;
             }
         }
-		return pokemonCria;
+		 System.out.println(pokemonCria);
     }
 
 	

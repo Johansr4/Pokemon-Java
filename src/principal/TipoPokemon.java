@@ -21,6 +21,9 @@ public enum TipoPokemon {
     TIERRA(15),
     VENENO(16),
     VOLADOR(17);
+
+
+    //Integrar el if tipo.Fuego = string "Fuego" de BBDD
     
     private int indice;
     

@@ -11,13 +11,6 @@ public class Entrenador {
 	private int dinero;
 	private static final int COSTO_POR_NIVEL_DE_ENTRENAMIENTO = 20;
 
-	
-	
-
-	
-
-	
-
 	public Entrenador(String nombre, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja, ArrayList<Objeto> mochila,
 			int dinero) {
 		this.nombre = nombre;
@@ -26,7 +19,6 @@ public class Entrenador {
 		this.mochila = mochila;
 		this.dinero = (int) (Math.random() * 200) + 800;
 	}
-	
 
 	public Entrenador(String nombre) {
 		this.nombre = nombre;
@@ -76,8 +68,6 @@ public class Entrenador {
 		this.dinero = dinero;
 	}
 
-	
-
 	public static int getCostoPorNivelDeEntrenamiento() {
 		return COSTO_POR_NIVEL_DE_ENTRENAMIENTO;
 	}
@@ -111,7 +101,7 @@ public class Entrenador {
 		switch (tipoEntrenamiento) {
 			// PESADO
 			case 1:
-
+				System.out.println("Entrenamiento pesado");
 				if (this.dinero > (20 * nivel)) {
 					this.dinero -= (20 * nivel);
 					pokemon.setAtaque(pokemon.getAtaque() + 5);
@@ -121,6 +111,7 @@ public class Entrenador {
 				break;
 			// FURIOSO
 			case 2:
+				System.out.println("Entrenamiento furioso");
 				if (this.dinero > (30 * nivel)) {
 					this.dinero -= (30 * nivel);
 					pokemon.setAtaque(pokemon.getAtaque() + 5);
@@ -130,6 +121,7 @@ public class Entrenador {
 				break;
 			// FUNCIONAL
 			case 3:
+				System.out.println("Entrenamiento funcional");
 				if (this.dinero > (40 * nivel)) {
 					this.dinero -= (40 * nivel);
 					pokemon.setAtaque(pokemon.getAtaque() + 5);
@@ -139,6 +131,7 @@ public class Entrenador {
 				break;
 			// ONIRICO
 			case 4:
+				System.out.println("Entrenamiento onírico");
 				if (this.dinero > (40 * nivel)) {
 					this.dinero -= (40 * nivel);
 					pokemon.setAtaque(pokemon.getAtaque() + 5);
@@ -153,6 +146,110 @@ public class Entrenador {
 		System.out.println(nombre + " ha entrenado a " + pokemon.getNombre() + " en el tipo de entrenamiento "
 				+ tipoEntrenamiento);
 	}
+
+	public Pokemon criarPokemon(Pokemon padre, Pokemon madre) {
+
+		Pokemon pokemonCria = new Pokemon();
+		// Obtener el mote mezclado
+		String moteMezclado = padre.getMote().substring(0, padre.getMote().length() / 2)
+				+ madre.getMote().substring(madre.getMote().length() / 2);
+
+				pokemonCria.setMote(moteMezclado);
+		// Obtener los ataques mezclados
+
+		pokemonCria.setMovimiento1(padre.getMovimiento1());
+		pokemonCria.setMovimiento2(padre.getMovimiento2());
+		pokemonCria.setMovimiento3(madre.getMovimiento3());
+		pokemonCria.setMovimiento4(madre.getMovimiento4());
+
+		// Obtener los tipos mezclados
+
+		Random random = new Random();
+        
+        // Generar un número aleatorio entre 1 y 2
+        int numeroAleatorio = random.nextInt(2) + 1;
+
+		if (numeroAleatorio==1) {
+			pokemonCria.setTipo(padre.getTipo());
+		} else {
+			pokemonCria.setTipo(madre.getTipo());
+		}
+		
+	
+
+		// Obtener las mejores características
+		if (padre.getAtaqueEspecial() > madre.getAtaqueEspecial()) {
+            pokemonCria = madre;
+        } else if (padre.getAtaqueEspecial() < madre.getAtaqueEspecial()) {
+            pokemonCria = madre;
+        } else {
+            // En caso de empate en todas las estadísticas, elegir al azar
+            if (Math.random() < 0.5) {
+                pokemonCria = padre;
+            } else {
+                pokemonCria = madre;
+            }
+        }
+		
+		if (padre.getDefensaEspecial() > madre.getDefensaEspecial()) {
+			pokemonCria = padre;
+		} else if (padre.getDefensaEspecial() < madre.getDefensaEspecial()) {
+			pokemonCria = madre;
+		} else {
+			// En caso de empate en todas las estadísticas, elegir al azar
+			if (Math.random() < 0.5) {
+				pokemonCria = padre;
+			} else {
+				pokemonCria = madre;
+			}
+		}
+	
+
+		if (padre.getDefensa() > madre.getDefensa()) {
+			pokemonCria = padre;
+		} else if (padre.getDefensa() < madre.getDefensa()) {
+			pokemonCria = madre;
+		} else {
+			// En caso de empate en todas las estadísticas, elegir al azar
+			if (Math.random() < 0.5) {
+				pokemonCria = padre;
+			} else {
+				pokemonCria = madre;
+			}
+		}
+
+		if (padre.getVelocidad() > madre.getVelocidad()) {
+			pokemonCria = padre;
+		} else if (padre.getVelocidad() < madre.getVelocidad()) {
+			pokemonCria = madre;
+		} else {
+			// En caso de empate en todas las estadísticas, elegir al azar
+			if (Math.random() < 0.5) {
+				pokemonCria = padre;
+			} else {
+				pokemonCria = madre;
+			}
+		}
+
+
+		if (padre.getAtaque() > madre.getAtaque()) {
+            pokemonCria = madre;
+        } else if (padre.getAtaque() < madre.getAtaque()) {
+            pokemonCria = madre;
+        } else {
+            // En caso de empate en todas las estadísticas, elegir al azar
+            if (Math.random() < 0.5) {
+                pokemonCria = padre;
+            } else {
+                pokemonCria = madre;
+            }
+        }
+		return pokemonCria;
+    }
+
+	
+
+	
 
 	public void comprar(Objeto objeto) {
 		int costo = objeto.getCosto();
@@ -228,5 +325,4 @@ public class Entrenador {
 				+ ", dinero=" + dinero + "]";
 	}
 
-	
 }

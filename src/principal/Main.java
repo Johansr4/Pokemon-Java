@@ -16,10 +16,13 @@ public class Main {
 		TablaTipoPokemon tablaTipoPokemon = new TablaTipoPokemon();
 		// Movimientos de prueba pre-establecidos
 
-		MovimientoPokemon movimientoPokemon1 = new MovimientoPokemon("ATAQUE1", 50, TipoMovimiento.ATAQUE);
+		MovimientoPokemon movimientoPokemon1 = new MovimientoPokemon("ATAQUE1", 50, TipoMovimiento.ATAQUE); 
+		
 		MovimientoPokemon movimientoPokemon2 = new MovimientoPokemon("ATAQUE2", Mejora.DEFENSA, 4,
 				TipoMovimiento.ATAQUE);
+
 		MovimientoPokemon movimientoPokemon3 = new MovimientoPokemon("ATAQUE3", 5, TipoMovimiento.ATAQUE);
+		
 		MovimientoPokemon movimientoPokemon4 = new MovimientoPokemon("ATAQUE4", Estado.CONGELADO, 0,
 				TipoMovimiento.ATAQUE);
 		MovimientoPokemon movimientoPokemon5 = new MovimientoPokemon("ATAQUE5", Mejora.VELOCIDAD, 4,

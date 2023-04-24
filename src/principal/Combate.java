@@ -19,7 +19,11 @@ public class Combate {
         this.numKorival = 0;
     }
     
-    public void comenzar() {
+    public Combate(Pokemon pokemonJugador, Pokemon pokemonRival) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void comenzar() {
         ArrayList<Pokemon> equipoJugador = jugador.getEquipo();
         ArrayList<Pokemon> equipoRival = rival.getEquipo();
         
@@ -41,12 +45,13 @@ public class Combate {
             System.out.println("Jugador: " + jugador.getNombre() + " envía a " + pokemonJugador.getNombre() + " (Nivel " + pokemonJugador.getNivel() + ")");
             System.out.println("Rival: " + rival.getNombre() + " envía a " + pokemonRival.getNombre() + " (Nivel " + pokemonRival.getNivel() + ")");
             
-            // Realizar la batalla
-            Batalla batalla = new Batalla(pokemonJugador, pokemonRival);
-            batalla.comenzar();
+            // Realizar el combate
+            Combate combate = new Combate(pokemonJugador, pokemonRival);
+            Combate batalla = null;
+			batalla.comenzar();
             
             // Actualizar los contadores de KO
-            if (batalla.getGanador() == pokemonJugador) {
+            if (combate.getGanador() == pokemonJugador) {
                 numKorival++;
             } else {
                 numKojugador++;
@@ -76,4 +81,9 @@ public class Combate {
         System.out.println("Número de Pokémon KO para " + jugador.getNombre() + ": " + numKojugador);
         System.out.println("Número de Pokémon KO para " + rival.getNombre() + ": " + numKorival);
     }
+
+	private Pokemon getGanador() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

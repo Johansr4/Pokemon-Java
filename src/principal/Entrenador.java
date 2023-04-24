@@ -331,4 +331,14 @@ public class Entrenador {
 				+ ", dinero=" + dinero + "]";
 	}
 
+	public int getNivelMaximoEquipo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public boolean seRetira() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

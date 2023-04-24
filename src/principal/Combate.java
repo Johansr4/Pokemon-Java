@@ -2,133 +2,78 @@ package principal;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
-
-import javax.management.ConstructorParameters;
 
 public class Combate {
-	private Entrenador entrenador;
-	private Entrenador entrenador2;
-	private int turno;
-	private int koJugador;
-	private int koRival;
-	private boolean retirado;
-	private int dinero;
-
-	/**
-	 * 
-	 * @param entrenador
-	 * @param entrenador2
-	 */
-
-	public void Combates(Entrenador entrenador, Entrenador entrenador2) {
-
-	}
-
-	public void iniciarCombate() {
-		System.out.println("¡Empieza el combate!");
-		turno = 1;
-		koJugador = 0;
-		koRival = 0;
-		retirado = false;
-
-		while (!combateTerminado() && !retirado) {
-			if (turno == 1) {
-				getJugador();
-				siguienteTurno();
-			} else {
-				getRival();
-				siguienteTurno();
-			}
-		}
-
-		terminarCombate();
-	}
-
-	public void sumarDinero(int cantidad) {
-		this.dinero += cantidad;
-	}
-
-	public void restarDinero(int cantidad) {
-		this.dinero -= cantidad;
-	}
-
-	private void terminarCombate() {
-		// No tengo ni idea de como quitar este error
-		if (entrenador.getEquipoPokemon().getKoRival()) {
-			// El jugador pierde el combate
-			System.out.println("El jugador ha perdido el combate.");
-			entrenador2.sumarDinero(100); // El rival gana 100 de dinero
-			entrenador.restarDinero(50); // El jugador pierde 50 de dinero
-		} else {
-			// El jugador gana el combate
-			System.out.println("El jugador ha ganado el combate.");
-			entrenador.sumarDinero(100); // El jugador gana 100 de dinero
-			entrenador2.restarDinero(50); // El rival pierde 50 de dinero
-		}
-
-	}
-
-	
-	private void siguienteTurno() {
-
-	}
-
-	private boolean combateTerminado() {
-		return false;
-	}
-
-	public Combate(Entrenador jugador, Entrenador rival) {
-		this.entrenador = jugador;
-		this.entrenador2 = rival;
-		this.turno = 1;
-		this.koJugador = 0;
-		this.koRival = 0;
-		this.retirado = false;
-	}
-
-	public Entrenador getGanador() {
-		if (this.koJugador == 6) {
-			return this.entrenador2;
-		} else if (this.koRival == 6 || this.retirado) {
-			return this.entrenador;
-		} else {
-			return null;
-		}
-	}
-
-	public Entrenador getJugador() {
-		return this.entrenador;
-	}
-
-	public Entrenador getRival() {
-		return this.entrenador2;
-	}
-
-	public int getTurno() {
-		return this.turno;
-	}
-
-	public int getKoJugador() {
-		return this.koJugador;
-	}
-
-	public int getKoRival() {
-		return this.koRival;
-	}
-
-	public boolean isRetirado() {
-		return this.retirado;
-	}
-
-	public void setRetirado(boolean retirado) {
-		this.retirado = retirado;
-	}
-
-	@Override
-	public String toString() {
-		return "Combate [jugador=" + entrenador + ", rival=" + entrenador2 + ", turno=" + turno + ", koJugador="
-				+ koJugador + ", koRival=" + koRival + ", retirado=" + retirado + "]";
-	}
-
+    private Entrenador jugador;
+    private Entrenador rival;
+    private int turno;
+    private int numKojugador;
+    private int numKorival;
+    private Entrenador ganador;
+    
+    public Combate(Entrenador jugador, Entrenador rival) {
+        this.jugador = jugador;
+        this.rival = rival;
+        this.turno = 1;
+        this.numKojugador = 0;
+        this.numKorival = 0;
+    }
+    
+    public void comenzar() {
+        ArrayList<Pokemon> equipoJugador = jugador.getEquipo();
+        ArrayList<Pokemon> equipoRival = rival.getEquipo();
+        
+        // Ordenar aleatoriamente los equipos
+        Collections.shuffle(equipoJugador);
+        Collections.shuffle(equipoRival);
+        
+        // Establecer el nivel máximo de los Pokémon del rival
+        int nivelMaxRival = jugador.getNivelMaximoEquipo();
+        
+        while (numKojugador < 6 && numKorival < 6) {
+            System.out.println("Turno " + turno + ":");
+            
+            // Elegir los Pokémon que van a luchar en este turno
+            Pokemon pokemonJugador = equipoJugador.get(turno-1);
+            Pokemon pokemonRival = equipoRival.get(turno-1);
+            
+            // Mostrar los Pokémon que van a luchar
+            System.out.println("Jugador: " + jugador.getNombre() + " envía a " + pokemonJugador.getNombre() + " (Nivel " + pokemonJugador.getNivel() + ")");
+            System.out.println("Rival: " + rival.getNombre() + " envía a " + pokemonRival.getNombre() + " (Nivel " + pokemonRival.getNivel() + ")");
+            
+            // Realizar la batalla
+            Batalla batalla = new Batalla(pokemonJugador, pokemonRival);
+            batalla.comenzar();
+            
+            // Actualizar los contadores de KO
+            if (batalla.getGanador() == pokemonJugador) {
+                numKorival++;
+            } else {
+                numKojugador++;
+            }
+            
+            // Incrementar el turno
+            turno++;
+        }
+        
+        // Determinar el ganador
+        if (numKojugador >= 6 || jugador.seRetira()) {
+            ganador = rival;
+            jugador.setDinero(Math.floorDiv(rival.getDinero(), 3));
+        } else {
+            ganador = jugador;
+            rival.setDinero(Math.floorDiv(jugador.getDinero(), 3));
+        }
+        
+        // Calcular la experiencia obtenida
+        for (Pokemon pokemon : jugador.getEquipo()) {
+            int experiencia = (int) Math.round((pokemon.getNivel() + rival.getNivelMaximoEquipo()*10) / 4.0);
+            pokemon.setExperiencia(experiencia);
+        }
+        
+        // Mostrar el resultado
+        System.out.println("El ganador es " + ganador.getNombre() + "!");
+        System.out.println("Número de Pokémon KO para " + jugador.getNombre() + ": " + numKojugador);
+        System.out.println("Número de Pokémon KO para " + rival.getNombre() + ": " + numKorival);
+    }
 }

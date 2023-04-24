@@ -81,6 +81,7 @@ public class Main {
 
 		entrenador.criarPokemon(pokemon2, pokemon);
 		
+		
 
 		
 

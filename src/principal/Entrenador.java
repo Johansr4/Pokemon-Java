@@ -147,11 +147,15 @@ public class Entrenador {
 				+ tipoEntrenamiento);
 	}
 
+	/**
+	 * Metodo para criar un pokemon con todos los paramentros requeridos 
+	 * @param padre
+	 * @param madre
+	 */
 	public void criarPokemon(Pokemon padre, Pokemon madre) {
 
 		Pokemon pokemonCria = new Pokemon();
 
-		pokemonCria.setMote("NOMBRE TEST");
 		// Obtener el mote mezclado
 		String moteMezclado = padre.getMote().substring(0, padre.getMote().length() / 2)
 				+ madre.getMote().substring(madre.getMote().length() / 2);
@@ -181,72 +185,72 @@ public class Entrenador {
 
 		// Obtener las mejores características
 		if (padre.getAtaqueEspecial() > madre.getAtaqueEspecial()) {
-            pokemonCria = padre;
+            pokemonCria.setAtaqueEspecial(padre.getAtaqueEspecial());
         } else if (padre.getAtaqueEspecial() < madre.getAtaqueEspecial()) {
-            pokemonCria = madre;
+            pokemonCria.setAtaqueEspecial(madre.getAtaqueEspecial());
         } else {
             // En caso de empate en todas las estadísticas, elegir al azar
             if (Math.random() < 0.5) {
-                pokemonCria = padre;
+                pokemonCria.setAtaqueEspecial(padre.getAtaqueEspecial()); 
             } else {
-                pokemonCria = madre;
+                pokemonCria.setAtaqueEspecial(madre.getAtaqueEspecial()); 
             }
         }
 		
 		if (padre.getDefensaEspecial() > madre.getDefensaEspecial()) {
-			pokemonCria = padre;
+			pokemonCria.setDefensaEspecial(padre.getDefensaEspecial());
 		} else if (padre.getDefensaEspecial() < madre.getDefensaEspecial()) {
-			pokemonCria = madre;
+			pokemonCria.setDefensaEspecial(madre.getDefensaEspecial());
 		} else {
 			// En caso de empate en todas las estadísticas, elegir al azar
 			if (Math.random() < 0.5) {
-				pokemonCria = padre;
+				pokemonCria.setDefensaEspecial(padre.getDefensaEspecial());
 			} else {
-				pokemonCria = madre;
+				pokemonCria.setDefensaEspecial(madre.getDefensaEspecial());
 			}
 		}
-	
-
+		
 		if (padre.getDefensa() > madre.getDefensa()) {
-			pokemonCria = padre;
+			pokemonCria.setDefensa(padre.getDefensa());
 		} else if (padre.getDefensa() < madre.getDefensa()) {
-			pokemonCria = madre;
+			pokemonCria.setDefensa(madre.getDefensa());
 		} else {
 			// En caso de empate en todas las estadísticas, elegir al azar
 			if (Math.random() < 0.5) {
-				pokemonCria = padre;
+				pokemonCria.setDefensa(padre.getDefensa());
 			} else {
-				pokemonCria = madre;
+				pokemonCria.setDefensa(madre.getDefensa());
 			}
 		}
-
+		
 		if (padre.getVelocidad() > madre.getVelocidad()) {
-			pokemonCria = padre;
+			pokemonCria.setVelocidad(padre.getVelocidad());
 		} else if (padre.getVelocidad() < madre.getVelocidad()) {
-			pokemonCria = madre;
+			pokemonCria.setVelocidad(madre.getVelocidad());
 		} else {
 			// En caso de empate en todas las estadísticas, elegir al azar
 			if (Math.random() < 0.5) {
-				pokemonCria = padre;
+				pokemonCria.setVelocidad(padre.getVelocidad());
 			} else {
-				pokemonCria = madre;
+				pokemonCria.setVelocidad(madre.getVelocidad());
 			}
 		}
-
-
+		
 		if (padre.getAtaque() > madre.getAtaque()) {
-            pokemonCria = padre;
-        } else if (padre.getAtaque() < madre.getAtaque()) {
-            pokemonCria = madre;
-        } else {
-            // En caso de empate en todas las estadísticas, elegir al azar
-            if (Math.random() < 0.5) {
-                pokemonCria = padre;
-            } else {
-                pokemonCria = madre;
-            }
-        }
-		 System.out.println(pokemonCria);
+			pokemonCria.setAtaque(padre.getAtaque());
+		} else if (padre.getAtaque() < madre.getAtaque()) {
+			pokemonCria.setAtaque(madre.getAtaque());
+		} else {
+			// En caso de empate en todas las estadísticas, elegir al azar
+			if (Math.random() < 0.5) {
+				pokemonCria.setAtaque(padre.getAtaque());
+			} else {
+				pokemonCria.setAtaque(madre.getAtaque());
+			}
+		}
+		
+		System.out.println(pokemonCria);
+		
     }
 
 	

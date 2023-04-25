@@ -275,7 +275,11 @@ public class Pokemon {
 			System.out.println("¡El Pokémon ha aprendido un nuevo ataque!");
 			
 			if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
-				MovimientoPokemon movimiento = new MovimientoPokemon("ATAQUE APRENDIDO", 2, TipoMovimiento.ATAQUE);
+
+
+				//LLAMADA A BBDD PARA INSERTAR EL MOVIMIENTO A APRENDER?
+
+				MovimientoPokemon movimiento = new MovimientoPokemon();
 
 				// Obtener el a sobreponer
 
@@ -326,6 +330,7 @@ public class Pokemon {
 			this.estamina -= movimiento.costoMovimiento();
 
 			// Realizar el ataque en el Pokémon objetivo
+
 			objetivo.recibirAtaque(movimiento);
 
 		} else {
@@ -334,6 +339,13 @@ public class Pokemon {
 	}
 
 	public void recibirAtaque(MovimientoPokemon movimiento) {
+
+		/*TablaTipoPokemon tablaTipoPokemon= new TablaTipoPokemon();
+
+		tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo, tipo)
+
+		tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo)*/
+
 		this.vitalidad -= movimiento.getPotencia();
 	}
 

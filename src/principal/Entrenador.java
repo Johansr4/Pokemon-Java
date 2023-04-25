@@ -165,7 +165,7 @@ public class Entrenador {
 
 		pokemonCria.setMovimiento1(padre.getMovimiento1());
 		pokemonCria.setMovimiento2(padre.getMovimiento2());
-		pokemonCria.setMovimiento3(madre.getMovimiento3());
+		pokemonCria.setMovimiento3(madre.getMovimiento1());
 		pokemonCria.setMovimiento4(madre.getMovimiento4());
 
 		// Obtener los tipos mezclados

@@ -12,11 +12,8 @@ public class Objeto {
 	private int aumentoEstamina;
 	private int disminucionAtaque;
 	private int disminucionDefensa;
-
 	private int disminucionDefensaEspecial;
-
 	private int disminucionVelocidad;
-
 	private int disminucionEstamina;
 
 	public Objeto(String nombre, String tipo, int aumentoAtaque, int aumentoDefensa, int aumentoDefensaEspecial,

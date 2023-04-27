@@ -249,6 +249,7 @@ public class Entrenador {
 			}
 		}
 		
+		caja.add(pokemonCria);
 		System.out.println(pokemonCria);
 		
     }

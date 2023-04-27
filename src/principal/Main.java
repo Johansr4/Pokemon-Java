@@ -86,6 +86,15 @@ public class Main {
 		System.out.println("AQUI ESTA LA CRIA");
 
 		entrenador.criarPokemon(pokemon2, pokemon);
+<<<<<<< Updated upstream
+=======
+
+		System.out.println(entrenador);
+		
+		
+
+		
+>>>>>>> Stashed changes
 
 	}
 }

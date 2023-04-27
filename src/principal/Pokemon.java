@@ -369,4 +369,6 @@ public class Pokemon {
 				+ ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
+   
+
 }

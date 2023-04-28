@@ -57,17 +57,17 @@ public class App {
 
 		// LinkedList<Pokemon> lista = null;
 
-		Pokemon e = null;
+		Pokemon e;
 		while (rs.next()) {
 			e = new Pokemon();
 			e.setNumPokedex(rs.getInt("num_pokedex"));
-			e.setNomPokemon(rs.getString("nom_pokemon"));
-			e.setTipo(rs.getString("tipo1"));
-			e.setTipo2(rs.getString("tipo2"));
+			e.setNombre(rs.getString("nom_pokemon"));
+			e.setTipoPokemon(rs.getString("tipo1"));
+			e.setTipoPokemon2(rs.getString("tipo2"));
 			e.setIdEntrenador(rs.getInt("ID_ENTRENADOR"));
 			e.setIdPokemon(rs.getInt("ID_POKEMON"));
 			e.setMote(rs.getString("MOTE"));
-			e.setS exo(rs.getString("SEXO").charAt(0));
+			e.setSexo(rs.getString("SEXO").charAt(0));
 			e.setNivel(rs.getInt("NIVEL"));
 			e.setVitalidad(rs.getInt("VITALIDAD"));
 			e.setAtaque(rs.getInt("ATAQUE"));
@@ -92,13 +92,13 @@ public class App {
 	 */
 	public static void insertarPokemon(Connection con, Pokemon p) throws SQLException {
 		String sentencia = "INSERT INTO POKEDEX(NUM_POKEDEX,NOM_POKEMON, TIPO1, TIPO2) VALUES(" + p.getNumPokedex()
-				+ ",'" + p.getNomPokemon() + "','" + p.getTipo1() + "','" + p.getTipo2() + "')";
+				+ ",'" + p.getIdPokemon() + "','" + p.getTipo() + "','" + p.getTipo2() + "')";
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
 			stmt.executeUpdate(sentencia);
 
-			System.out.println("Nuevo pokemon insertado. " + p.getNomPokemon());
+			System.out.println("Nuevo pokemon insertado. " + p.getIdPokemon());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

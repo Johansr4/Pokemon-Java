@@ -18,6 +18,9 @@ import principal.MovimientoPokemon.TipoMovimiento;
 
 public class Pokemon {
 
+	private int IdPokemon;
+	private int NumPokedex;
+	private int IdEntrenador;
 	private int experiencia;
 	private String nombre;
 	private String mote;
@@ -32,6 +35,7 @@ public class Pokemon {
 	private int fertilidad = 5;
 	private char sexo;
 	private TipoPokemon tipo;
+	private TipoPokemon tipo2;
 	private MovimientoPokemon Movimiento1;
 	private MovimientoPokemon Movimiento2;
 	private MovimientoPokemon Movimiento3;
@@ -60,12 +64,20 @@ public class Pokemon {
 		this.Movimiento4 = Movimiento4;
 		this.estado = estado;
 		this.objeto = objeto;
+		this.IdEntrenador = IdEntrenador;
+		this.NumPokedex = NumPokedex;
+		this.IdPokemon = IdPokemon;
+		this.tipo2 = tipo2;
 	}
 
-	public Pokemon(int experiencia, String nombre, String mote, int vitalidad, int ataque, int defensa,
-			int ataqueEspecial, int defensaEspecial, int velocidad, int estamina, int nivel, int fertilidad, char sexo,
-			TipoPokemon tipo, MovimientoPokemon movimiento, MovimientoPokemon movimiento2,
-			MovimientoPokemon movimiento3, MovimientoPokemon movimiento4, Estado estado, Objeto objeto) {
+	public Pokemon( int experiencia, String nombre, String mote,
+			int vitalidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad,
+			int estamina, int nivel, int fertilidad, char sexo, TipoPokemon tipo, TipoPokemon tipo2,
+			MovimientoPokemon movimiento1, MovimientoPokemon movimiento2, MovimientoPokemon movimiento3,
+			MovimientoPokemon movimiento4, Estado estado, Objeto objeto ,int idPokemon, int numPokedex, int idEntrenador) {
+		this.IdPokemon = this.IdPokemon;
+		this.NumPokedex = this.NumPokedex;
+		this.IdEntrenador = this.IdEntrenador;
 		this.experiencia = experiencia;
 		this.nombre = nombre;
 		this.mote = mote;
@@ -80,12 +92,41 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
 		this.tipo = tipo;
-		this.Movimiento1 = Movimiento1;
-		this.Movimiento2 = Movimiento2;
-		this.Movimiento3 = Movimiento3;
-		this.Movimiento4 = Movimiento4;
+		this.tipo2 = tipo2;
+		this.Movimiento1 = this.Movimiento1;
+		this.Movimiento2 = this.Movimiento2;
+		this.Movimiento3 = this.Movimiento3;
+		this.Movimiento4 = this.Movimiento4;
 		this.estado = estado;
 		this.objeto = objeto;
+	}
+
+	
+
+	
+
+	public int getIdPokemon() {
+		return IdPokemon;
+	}
+
+	public void setIdPokemon(int idPokemon) {
+		IdPokemon = idPokemon;
+	}
+
+	public int getNumPokedex() {
+		return NumPokedex;
+	}
+
+	public void setNumPokedex(int numPokedex) {
+		NumPokedex = numPokedex;
+	}
+
+	public int getIdEntrenador() {
+		return IdEntrenador;
+	}
+
+	public void setIdEntrenador(int idEntrenador) {
+		IdEntrenador = idEntrenador;
 	}
 
 	public int getExperiencia() {
@@ -196,8 +237,16 @@ public class Pokemon {
 		return tipo;
 	}
 
-	public void setTipo(TipoPokemon tipo) {
-		this.tipo = tipo;
+	public TipoPokemon setTipo(TipoPokemon tipo) {
+		return this.tipo = tipo;
+	}
+
+	public TipoPokemon getTipo2() {
+		return this.tipo2;
+	}
+
+	public TipoPokemon setTipo2(TipoPokemon tipo2) {
+		return this.tipo2 = tipo2;
 	}
 
 	public MovimientoPokemon getMovimiento1() {
@@ -205,7 +254,7 @@ public class Pokemon {
 	}
 
 	public void setMovimiento1(MovimientoPokemon movimiento1) {
-		Movimiento1 = movimiento1;
+		this.Movimiento1 = movimiento1;
 	}
 
 	public MovimientoPokemon getMovimiento2() {
@@ -213,7 +262,7 @@ public class Pokemon {
 	}
 
 	public void setMovimiento2(MovimientoPokemon movimiento2) {
-		Movimiento2 = movimiento2;
+		this.Movimiento2 = movimiento2;
 	}
 
 	public MovimientoPokemon getMovimiento3() {
@@ -221,7 +270,7 @@ public class Pokemon {
 	}
 
 	public void setMovimiento3(MovimientoPokemon movimiento3) {
-		Movimiento3 = movimiento3;
+		this.Movimiento3 = movimiento3;
 	}
 
 	public MovimientoPokemon getMovimiento4() {
@@ -229,7 +278,7 @@ public class Pokemon {
 	}
 
 	public void setMovimiento4(MovimientoPokemon movimiento4) {
-		Movimiento4 = movimiento4;
+		this.Movimiento4 = movimiento4;
 	}
 
 	public Estado getEstado() {
@@ -257,6 +306,85 @@ public class Pokemon {
 		}
 	}
 
+	public TipoPokemon setTipoPokemon(String str) {
+        switch(str) {
+            case "AGUA":
+			return setTipo(TipoPokemon.AGUA);    
+			case "FUEGO":
+			return setTipo(TipoPokemon.FUEGO);
+			case "PLANTA":
+				return setTipo(TipoPokemon.PLANTA);
+			case "VOLADOR":
+				return setTipo(TipoPokemon.VOLADOR);
+			case "TIERRA":
+				return setTipo(TipoPokemon.TIERRA);
+			case "ELÉCTRICO":
+				return setTipo(TipoPokemon.ELÉCTRICO);
+			case "BICHO":
+				return setTipo(TipoPokemon.BICHO);
+			case "LUCHA":
+				return setTipo(TipoPokemon.LUCHA);
+			case "NORMAL":
+				return setTipo(TipoPokemon.NORMAL);
+			case "PSÍQUICO":
+				return setTipo(TipoPokemon.PSÍQUICO);
+			case "ROCA":
+				return setTipo(TipoPokemon.ROCA);
+			case "HIELO":
+				return setTipo(TipoPokemon.HIELO);
+			case "VENENO":
+				return setTipo(TipoPokemon.VENENO);
+			case "FANTASMA":
+				return setTipo(TipoPokemon.FANTASMA);
+			case "DRAGÓN":
+				return setTipo(TipoPokemon.DRAGÓN);
+			default:
+				// Si el valor de str no coincide con ninguna de las opciones anteriores, se asigna un valor nulo al objeto.
+				break;
+		}
+		return null;
+	}
+
+	public TipoPokemon setTipoPokemon2(String str) {
+        switch(str) {
+            case "AGUA":
+			return setTipo(TipoPokemon.AGUA);    
+			case "FUEGO":
+			return setTipo(TipoPokemon.FUEGO);
+			case "PLANTA":
+				return setTipo(TipoPokemon.PLANTA);
+			case "VOLADOR":
+				return setTipo(TipoPokemon.VOLADOR);
+			case "TIERRA":
+				return setTipo(TipoPokemon.TIERRA);
+			case "ELÉCTRICO":
+				return setTipo(TipoPokemon.ELÉCTRICO);
+			case "BICHO":
+				return setTipo(TipoPokemon.BICHO);
+			case "LUCHA":
+				return setTipo(TipoPokemon.LUCHA);
+			case "NORMAL":
+				return setTipo(TipoPokemon.NORMAL);
+			case "PSÍQUICO":
+				return setTipo(TipoPokemon.PSÍQUICO);
+			case "ROCA":
+				return setTipo(TipoPokemon.ROCA);
+			case "HIELO":
+				return setTipo(TipoPokemon.HIELO);
+			case "VENENO":
+				return setTipo(TipoPokemon.VENENO);
+			case "FANTASMA":
+				return setTipo(TipoPokemon.FANTASMA);
+			case "DRAGÓN":
+				return setTipo(TipoPokemon.DRAGÓN);
+			default:
+				// Si el valor de str no coincide con ninguna de las opciones anteriores, se asigna un valor nulo al objeto.
+				break;
+		}
+		return null;
+	}
+	
+
 	public void upgradeStatsNivel() {
 		nivel += 1;
 
@@ -273,11 +401,10 @@ public class Pokemon {
 
 		if (nivel % 3 == 0) {
 			System.out.println("¡El Pokémon ha aprendido un nuevo ataque!");
-			
+
 			if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
 
-
-				//LLAMADA A BBDD PARA INSERTAR EL MOVIMIENTO A APRENDER?
+				// LLAMADA A BBDD PARA INSERTAR EL MOVIMIENTO A APRENDER?
 
 				MovimientoPokemon movimiento = new MovimientoPokemon();
 
@@ -285,16 +412,16 @@ public class Pokemon {
 
 				switch (ataqueSeleccionado) {
 					case 1:
-					pkEvolucion.setMovimiento1(movimiento) ;
+						pkEvolucion.setMovimiento1(movimiento);
 						break;
 					case 2:
-					pkEvolucion.setMovimiento2(movimiento);
+						pkEvolucion.setMovimiento2(movimiento);
 						break;
 					case 3:
-					pkEvolucion.setMovimiento3(movimiento);
+						pkEvolucion.setMovimiento3(movimiento);
 						break;
 					case 4:
-					pkEvolucion.setMovimiento4(movimiento);
+						pkEvolucion.setMovimiento4(movimiento);
 						break;
 					default:
 						System.out.println("Opción inválida. No se realizó ningún cambio.");
@@ -340,11 +467,13 @@ public class Pokemon {
 
 	public void recibirAtaque(MovimientoPokemon movimiento) {
 
-		/*TablaTipoPokemon tablaTipoPokemon= new TablaTipoPokemon();
-
-		tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo, tipo)
-
-		tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo)*/
+		/*
+		 * TablaTipoPokemon tablaTipoPokemon= new TablaTipoPokemon();
+		 * 
+		 * tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo, tipo)
+		 * 
+		 * tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo)
+		 */
 
 		this.vitalidad -= movimiento.getPotencia();
 	}
@@ -368,7 +497,5 @@ public class Pokemon {
 				+ ", Movimiento=" + Movimiento1 + ", Movimiento2=" + Movimiento2 + ", Movimiento3=" + Movimiento3
 				+ ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
-
-   
 
 }

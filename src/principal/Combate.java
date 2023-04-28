@@ -20,7 +20,7 @@ public class Combate {
 	}
 
 	public Combate(Pokemon pokemonJugador, Pokemon pokemonRival) {
-		// TODO Auto-generated constructor stub
+		 
 	}
 
 	public void comenzar() {
@@ -84,7 +84,7 @@ public class Combate {
 	}
 
 	private Pokemon getGanador() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 }

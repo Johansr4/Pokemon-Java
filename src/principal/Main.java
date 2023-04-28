@@ -37,8 +37,8 @@ public class Main {
 		// TU POKEMON
 
 		Pokemon pokemon = new Pokemon(60, "charmander", "charrrr", 400, 30, 60, 1, 1, 1, 100, 100, 0, 'h',
-				TipoPokemon.PLANTA, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4,
-				movimientoPokemon5, Estado.CONGELADO, objeto1);
+				TipoPokemon.PLANTA, null, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4,
+				movimientoPokemon5, Estado.CONGELADO, objeto1, 0,0,0);
 
 				
 
@@ -49,8 +49,8 @@ public class Main {
 
 		// POKEMON RIVAL
 		Pokemon pokemon2 = new Pokemon(30, "squirtle", "sssql", 100, 60, 20, 0, 0, 0, 100, 60, 0, 'h',
-				TipoPokemon.AGUA, movimientoPokemon1, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4, null,
-				objeto1);
+				TipoPokemon.AGUA, null, movimientoPokemon1, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4, null,
+				objeto1, 0, 0, 0);
 
 		pokemon2.setMovimiento1(movimientoPokemon1);
 		pokemon2.setMovimiento2(movimientoPokemon2);
@@ -87,8 +87,12 @@ public class Main {
 
 		entrenador.criarPokemon(pokemon2, pokemon);
 
+		entrenador.capturarPokemon();
 
 		System.out.println(entrenador);
+
+		
+
 		
 		
 

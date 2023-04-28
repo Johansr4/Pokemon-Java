@@ -72,6 +72,23 @@ public class Entrenador {
 		return COSTO_POR_NIVEL_DE_ENTRENAMIENTO;
 	}
 
+	public void capturarPokemon() {
+        Captura captura = new Captura();
+        captura.capturarPokemonWhile();
+        Pokemon pokemonCapturado = captura.getNuevoPokemon();
+        agregarPokemonACaja(pokemonCapturado);
+    }
+
+    public void agregarPokemonACaja(Pokemon pokemon) {
+		if (caja.size() < 10) {
+			caja.add(pokemon);
+			System.out.println("Pokemon añadido a la caja.");
+		} else {
+			System.out.println("La caja está llena, no se puede agregar el pokemon.");
+		}
+	}
+	
+
 	public void moverAPrincipal(Pokemon pokemon) {
 		if (this.equipo.size() < 6) {
 			equipo.add(pokemon);
@@ -311,27 +328,16 @@ public class Entrenador {
 		System.out.println(nombre + " tiene " + dinero + " monedas.");
 	}
 
-	public void sumarDinero(int i) {
-		// TODO Auto-generated method stub
+	public void sumarDinero(Entrenador entrenador) {
+		entrenador.setDinero(entrenador.getDinero() + (entrenador.getDinero()/3));
 
 	}
 
-	public void restarDinero(int i) {
-		// TODO Auto-generated method stub
+	public void restarDinero(Entrenador entrenador) {
+		entrenador.setDinero(entrenador.getDinero() - (entrenador.getDinero()/3));
 
 	}
-
-	public Object getEquipoPokemon() {
-		// TODO Auto-generated method stubtt
-		return null;
-	}
-
-	@Override
-	public String toString() {
-		return "Entrenador [nombre=" + nombre + ", equipo=" + equipo + ", caja=" + caja + ", mochila=" + mochila
-				+ ", dinero=" + dinero + "]";
-	}
-
+	
 	public int getNivelMaximoEquipo() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -341,5 +347,13 @@ public class Entrenador {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public String toString() {
+		return "Entrenador [nombre=" + nombre + ", equipo=" + equipo + ", caja=" + caja + ", mochila=" + mochila
+				+ ", dinero=" + dinero + "]";
+	}
+
+	
 
 }

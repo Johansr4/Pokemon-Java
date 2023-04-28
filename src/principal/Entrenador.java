@@ -354,6 +354,51 @@ public class Entrenador {
 				+ ", dinero=" + dinero + "]";
 	}
 
+	public Pokemon escogerPokemon() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Pokemon escogerPokemon(int nivelMaximoRival) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getNumPokemonsKO() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public double getExperienciaTotal() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void añadirExperiencia(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void añadirDinero(int pokédollarsGanador) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void quitarDinero(int pokédollarsPerdedor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void incrementarNumPokemonsKO() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void incrementarExperienciaTotal(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 }

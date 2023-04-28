@@ -498,4 +498,24 @@ public class Pokemon {
 				+ ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
+	public int getSalud() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int atacar(Pokemon pokemonRival) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void confundir() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean estaKO() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

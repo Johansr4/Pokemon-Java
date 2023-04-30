@@ -18,7 +18,7 @@ public class Main {
 		Objeto baston = new Objeto("Baston", "Estamina", 0, 0, 0, -15, 20, 0, 0, 0, 15, 0);
 		Objeto pilas = new Objeto("Pilas", "Recuperación de estamina", 0, 0, -30, 0, 50, 0, 0, -30, 0, 0);
 
-		Objeto objeto1 = new Objeto("palo pokemon", 1);
+		
 		TablaTipoPokemon tablaTipoPokemon = new TablaTipoPokemon();
 		// Movimientos de prueba pre-establecidos
 
@@ -38,7 +38,7 @@ public class Main {
 
 		Pokemon pokemon = new Pokemon(60, "charmander", "charrrr", 400, 30, 60, 1, 1, 1, 100, 100, 0, 'h',
 				TipoPokemon.PLANTA, null, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4,
-				movimientoPokemon5, Estado.CONGELADO, objeto1, 0,0,0);
+				movimientoPokemon5, Estado.CONGELADO, baston, 0,0,0);
 
 				
 
@@ -50,7 +50,7 @@ public class Main {
 		// POKEMON RIVAL
 		Pokemon pokemon2 = new Pokemon(30, "squirtle", "sssql", 100, 60, 20, 0, 0, 0, 100, 60, 0, 'h',
 				TipoPokemon.AGUA, null, movimientoPokemon1, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4, null,
-				objeto1, 0, 0, 0);
+				baston, 0, 0, 0);
 
 		pokemon2.setMovimiento1(movimientoPokemon1);
 		pokemon2.setMovimiento2(movimientoPokemon2);
@@ -70,26 +70,37 @@ public class Main {
 		 * System.out.println(pokemon);
 		 */
 
-		Entrenador entrenador = new Entrenador("Ash", new ArrayList<>(), new ArrayList<>(),
+		Entrenador entrenador = new Entrenador("Ash", new ArrayList<>(6), new ArrayList<>(),
 				new ArrayList<>(), 100);
 
-		/*
-		 * Pokemon nuevopokemon;
-		 * entrenador.getEquipo().add(0, pokemon2);
-		 * 
-		 * System.out.println(entrenador);
-		 * 
-		 * pokemon.aprenderAtaque(pokemon, 5);
-		 * 
-		 * System.out.println(pokemon);
-		 */
-		System.out.println("AQUI ESTA LA CRIA");
+				Entrenador entrenador2 = new Entrenador("PEPE", new ArrayList<>(6), new ArrayList<>(),
+				new ArrayList<>(), 100);
+
+		
+		  Pokemon nuevopokemon;
+		  entrenador.getEquipo().add(0, pokemon2);
+		  
+		  System.out.println(entrenador);
+		  
+		  pokemon.aprenderAtaque(pokemon, 5);
+		  
+		  System.out.println(pokemon);
+
+		  entrenador.getMochila().add(0, pluma);
+
+		  entrenador.usarObjeto(pokemon2, pluma);
+
+		  System.out.println(entrenador);
+		 
+		/*System.out.println("AQUI ESTA LA CRIA");
 
 		entrenador.criarPokemon(pokemon2, pokemon);
 
 		entrenador.capturarPokemon();
 
-		System.out.println(entrenador);
+		System.out.println(entrenador);*/
+
+		
 
 		
 

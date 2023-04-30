@@ -73,13 +73,13 @@ public class Entrenador {
 	}
 
 	public void capturarPokemon() {
-        Captura captura = new Captura();
-        captura.capturarPokemonWhile();
-        Pokemon pokemonCapturado = captura.getNuevoPokemon();
-        agregarPokemonACaja(pokemonCapturado);
-    }
+		Captura captura = new Captura();
+		captura.capturarPokemonWhile();
+		Pokemon pokemonCapturado = captura.getNuevoPokemon();
+		agregarPokemonACaja(pokemonCapturado);
+	}
 
-    public void agregarPokemonACaja(Pokemon pokemon) {
+	public void agregarPokemonACaja(Pokemon pokemon) {
 		if (caja.size() < 10) {
 			caja.add(pokemon);
 			System.out.println("Pokemon añadido a la caja.");
@@ -87,7 +87,6 @@ public class Entrenador {
 			System.out.println("La caja está llena, no se puede agregar el pokemon.");
 		}
 	}
-	
 
 	public void moverAPrincipal(Pokemon pokemon) {
 		if (this.equipo.size() < 6) {
@@ -165,7 +164,8 @@ public class Entrenador {
 	}
 
 	/**
-	 * Metodo para criar un pokemon con todos los paramentros requeridos 
+	 * Metodo para criar un pokemon con todos los paramentros requeridos
+	 * 
 	 * @param padre
 	 * @param madre
 	 */
@@ -177,7 +177,7 @@ public class Entrenador {
 		String moteMezclado = padre.getMote().substring(0, padre.getMote().length() / 2)
 				+ madre.getMote().substring(madre.getMote().length() / 2);
 
-				pokemonCria.setMote(moteMezclado);
+		pokemonCria.setMote(moteMezclado);
 		// Obtener los ataques mezclados
 
 		pokemonCria.setMovimiento1(padre.getMovimiento1());
@@ -188,32 +188,30 @@ public class Entrenador {
 		// Obtener los tipos mezclados
 
 		Random random = new Random();
-        
-        // Generar un número aleatorio entre 1 y 2
-        int numeroAleatorio = random.nextInt(2) + 1;
 
-		if (numeroAleatorio==1) {
+		// Generar un número aleatorio entre 1 y 2
+		int numeroAleatorio = random.nextInt(2) + 1;
+
+		if (numeroAleatorio == 1) {
 			pokemonCria.setTipo(padre.getTipo());
 		} else {
 			pokemonCria.setTipo(madre.getTipo());
 		}
-		
-	
 
 		// Obtener las mejores características
 		if (padre.getAtaqueEspecial() > madre.getAtaqueEspecial()) {
-            pokemonCria.setAtaqueEspecial(padre.getAtaqueEspecial());
-        } else if (padre.getAtaqueEspecial() < madre.getAtaqueEspecial()) {
-            pokemonCria.setAtaqueEspecial(madre.getAtaqueEspecial());
-        } else {
-            // En caso de empate en todas las estadísticas, elegir al azar
-            if (Math.random() < 0.5) {
-                pokemonCria.setAtaqueEspecial(padre.getAtaqueEspecial()); 
-            } else {
-                pokemonCria.setAtaqueEspecial(madre.getAtaqueEspecial()); 
-            }
-        }
-		
+			pokemonCria.setAtaqueEspecial(padre.getAtaqueEspecial());
+		} else if (padre.getAtaqueEspecial() < madre.getAtaqueEspecial()) {
+			pokemonCria.setAtaqueEspecial(madre.getAtaqueEspecial());
+		} else {
+			// En caso de empate en todas las estadísticas, elegir al azar
+			if (Math.random() < 0.5) {
+				pokemonCria.setAtaqueEspecial(padre.getAtaqueEspecial());
+			} else {
+				pokemonCria.setAtaqueEspecial(madre.getAtaqueEspecial());
+			}
+		}
+
 		if (padre.getDefensaEspecial() > madre.getDefensaEspecial()) {
 			pokemonCria.setDefensaEspecial(padre.getDefensaEspecial());
 		} else if (padre.getDefensaEspecial() < madre.getDefensaEspecial()) {
@@ -226,7 +224,7 @@ public class Entrenador {
 				pokemonCria.setDefensaEspecial(madre.getDefensaEspecial());
 			}
 		}
-		
+
 		if (padre.getDefensa() > madre.getDefensa()) {
 			pokemonCria.setDefensa(padre.getDefensa());
 		} else if (padre.getDefensa() < madre.getDefensa()) {
@@ -239,7 +237,7 @@ public class Entrenador {
 				pokemonCria.setDefensa(madre.getDefensa());
 			}
 		}
-		
+
 		if (padre.getVelocidad() > madre.getVelocidad()) {
 			pokemonCria.setVelocidad(padre.getVelocidad());
 		} else if (padre.getVelocidad() < madre.getVelocidad()) {
@@ -252,7 +250,7 @@ public class Entrenador {
 				pokemonCria.setVelocidad(madre.getVelocidad());
 			}
 		}
-		
+
 		if (padre.getAtaque() > madre.getAtaque()) {
 			pokemonCria.setAtaque(padre.getAtaque());
 		} else if (padre.getAtaque() < madre.getAtaque()) {
@@ -265,15 +263,11 @@ public class Entrenador {
 				pokemonCria.setAtaque(madre.getAtaque());
 			}
 		}
-		
+
 		caja.add(pokemonCria);
 		System.out.println(pokemonCria);
-		
-    }
 
-	
-
-	
+	}
 
 	public void comprar(Objeto objeto) {
 		int costo = objeto.getCosto();
@@ -288,19 +282,22 @@ public class Entrenador {
 	}
 
 	public void usarObjeto(Pokemon pokemon, Objeto objeto) {
-		if (!mochila.contains(objeto)) {
+		if (mochila.contains(objeto)) {
+
+			if (pokemon.getObjeto() != null) {
+				pokemon.setObjeto(null);
+				pokemon.setObjeto(objeto);
+
+			} else {
+				pokemon.setObjeto(objeto);
+			}
+
+			mochila.remove(objeto);
+			System.out.println(nombre + " ha usado " + objeto.getNombre() + " en " + pokemon.getNombre());
+			
+		} else {
 			System.out.println(nombre + " no tiene " + objeto.getNombre() + " en su mochila.");
-			return;
 		}
-
-		if (!pokemon.puedeUsarObjeto(objeto)) {
-			System.out.println(pokemon.getNombre() + " no puede usar " + objeto.getNombre());
-			return;
-		}
-
-		mochila.remove(objeto);
-		pokemon.puedeUsarObjeto(objeto);
-		System.out.println(nombre + " ha usado " + objeto.getNombre() + " en " + pokemon.getNombre());
 	}
 
 	public void mostrarEquipo() {
@@ -320,7 +317,7 @@ public class Entrenador {
 	public void mostrarMochila() {
 		System.out.println(nombre + " tiene los siguientes objetos en su mochila:");
 		for (Objeto objeto : mochila) {
-			System.out.println("- " + objeto.getNombre() + " (x" + objeto.getCantidad() + ")");
+			System.out.println("- " + objeto.getNombre());
 		}
 	}
 
@@ -329,23 +326,13 @@ public class Entrenador {
 	}
 
 	public void sumarDinero(Entrenador entrenador) {
-		entrenador.setDinero(entrenador.getDinero() + (entrenador.getDinero()/3));
+		entrenador.setDinero(entrenador.getDinero() + (entrenador.getDinero() / 3));
 
 	}
 
 	public void restarDinero(Entrenador entrenador) {
-		entrenador.setDinero(entrenador.getDinero() - (entrenador.getDinero()/3));
+		entrenador.setDinero(entrenador.getDinero() - (entrenador.getDinero() / 3));
 
-	}
-	
-	public int getNivelMaximoEquipo() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public boolean seRetira() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
@@ -353,52 +340,5 @@ public class Entrenador {
 		return "Entrenador [nombre=" + nombre + ", equipo=" + equipo + ", caja=" + caja + ", mochila=" + mochila
 				+ ", dinero=" + dinero + "]";
 	}
-
-	public Pokemon escogerPokemon() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Pokemon escogerPokemon(int nivelMaximoRival) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public int getNumPokemonsKO() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public double getExperienciaTotal() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void añadirExperiencia(double d) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void añadirDinero(int pokédollarsGanador) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void quitarDinero(int pokédollarsPerdedor) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void incrementarNumPokemonsKO() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void incrementarExperienciaTotal(int i) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 
 }

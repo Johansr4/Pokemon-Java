@@ -48,56 +48,212 @@ public class Objeto {
 
 	}
 
-	public Objeto(String nombre, int estadisticaPrueba) {
 
-		this.nombre = nombre;
-
-		this.estadisticaPrueba = estadisticaPrueba;
-
-	}
+	
 
 	public String getNombre() {
-
 		return nombre;
-
 	}
 
-	public int getEstadisticaPrueba() {
 
-		return estadisticaPrueba;
 
-	}
 
 	public void setNombre(String nombre) {
-
 		this.nombre = nombre;
-
 	}
+
+
+
+
+	public int getEstadisticaPrueba() {
+		return estadisticaPrueba;
+	}
+
+
+
 
 	public void setEstadisticaPrueba(int estadisticaPrueba) {
-
 		this.estadisticaPrueba = estadisticaPrueba;
-
 	}
+
+
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
+
+
+	public int getAumentoAtaque() {
+		return aumentoAtaque;
+	}
+
+
+
+
+	public void setAumentoAtaque(int aumentoAtaque) {
+		this.aumentoAtaque = aumentoAtaque;
+	}
+
+
+
+
+	public int getAumentoDefensa() {
+		return aumentoDefensa;
+	}
+
+
+
+
+	public void setAumentoDefensa(int aumentoDefensa) {
+		this.aumentoDefensa = aumentoDefensa;
+	}
+
+
+
+
+	public int getAumentoDefensaEspecial() {
+		return aumentoDefensaEspecial;
+	}
+
+
+
+
+	public void setAumentoDefensaEspecial(int aumentoDefensaEspecial) {
+		this.aumentoDefensaEspecial = aumentoDefensaEspecial;
+	}
+
+
+
+
+	public int getAumentoVelocidad() {
+		return aumentoVelocidad;
+	}
+
+
+
+
+	public void setAumentoVelocidad(int aumentoVelocidad) {
+		this.aumentoVelocidad = aumentoVelocidad;
+	}
+
+
+
+
+	public int getAumentoEstamina() {
+		return aumentoEstamina;
+	}
+
+
+
+
+	public void setAumentoEstamina(int aumentoEstamina) {
+		this.aumentoEstamina = aumentoEstamina;
+	}
+
+
+
+
+	public int getDisminucionAtaque() {
+		return disminucionAtaque;
+	}
+
+
+
+
+	public void setDisminucionAtaque(int disminucionAtaque) {
+		this.disminucionAtaque = disminucionAtaque;
+	}
+
+
+
+
+	public int getDisminucionDefensa() {
+		return disminucionDefensa;
+	}
+
+
+
+
+	public void setDisminucionDefensa(int disminucionDefensa) {
+		this.disminucionDefensa = disminucionDefensa;
+	}
+
+
+
+
+	public int getDisminucionDefensaEspecial() {
+		return disminucionDefensaEspecial;
+	}
+
+
+
+
+	public void setDisminucionDefensaEspecial(int disminucionDefensaEspecial) {
+		this.disminucionDefensaEspecial = disminucionDefensaEspecial;
+	}
+
+
+
+
+	public int getDisminucionVelocidad() {
+		return disminucionVelocidad;
+	}
+
+
+
+
+	public void setDisminucionVelocidad(int disminucionVelocidad) {
+		this.disminucionVelocidad = disminucionVelocidad;
+	}
+
+
+
+
+	public int getDisminucionEstamina() {
+		return disminucionEstamina;
+	}
+
+
+
+
+	public void setDisminucionEstamina(int disminucionEstamina) {
+		this.disminucionEstamina = disminucionEstamina;
+	}
+
+
+
 
 	@Override
-
 	public String toString() {
-
-		return "Objeto [nombre=" + nombre + ", estadisticaPrueba=" + estadisticaPrueba + "]";
-
+		return "Objeto [nombre=" + nombre + ", estadisticaPrueba=" + estadisticaPrueba + ", tipo=" + tipo
+				+ ", aumentoAtaque=" + aumentoAtaque + ", aumentoDefensa=" + aumentoDefensa
+				+ ", aumentoDefensaEspecial=" + aumentoDefensaEspecial + ", aumentoVelocidad=" + aumentoVelocidad
+				+ ", aumentoEstamina=" + aumentoEstamina + ", disminucionAtaque=" + disminucionAtaque
+				+ ", disminucionDefensa=" + disminucionDefensa + ", disminucionDefensaEspecial="
+				+ disminucionDefensaEspecial + ", disminucionVelocidad=" + disminucionVelocidad
+				+ ", disminucionEstamina=" + disminucionEstamina + "]";
 	}
+
+
+
 
 	public int getCosto() {
-
 		return 0;
-
 	}
 
-	public String getCantidad() {
 
-		return null;
 
-	}
+
+	
 
 }

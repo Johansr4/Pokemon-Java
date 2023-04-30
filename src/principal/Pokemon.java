@@ -482,11 +482,7 @@ public class Pokemon {
 		setEstamina(100);
 
 	}
-
-	public boolean puedeUsarObjeto(Objeto objeto2) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
 	public String toString() {
@@ -498,24 +494,6 @@ public class Pokemon {
 				+ ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
 
-	public int getSalud() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int atacar(Pokemon pokemonRival) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void confundir() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public boolean estaKO() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 }

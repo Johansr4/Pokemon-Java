@@ -1,4 +1,4 @@
-package principal;
+package modelo;
 
 public enum EficaciasPokemon {
     DESVENTAJA("NO ES MUY EFICAZ", 0.5),

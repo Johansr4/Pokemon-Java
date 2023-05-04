@@ -1,12 +1,12 @@
-package principal;
+package modelo;
 
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import principal.MovimientoPokemon.Estado;
-import principal.MovimientoPokemon.TipoMovimiento;
+import modelo.MovimientoPokemon.Estado;
+import modelo.MovimientoPokemon.TipoMovimiento;
 
 //Javafx/Scene Builder y conexion bbdd
 

@@ -1,4 +1,4 @@
-package principal;
+package modelo;
 
 //Texto de lo ocurrido en dicho turno
 

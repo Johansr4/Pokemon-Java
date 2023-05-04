@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CapturaPokemonController">
+   <children>
+      <Button fx:id="btnCapturar" layoutX="443.0" layoutY="234.0" mnemonicParsing="false" onAction="#capturar" prefHeight="26.0" prefWidth="80.0" text="Capturar" />
+      <Button fx:id="btnBuscar" layoutX="443.0" layoutY="174.0" mnemonicParsing="false" onAction="#buscar" prefHeight="26.0" prefWidth="80.0" text="Buscar" />
+      <Label fx:id="lblPokemonCapturar" layoutX="170.0" layoutY="64.0" />
+   </children>
+</AnchorPane>

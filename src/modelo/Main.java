@@ -1,12 +1,12 @@
-package principal;
+package modelo;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import principal.MovimientoPokemon.Estado;
-import principal.MovimientoPokemon.Mejora;
-import principal.MovimientoPokemon.TipoMovimiento;
+import modelo.MovimientoPokemon.Estado;
+import modelo.MovimientoPokemon.Mejora;
+import modelo.MovimientoPokemon.TipoMovimiento;
 
 public class Main {
 

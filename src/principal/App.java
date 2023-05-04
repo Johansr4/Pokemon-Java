@@ -11,7 +11,7 @@ public class App {
 
 	public static void main(String[] args) {
 		Connection connection = null;
-		String url = "jdbc:mysql://localhost:3306/pokemonx ";
+		String url = "jdbc:mysql://localhost:3306/pokemonx";
 		String login = "root";
 		String password = "";
 		try {

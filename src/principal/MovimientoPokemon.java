@@ -34,7 +34,7 @@ public class MovimientoPokemon {
         this.tipoPokemon = null;
         this.tipo = null;
         this.nombre = "";
-        this.potencia = 0;
+        this.potencia = 1;
         this.estado = null;
         this.duracionEstado = 0;
         this.mejora = null;

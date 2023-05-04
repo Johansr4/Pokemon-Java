@@ -444,6 +444,7 @@ public class Pokemon {
 	 * @param ataqueSeleccionado
 	 * @return
 	 */
+	
 	public void atacar(Pokemon objetivo, MovimientoPokemon movimiento) {
 		System.out.println("Seleccionaste el ataque " + movimiento);
 

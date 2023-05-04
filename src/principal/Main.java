@@ -57,18 +57,18 @@ public class Main {
 		pokemon2.setMovimiento3(movimientoPokemon3);
 		pokemon2.setMovimiento4(movimientoPokemon4);
 
-		/*
-		 * pokemon.atacar(pokemon2, movimientoPokemon1);
-		 * 
-		 * pokemon.getTipo();
-		 * System.out.println("El pokemon del rival tiene estos puntos de vitalidad:");
-		 * System.out.println(pokemon2.getVitalidad());
-		 * System.out.println(tablaTipoPokemon.mostrarEficaciaTipo(pokemon.getTipo(),
-		 * pokemon2.getTipo()));
-		 * System.out.println(pokemon.getEstamina());
-		 * 
-		 * System.out.println(pokemon);
-		 */
+		
+		  pokemon.atacar(pokemon2, movimientoPokemon1);
+		  
+		  pokemon.getTipo();
+		  System.out.println("El pokemon del rival tiene estos puntos de vitalidad:");
+		  System.out.println(pokemon2.getVitalidad());
+		  System.out.println(tablaTipoPokemon.mostrarEficaciaTipo(pokemon.getTipo(),
+		  pokemon2.getTipo()));
+		  System.out.println(pokemon.getEstamina());
+		  
+		  System.out.println(pokemon);
+		 
 
 		Entrenador entrenador = new Entrenador("Ash", new ArrayList<>(6), new ArrayList<>(),
 				new ArrayList<>(), 100);

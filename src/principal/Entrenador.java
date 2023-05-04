@@ -294,7 +294,7 @@ public class Entrenador {
 
 			mochila.remove(objeto);
 			System.out.println(nombre + " ha usado " + objeto.getNombre() + " en " + pokemon.getNombre());
-			
+
 		} else {
 			System.out.println(nombre + " no tiene " + objeto.getNombre() + " en su mochila.");
 		}
@@ -335,10 +335,22 @@ public class Entrenador {
 
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "Entrenador [nombre=" + nombre + ", equipo=" + equipo + ", caja=" + caja + ", mochila=" + mochila
 				+ ", dinero=" + dinero + "]";
 	}
+
+	public Pokemon elegirPokemonActivo(int pokemonSelecPelea) {
+		// Obtener un dentro del rango de la lista
+		return equipo.get(pokemonSelecPelea);
+
+	}
+
+    
+
+	
 
 }

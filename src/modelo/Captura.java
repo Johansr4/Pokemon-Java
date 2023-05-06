@@ -24,29 +24,17 @@ public class Captura {
     public void capturarPokemonWhile() {
         boolean capturado = false;
         while (!capturado) {
-            Captura.nuevoPokemon = new Pokemon();
+            nuevoPokemon = new Pokemon();
             mostrarPokemon();
-            System.out.println("1. Randomizar Pokemon");
-            System.out.println("2. Capturar Pokemon");
-            int opcion = scanner.nextInt();
-            if (opcion == 1) {
-                nuevoPokemon = new Pokemon();
-            } else if (opcion == 2) {
-                if (pokeballs > 0) {
-                    capturado = capturarPokemon();
-                } else {
-                    System.out.println("No tienes pokéballs.");
-                }
-            } else {
-                System.out.println("Opción inválida.");
-            }
+            capturado = capturarPokemon();
         }
         agregarACaja();
     }
+    
 
     public void mostrarPokemon() {
-        System.out.println("A wild " + nuevoPokemon.getNombre() + " appears!");
-        System.out.println("Level: " + nuevoPokemon.getNivel());
+        System.out.println("Un " + nuevoPokemon.getNombre() + " salvaje aparecio!");
+        System.out.println("NIVEL: " + nuevoPokemon.getNivel());
     }
 
     public boolean capturarPokemon() {

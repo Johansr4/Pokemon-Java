@@ -36,9 +36,9 @@ public class Main {
 
 		// TU POKEMON
 
-		Pokemon pokemon = new Pokemon(60, "charmander", "charrrr", 400, 30, 60, 1, 1, 1, 100, 100, 0, 'h',
+		Pokemon pokemon = new Pokemon(0,0,0,60, "charmander", "charrrr", 400, 30, 60, 1, 1, 1, 100, 100, 0, 'h',
 				TipoPokemon.PLANTA, null, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4,
-				movimientoPokemon5, Estado.CONGELADO, baston, 0,0,0);
+				movimientoPokemon5, Estado.CONGELADO, baston);
 
 				
 
@@ -48,9 +48,9 @@ public class Main {
 		pokemon.setMovimiento4(movimientoPokemon4);
 
 		// POKEMON RIVAL
-		Pokemon pokemon2 = new Pokemon(30, "squirtle", "sssql", 100, 60, 20, 0, 0, 0, 100, 60, 0, 'h',
+		Pokemon pokemon2 = new Pokemon(0,0,0, 30, "squirtle", "sssql", 100, 60, 20, 0, 0, 0, 100, 60, 0, 'h',
 				TipoPokemon.AGUA, null, movimientoPokemon1, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4, null,
-				baston, 0, 0, 0);
+				baston);
 
 		pokemon2.setMovimiento1(movimientoPokemon1);
 		pokemon2.setMovimiento2(movimientoPokemon2);
@@ -70,10 +70,10 @@ public class Main {
 		  System.out.println(pokemon);
 		 
 
-		Entrenador entrenador = new Entrenador("Ash", new ArrayList<>(6), new ArrayList<>(),
+		Entrenador entrenador = new Entrenador(1,"Ash", new ArrayList<>(6), new ArrayList<>(),
 				new ArrayList<>(), 100);
 
-				Entrenador entrenador2 = new Entrenador("PEPE", new ArrayList<>(6), new ArrayList<>(),
+				Entrenador entrenador2 = new Entrenador(2,"PEPE", new ArrayList<>(6), new ArrayList<>(),
 				new ArrayList<>(), 100);
 
 		
@@ -92,13 +92,13 @@ public class Main {
 
 		  System.out.println(entrenador);
 		 
-		/*System.out.println("AQUI ESTA LA CRIA");
+		System.out.println("AQUI ESTA LA CRIA");
 
 		entrenador.criarPokemon(pokemon2, pokemon);
 
 		entrenador.capturarPokemon();
 
-		System.out.println(entrenador);*/
+		System.out.println(entrenador);
 
 		
 

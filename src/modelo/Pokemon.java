@@ -45,7 +45,7 @@ public class Pokemon {
 
 	public Pokemon() {
 		this.experiencia = (int) (Math.random() * 10) + 1;
-		this.nombre = nombre;
+		this.nombre = "TESTEO";
 		this.mote = mote;
 		this.vitalidad = (int) (Math.random() * 10) + 1;
 		this.ataque = (int) (Math.random() * 10) + 1;
@@ -55,8 +55,8 @@ public class Pokemon {
 		this.velocidad = (int) (Math.random() * 10) + 1;
 		this.estamina = (int) (Math.random() * 10) + 1;
 		this.nivel = 1;
-		this.fertilidad = fertilidad;
-		this.sexo = sexo;
+		this.fertilidad = 0;
+		this.sexo = ' ';
 		this.tipo = tipo;
 		this.Movimiento1 = Movimiento1;
 		this.Movimiento2 = Movimiento2;
@@ -70,39 +70,37 @@ public class Pokemon {
 		this.tipo2 = tipo2;
 	}
 
-	public Pokemon( int experiencia, String nombre, String mote,
+	public Pokemon(int idPokemon, int numPokedex, int idEntrenador, int experiencia, String nombre, String mote,
 			int vitalidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad,
 			int estamina, int nivel, int fertilidad, char sexo, TipoPokemon tipo, TipoPokemon tipo2,
 			MovimientoPokemon movimiento1, MovimientoPokemon movimiento2, MovimientoPokemon movimiento3,
-			MovimientoPokemon movimiento4, Estado estado, Objeto objeto ,int idPokemon, int numPokedex, int idEntrenador) {
-		this.IdPokemon = this.IdPokemon;
-		this.NumPokedex = this.NumPokedex;
-		this.IdEntrenador = this.IdEntrenador;
-		this.experiencia = experiencia;
+			MovimientoPokemon movimiento4, Estado estado, Objeto objeto) {
+		super();
+		this.experiencia = (int) (Math.random() * 10) + 1;
 		this.nombre = nombre;
 		this.mote = mote;
-		this.vitalidad = vitalidad;
-		this.ataque = ataque;
-		this.defensa = defensa;
-		this.ataqueEspecial = ataqueEspecial;
-		this.defensaEspecial = defensaEspecial;
-		this.velocidad = velocidad;
-		this.estamina = estamina;
-		this.nivel = nivel;
-		this.fertilidad = fertilidad;
-		this.sexo = sexo;
+		this.vitalidad = (int) (Math.random() * 10) + 1;
+		this.ataque = (int) (Math.random() * 10) + 1;
+		this.defensa = (int) (Math.random() * 10) + 1;
+		this.ataqueEspecial = (int) (Math.random() * 10) + 1;
+		this.defensaEspecial = (int) (Math.random() * 10) + 1;
+		this.velocidad = (int) (Math.random() * 10) + 1;
+		this.estamina = (int) (Math.random() * 10) + 1;
+		this.nivel = 1;
+		this.fertilidad = 0;
+		this.sexo = ' ';
 		this.tipo = tipo;
-		this.tipo2 = tipo2;
-		this.Movimiento1 = this.Movimiento1;
-		this.Movimiento2 = this.Movimiento2;
-		this.Movimiento3 = this.Movimiento3;
-		this.Movimiento4 = this.Movimiento4;
+		this.Movimiento1 = Movimiento1;
+		this.Movimiento2 = Movimiento2;
+		this.Movimiento3 = Movimiento3;
+		this.Movimiento4 = Movimiento4;
 		this.estado = estado;
 		this.objeto = objeto;
+		this.IdEntrenador = IdEntrenador;
+		this.NumPokedex = NumPokedex;
+		this.IdPokemon = IdPokemon;
+		this.tipo2 = tipo2;
 	}
-
-	
-
 	
 
 	public int getIdPokemon() {
@@ -483,17 +481,20 @@ public class Pokemon {
 		setEstamina(100);
 
 	}
-	
 
 	@Override
 	public String toString() {
-		return "Pokemon [experiencia=" + experiencia + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
-				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
+		return "Pokemon [IdPokemon=" + IdPokemon + ", NumPokedex=" + NumPokedex + ", IdEntrenador=" + IdEntrenador
+				+ ", experiencia=" + experiencia + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad=" + vitalidad
+				+ ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
-				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", tipo=" + tipo
-				+ ", Movimiento=" + Movimiento1 + ", Movimiento2=" + Movimiento2 + ", Movimiento3=" + Movimiento3
-				+ ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
+				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", tipo=" + tipo + ", tipo2="
+				+ tipo2 + ", Movimiento1=" + Movimiento1 + ", Movimiento2=" + Movimiento2 + ", Movimiento3="
+				+ Movimiento3 + ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
 	}
+	
+
+
 
 	
 

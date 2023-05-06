@@ -4,73 +4,103 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Entrenador {
+	private int idEntrenador;
 	private String nombre;
 	ArrayList<Pokemon> equipo;
 	private ArrayList<Pokemon> caja;
 	private ArrayList<Objeto> mochila;
 	private int dinero;
 	private static final int COSTO_POR_NIVEL_DE_ENTRENAMIENTO = 20;
+	
+	
 
-	public Entrenador(String nombre, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja, ArrayList<Objeto> mochila,
-			int dinero) {
+	public Entrenador(int idEntrenador, String nombre, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja,
+			ArrayList<Objeto> mochila, int dinero) {
+		super();
+		this.idEntrenador = idEntrenador;
 		this.nombre = nombre;
 		this.equipo = equipo;
 		this.caja = caja;
 		this.mochila = mochila;
-		this.dinero = (int) (Math.random() * 200) + 800;
+		this.dinero = (int) (Math.random() * 200) + 800;;
 	}
 
-	public Entrenador(String nombre) {
-		this.nombre = nombre;
+
+	public Entrenador() {
+		this.nombre = "";
 		this.equipo = new ArrayList<Pokemon>();
 		this.caja = new ArrayList<Pokemon>();
 		this.mochila = new ArrayList<Objeto>();
 		this.dinero = (int) (Math.random() * 200) + 800;
 	}
 
+	
+
+
+    public int getIdEntrenador() {
+		return idEntrenador;
+	}
+
+
+	public void setIdEntrenador(int idEntrenador) {
+		this.idEntrenador = idEntrenador;
+	}
+
+
 	public String getNombre() {
 		return nombre;
 	}
+
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+
 	public ArrayList<Pokemon> getEquipo() {
 		return equipo;
 	}
+
 
 	public void setEquipo(ArrayList<Pokemon> equipo) {
 		this.equipo = equipo;
 	}
 
+
 	public ArrayList<Pokemon> getCaja() {
 		return caja;
 	}
+
 
 	public void setCaja(ArrayList<Pokemon> caja) {
 		this.caja = caja;
 	}
 
+
 	public ArrayList<Objeto> getMochila() {
 		return mochila;
 	}
+
 
 	public void setMochila(ArrayList<Objeto> mochila) {
 		this.mochila = mochila;
 	}
 
+
 	public int getDinero() {
 		return dinero;
 	}
+
 
 	public void setDinero(int dinero) {
 		this.dinero = dinero;
 	}
 
+
 	public static int getCostoPorNivelDeEntrenamiento() {
 		return COSTO_POR_NIVEL_DE_ENTRENAMIENTO;
 	}
+
 
 	public void capturarPokemon() {
 		Captura captura = new Captura();

@@ -3,6 +3,8 @@ package modelo;
 import java.util.Random;
 
 public class Combate {
+	private static final int NUM_MAX_POKEMON = 6;
+
 	private Entrenador ganador;
 	private Entrenador jugador;
 	private Entrenador rival;
@@ -25,7 +27,7 @@ public class Combate {
 	}
 
 	public void empezarCombate() {
-		while (numKoJugador < 6 && numKoRival < 6) {
+		while (numKoJugador < NUM_MAX_POKEMON && numKoRival < NUM_MAX_POKEMON) {
 			System.out.println("Turno " + turno + ":");
 
 			Pokemon pokemonJugador = jugador.elegirPokemonActivo(1);
@@ -37,7 +39,7 @@ public class Combate {
 			System.out.println(jugador.getNombre() + " envía a " + pokemonJugador.getNombre() + "!");
 			System.out.println(rival.getNombre() + " envía a " + pokemonRival.getNombre() + "!");
 
-			// Determinar el Pokémon que ataca primero (basado en su velocidad)
+			// Determinar el Pokémon que ataca primero 
 			Pokemon atacante, defensor;
 
 			if (pokemonJugador.getVelocidad() >= pokemonRival.getVelocidad()) {
@@ -49,7 +51,7 @@ public class Combate {
 			}
 
 			// Realizar el ataque del Pokémon atacante
-			atacante.atacar(defensor, new MovimientoPokemon());
+			realizarAtaque(atacante, defensor);
 
 			// Comprobar si el Pokémon defensor ha sido derrotado
 			if (defensor.getVitalidad() == 0) {
@@ -68,19 +70,44 @@ public class Combate {
 			turno++;
 		}
 
-		if (numKOPokemonJugador >= 6) {
+		ResultadoCombate resultado = determinarResultadoCombate();
+		mostrarResultadoCombate(resultado);
+	}
+
+	private void realizarAtaque(Pokemon atacante, Pokemon defensor) {
+		atacante.atacar(defensor, new MovimientoPokemon());
+	}
+
+	private ResultadoCombate determinarResultadoCombate() {
+		if (numKOPokemonJugador >= NUM_MAX_POKEMON) {
+			return ResultadoCombate.DERROTA;
+		} else if (numKOPokemonRival >= NUM_MAX_POKEMON) {
+			return ResultadoCombate.VICTORIA;
+		} else {
+			return ResultadoCombate.EMPATE;
+		}
+	}
+
+	private void mostrarResultadoCombate(ResultadoCombate resultado) {
+		if (resultado == ResultadoCombate.VICTORIA) {
+			ganador = jugador;
+			System.out.println(rival.getNombre() + " ha sido derrotado!");
+			int pokédollarsGanados = rival.getPokédollars() / 3;
+			ganador.incrementarPokédollars(pokédollarsGanados);
+		} else if (resultado == ResultadoCombate.DERROTA) {
 			ganador = rival;
 			System.out.println(jugador.getNombre() + " ha sido derrotado!");
 			int pokédollarsPerdidos = jugador.getPokédollars() / 3;
 			ganador.incrementarPokédollars(pokédollarsPerdidos);
 		} else {
-			ganador = jugador;
-			System.out.println(rival.getNombre() + " ha sido derrotado!");
-			int pokédollarsGanados = rival.getPokédollars() / 3;
-			ganador.incrementarPokédollars(pokédollarsGanados);
+			System.out.println("El combate ha terminado en empate.");
 		}
 
 		System.out.println("El ganador del combate es: " + ganador.getNombre() + "!");
 		System.out.println("¡Fin del combate!");
+	}
+
+	private enum ResultadoCombate {
+		VICTORIA, DERROTA, EMPATE
 	}
 }

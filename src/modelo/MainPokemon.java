@@ -8,7 +8,7 @@ import modelo.MovimientoPokemon.Estado;
 import modelo.MovimientoPokemon.Mejora;
 import modelo.MovimientoPokemon.TipoMovimiento;
 
-public class Main {
+public class MainPokemon {
 
 	public static void main(String[] args) {
 

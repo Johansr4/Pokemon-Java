@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			
-			Parent root = FXMLLoader.load(getClass().getResource("/vista/CapturaPokemon.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/vista/CrearUsuario.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("PRUEBA FX JOHAN");
 			primaryStage.setScene(scene);

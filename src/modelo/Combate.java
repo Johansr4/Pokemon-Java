@@ -48,8 +48,10 @@ public class Combate {
 			} else {
 				atacante = pokemonRival;
 				defensor = pokemonJugador;
-			}
+			}  
 
+
+			
 			// Realizar el ataque del Pokémon atacante
 			realizarAtaque(atacante, defensor);
 

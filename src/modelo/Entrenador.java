@@ -11,8 +11,6 @@ public class Entrenador {
 	private ArrayList<Objeto> mochila;
 	private int dinero;
 	private static final int COSTO_POR_NIVEL_DE_ENTRENAMIENTO = 20;
-	
-	
 
 	public Entrenador(int idEntrenador, String nombre, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja,
 			ArrayList<Objeto> mochila, int dinero) {
@@ -22,9 +20,9 @@ public class Entrenador {
 		this.equipo = equipo;
 		this.caja = caja;
 		this.mochila = mochila;
-		this.dinero = (int) (Math.random() * 200) + 800;;
+		this.dinero = (int) (Math.random() * 200) + 800;
+		;
 	}
-
 
 	public Entrenador() {
 		this.nombre = "";
@@ -34,73 +32,57 @@ public class Entrenador {
 		this.dinero = (int) (Math.random() * 200) + 800;
 	}
 
-	
-
-
-    public int getIdEntrenador() {
+	public int getIdEntrenador() {
 		return idEntrenador;
 	}
-
 
 	public void setIdEntrenador(int idEntrenador) {
 		this.idEntrenador = idEntrenador;
 	}
 
-
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
 	public ArrayList<Pokemon> getEquipo() {
 		return equipo;
 	}
-
 
 	public void setEquipo(ArrayList<Pokemon> equipo) {
 		this.equipo = equipo;
 	}
 
-
 	public ArrayList<Pokemon> getCaja() {
 		return caja;
 	}
-
 
 	public void setCaja(ArrayList<Pokemon> caja) {
 		this.caja = caja;
 	}
 
-
 	public ArrayList<Objeto> getMochila() {
 		return mochila;
 	}
-
 
 	public void setMochila(ArrayList<Objeto> mochila) {
 		this.mochila = mochila;
 	}
 
-
 	public int getDinero() {
 		return dinero;
 	}
-
 
 	public void setDinero(int dinero) {
 		this.dinero = dinero;
 	}
 
-
 	public static int getCostoPorNivelDeEntrenamiento() {
 		return COSTO_POR_NIVEL_DE_ENTRENAMIENTO;
 	}
-
 
 	public void capturarPokemon() {
 		Captura captura = new Captura();
@@ -145,48 +127,48 @@ public class Entrenador {
 		int nivel = pokemon.getNivel();
 
 		switch (tipoEntrenamiento) {
-			// PESADO
-			case 1:
-				System.out.println("Entrenamiento pesado");
-				if (this.dinero > (20 * nivel)) {
-					this.dinero -= (20 * nivel);
-					pokemon.setAtaque(pokemon.getAtaque() + 5);
-				} else {
-					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
-				}
-				break;
-			// FURIOSO
-			case 2:
-				System.out.println("Entrenamiento furioso");
-				if (this.dinero > (30 * nivel)) {
-					this.dinero -= (30 * nivel);
-					pokemon.setAtaque(pokemon.getAtaque() + 5);
-				} else {
-					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
-				}
-				break;
-			// FUNCIONAL
-			case 3:
-				System.out.println("Entrenamiento funcional");
-				if (this.dinero > (40 * nivel)) {
-					this.dinero -= (40 * nivel);
-					pokemon.setAtaque(pokemon.getAtaque() + 5);
-				} else {
-					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
-				}
-				break;
-			// ONIRICO
-			case 4:
-				System.out.println("Entrenamiento onírico");
-				if (this.dinero > (40 * nivel)) {
-					this.dinero -= (40 * nivel);
-					pokemon.setAtaque(pokemon.getAtaque() + 5);
-				} else {
-					System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
-				}
-			default:
-				System.out.println("Tipo de entrenamiento no válido");
-				return;
+		// PESADO
+		case 1:
+			System.out.println("Entrenamiento pesado");
+			if (this.dinero > (20 * nivel)) {
+				this.dinero -= (20 * nivel);
+				pokemon.setAtaque(pokemon.getAtaque() + 5);
+			} else {
+				System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+			}
+			break;
+		// FURIOSO
+		case 2:
+			System.out.println("Entrenamiento furioso");
+			if (this.dinero > (30 * nivel)) {
+				this.dinero -= (30 * nivel);
+				pokemon.setAtaque(pokemon.getAtaque() + 5);
+			} else {
+				System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+			}
+			break;
+		// FUNCIONAL
+		case 3:
+			System.out.println("Entrenamiento funcional");
+			if (this.dinero > (40 * nivel)) {
+				this.dinero -= (40 * nivel);
+				pokemon.setAtaque(pokemon.getAtaque() + 5);
+			} else {
+				System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+			}
+			break;
+		// ONIRICO
+		case 4:
+			System.out.println("Entrenamiento onírico");
+			if (this.dinero > (40 * nivel)) {
+				this.dinero -= (40 * nivel);
+				pokemon.setAtaque(pokemon.getAtaque() + 5);
+			} else {
+				System.out.println("No tienes suficiente dinero para entrenar a " + pokemon.getNombre());
+			}
+		default:
+			System.out.println("Tipo de entrenamiento no válido");
+			return;
 		}
 
 		System.out.println(nombre + " ha entrenado a " + pokemon.getNombre() + " en el tipo de entrenamiento "
@@ -365,22 +347,38 @@ public class Entrenador {
 
 	}
 
-	
-
 	@Override
 	public String toString() {
 		return "Entrenador [nombre=" + nombre + ", equipo=" + equipo + ", caja=" + caja + ", mochila=" + mochila
 				+ ", dinero=" + dinero + "]";
 	}
 
-	public Pokemon elegirPokemonActivo(int pokemonSelecPelea) {
+	public Pokemon elegirPokemonActivo1(int pokemonSelecPelea) {
 		// Obtener un dentro del rango de la lista
 		return equipo.get(pokemonSelecPelea);
-
 	}
 
-    
+	Pokemon elegirPokemonActivo(int indice) {
+		if (equipo.size() < indice) {
+			return null;
+		}
+		return equipo.get(indice - 1);
+	}
 
-	
+	public int getPokédollars() {
+		return dinero;
+	}
+
+	public void incrementarPokédollars(int cantidad) {
+		dinero += cantidad;
+	}
+
+	public void setPokemonActivo(Pokemon pokemon) {
+		int indice = equipo.indexOf(pokemon);
+		if (indice != -1) {
+			equipo.set(indice, pokemon);
+		}
+
+	}
 
 }

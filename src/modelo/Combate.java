@@ -39,7 +39,7 @@ public class Combate {
 			System.out.println(jugador.getNombre() + " envía a " + pokemonJugador.getNombre() + "!");
 			System.out.println(rival.getNombre() + " envía a " + pokemonRival.getNombre() + "!");
 
-			// Determinar el Pokémon que ataca primero 
+			// Determinar el Pokémon que ataca primero
 			Pokemon atacante, defensor;
 
 			if (pokemonJugador.getVelocidad() >= pokemonRival.getVelocidad()) {
@@ -48,21 +48,19 @@ public class Combate {
 			} else {
 				atacante = pokemonRival;
 				defensor = pokemonJugador;
-			}  
+			}
 
-
-			
 			// Realizar el ataque del Pokémon atacante
 			realizarAtaque(atacante, defensor);
 
 			// Comprobar si el Pokémon defensor ha sido derrotado
 			if (defensor.getVitalidad() == 0) {
-				if (defensor.getEntrenador() == jugador) {
+				if (defensor.getIdEntrenador() == jugador) {
 					numKOPokemonJugador++;
 				} else {
 					numKOPokemonRival++;
 				}
-				defensor = defensor.getEntrenador().elegirPokemonActivo(1);
+				defensor = defensor.getIdEntrenador().elegirPokemonActivo(1);
 			}
 
 			// Actualizar los Pokémon activos de cada entrenador

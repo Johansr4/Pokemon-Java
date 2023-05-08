@@ -15,7 +15,7 @@ public class Main extends Application {
 			
 			Parent root = FXMLLoader.load(getClass().getResource("/vista/CrearUsuario.fxml"));
 			Scene scene = new Scene(root);
-			primaryStage.setTitle("Creacion de Usuario");
+			primaryStage.setTitle("PRUEBA FX JOHAN");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

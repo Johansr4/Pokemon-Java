@@ -60,7 +60,23 @@ public class Combate {
 				} else {
 					numKOPokemonRival++;
 				}
-				defensor = defensor.getIdEntrenador().elegirPokemonActivo(1);
+
+				Entrenador entrenadorDefensor = defensor.getIdEntrenador();
+				Pokemon nuevoDefensor = null;
+				int intentos = 0;
+
+				while (nuevoDefensor == null && intentos < NUM_MAX_POKEMON) {
+					nuevoDefensor = entrenadorDefensor.elegirPokemonActivo(intentos + 1);
+					intentos++;
+				}
+
+				if (nuevoDefensor == null) {
+					System.out.println(
+							"El entrenador " + entrenadorDefensor.getNombre() + " no tiene más Pokémon disponibles.");
+					return;
+				}
+
+				defensor = nuevoDefensor;
 			}
 
 			// Actualizar los Pokémon activos de cada entrenador

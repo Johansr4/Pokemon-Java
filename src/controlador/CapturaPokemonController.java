@@ -32,19 +32,25 @@ public class CapturaPokemonController {
 	public void capturar(ActionEvent event) {
 		lblPokemonEncontrado.setText(null);
 
-		if (buscarRealizado) {
-			if (cap.capturarPokemon()) {
-				lblPokemonCapturar.setText(cap.mostrarPokemon() + " fue capturado!");
-				buscarRealizado = false;
+		if (cap.comprobarPokeball()) {
 
+			if (buscarRealizado) {
+				if (cap.capturarPokemon()) {
+					lblPokemonCapturar.setText(cap.mostrarPokemon() + " fue capturado!");
+					buscarRealizado = false;
+
+				} else {
+
+					lblPokemonCapturar.setText(cap.mostrarPokemon() + " se ha escapado!");
+					buscarRealizado = true;
+				}
 			} else {
-				
-				lblPokemonCapturar.setText(cap.mostrarPokemon() + " se ha escapado!");
-				buscarRealizado = true;
+				// Acción cuando se intenta capturar sin haber buscado primero
+				lblPokemonCapturar.setText(" Debes buscar un Pokémon antes de capturar!");
 			}
-		} else {
-			// Acción cuando se intenta capturar sin haber buscado primero
-			lblPokemonCapturar.setText(" Debes buscar un Pokémon antes de capturar!");
+		}else {
+			lblPokemonCapturar.setText("No tienes pokeballs, compra mas en la tienda");
+			buscarRealizado = false;
 		}
 	}
 }

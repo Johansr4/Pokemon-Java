@@ -29,6 +29,15 @@ public class Captura {
 		}
 		agregarACaja();
 	}
+	
+	public boolean comprobarPokeball() {
+		if (pokeballs>0) {
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
 
 	public boolean capturarPokemon() {
 		pokeballs--;
@@ -39,6 +48,7 @@ public class Captura {
 		} else {
 			System.out.println(nuevoPokemon.getNombre() + " escapó!");
 		}
+		
 		return capturado;
 	}
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.MenuController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../img/MenuImgPk.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnMmochila" layoutX="104.0" layoutY="167.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Mochila" />
+      <Button fx:id="btnMcaptura" layoutX="104.0" layoutY="67.0" mnemonicParsing="false" onAction="#btnMcapturar" prefHeight="60.0" prefWidth="189.0" text="Capturar" />
+      <Button fx:id="btnMentrenar" layoutX="104.0" layoutY="264.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Entrenar" />
+      <Button fx:id="btnMtienda" layoutX="402.0" layoutY="167.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Tienda" />
+      <Button fx:id="btnMcaja" layoutX="402.0" layoutY="67.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Caja" />
+      <Button fx:id="btnMcombate" layoutX="402.0" layoutY="264.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Combate" />
+   </children>
+</AnchorPane>

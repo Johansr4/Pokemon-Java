@@ -5,13 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.LinkedList;
 
 public class App {
 
 	public static void main(String[] args) {
 		Connection connection = null;
-		String url = "jdbc:mysql://localhost:3306/pokemonx";
+		String url = "jdbc:mysql://localhost:3306/pokemon";
 		String login = "root";
 		String password = "";
 		try {

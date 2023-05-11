@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CrearUsuarioController">
    <children>
       <ImageView fitHeight="402.0" fitWidth="716.0" layoutX="-115.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,7 +20,7 @@
             <Font name="Yu Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="BtnUsuario" layoutX="396.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="OK" />
+      <Button fx:id="BtnUsuario" layoutX="396.0" layoutY="292.0" mnemonicParsing="false" onAction="#pulsarBtnUsuario" prefHeight="26.0" prefWidth="66.0" text="OK" />
       <TextField fx:id="TxtUsuario" layoutX="355.0" layoutY="238.0" />
       <TextField fx:id="TxtUsuario1" layoutX="355.0" layoutY="162.0" />
       <Label fx:id="lblUsuario1" layoutX="356.0" layoutY="123.0" prefHeight="38.0" prefWidth="126.0" text="Usuario" textFill="#fffefe" />

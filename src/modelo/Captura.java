@@ -27,7 +27,7 @@ public class Captura {
 			mostrarPokemon();
 			capturado = capturarPokemon();
 		}
-		agregarACaja();
+		
 	}
 	
 	public boolean comprobarPokeball() {
@@ -44,7 +44,7 @@ public class Captura {
 		boolean capturado = random.nextInt(3) < 2;
 		if (capturado) {
 			System.out.println(nuevoPokemon.getNombre() + " capturado!");
-			agregarACaja();
+			
 		} else {
 			System.out.println(nuevoPokemon.getNombre() + " escapó!");
 		}
@@ -52,22 +52,19 @@ public class Captura {
 		return capturado;
 	}
 
-	public boolean agregarACaja() {
-		/*System.out.println("¿Quieres ponerle un mote al nuevo Pokemon? (s/n)");
-		String opcion = scanner.next().toLowerCase();
-		if (opcion.equals("s")) {
+	public boolean agregarCajaMote(String mote) {
+		
 			boolean moteValido = false;
-			String mote = "";
+			
 			while (!moteValido) {
-				System.out.println("Ingresa el mote del Pokemon (sólo letras):");
-				mote = scanner.next();
 				moteValido = PATRON_MOTE.matcher(mote).matches();
 				if (!moteValido) {
 					System.out.println("Mote inválido. El mote debe contener sólo letras.");
-				}
+					break;
+				
 			}
 			nuevoPokemon.setMote(mote);
-		}*/
+		}
 		if (indiceCaja < caja.length) {
 			caja[indiceCaja] = nuevoPokemon;
 			indiceCaja++;

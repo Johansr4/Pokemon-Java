@@ -24,19 +24,15 @@ public class CapturaPokemonController {
 	private Label lblPokemonCapturar;
 	@FXML
 	private Label lblPokemonEncontrado;
-	
+
 	@FXML
 	private TextField txtmote;
 
 	@FXML
 	private Button btnsalir;
-	
-	
+
 	@FXML
 	private Button btnMote;
-	
-	
-	
 
 	private Captura cap = new Captura();
 
@@ -78,9 +74,12 @@ public class CapturaPokemonController {
 				if (cap.capturarPokemon()) {
 					lblPokemonCapturar.setText(cap.mostrarPokemon() + " fue capturado!");
 					buscarRealizado = false;
-					 txtmote.setDisable(false);
-					 btnBuscar.setDisable(true);
-					 
+					txtmote.setDisable(false);
+					btnBuscar.setDisable(true);
+
+					txtmote.setVisible(true); // Hacer visible el campo
+					btnMote.setVisible(true);
+					
 					
 
 				} else {
@@ -98,14 +97,15 @@ public class CapturaPokemonController {
 		}
 
 	}
-	
-	
+
 	public void btnPonerMote(ActionEvent event) {
-		
-		
+		  String mote = txtmote.getText(); // Obtener el texto del TextField
+          boolean resultado = cap.agregarCajaMote(mote); // Llamar a agregarCajaMote() con el mote obtenido
+          btnMote.setVisible(false);
 	}
-	
 
-	
-
+	public void initialize() {
+		txtmote.setVisible(false); // Hacer invisible el campo
+		btnMote.setVisible(false);
+	}
 }

@@ -35,7 +35,7 @@ public class MenuController {
 			currentStage.close();
 
 			// Abrir la ventana 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Prueba.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/capturapokemon.fxml"));
 			AnchorPane root = loader.load();
 			Stage menuStage = new Stage();
 			menuStage.setScene(new Scene(root));

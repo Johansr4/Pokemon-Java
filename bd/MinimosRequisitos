@@ -1,0 +1,29 @@
+MÍNIMOS de Proyecto Pokémon
+
+ 
+
+- Ventanas de Login + Captura (con toda la funcionalidad de modelo y controlador)
+- Acceso a Base de datos (con la inserción de Pokémon en una clase CRUD)
+- Logger (escribiendo en ficheros las interacciones de la mecánica de Captura)
+- JUnit de las clases Pokemon y Entrenador (con las pruebas de todos los métodos, salvo get/set y constructores)
+- JavaDoc de las clases Pokemon y Entrenador.
+
+ 
+
+Los mínimos para aprobar el proyecto implican que todos los puntos anteriormente indicados sean correctos, sin errores de código y con toda la funcionalidad disponible y funcional.
+Si alguno de ellos es incorrecto, el proyecto puede estar suspenso (recordemos que son los MÍNIMOS), por lo que recomendamos realizar lo máximo posible del resto de funcionalidades.
+
+ 
+
+La fecha de finalización será el día 19-05-2023, a las 23:59.
+Para la entrega final se revisará:
+
+ 
+
+- Trello del equipo
+- GitHub del equipo (debe estar todo el proyecto finalizado en su última versión en la rama main/master)
+- Vídeo conjunto explicativo (se subirá una tarea para que podáis enviar vuestros vídeos, indicando las condiciones a cumplir)
+
+ 
+
+TODO lo que no esté reflejado en GitHub y Trello no existirá a la hora de corregir la entrega, por lo que os recomendamos que subáis todo el contenido lo más actualizado posible. Debéis tener al día el código, la base de datos, las pruebas y la documentación.

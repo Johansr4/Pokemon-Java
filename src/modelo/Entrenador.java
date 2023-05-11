@@ -80,46 +80,68 @@ public class Entrenador {
 		this.dinero = dinero;
 	}
 
+	/**
+	 * Obtiene el costo por nivel de entrenamiento.
+	 *
+	 * @return El costo por nivel de entrenamiento.
+	 */
 	public static int getCostoPorNivelDeEntrenamiento() {
-		return COSTO_POR_NIVEL_DE_ENTRENAMIENTO;
+	    return COSTO_POR_NIVEL_DE_ENTRENAMIENTO;
 	}
 
+	/**
+	 * Realiza la captura de un Pokémon.
+	 * Captura un nuevo Pokémon y lo agrega a la caja del jugador.
+	 */
 	public void capturarPokemon() {
-		Captura captura = new Captura();
-		captura.capturarPokemonWhile();
-		Pokemon pokemonCapturado = captura.getNuevoPokemon();
-		agregarPokemonACaja(pokemonCapturado);
+	    Captura captura = new Captura();
+	    captura.capturarPokemonWhile();
+	    Pokemon pokemonCapturado = captura.getNuevoPokemon();
+	    agregarPokemonACaja(pokemonCapturado);
 	}
 
+	/**
+	 * Agrega un Pokémon a la caja del jugador.
+	 *
+	 * @param pokemon El Pokémon a agregar a la caja.
+	 */
 	public void agregarPokemonACaja(Pokemon pokemon) {
-		if (caja.size() < 10) {
-			caja.add(pokemon);
-			System.out.println("Pokemon añadido a la caja.");
-		} else {
-			System.out.println("La caja está llena, no se puede agregar el pokemon.");
-		}
+	    if (caja.size() < 10) {
+	        caja.add(pokemon);
+	        System.out.println("Pokemon añadido a la caja.");
+	    } else {
+	        System.out.println("La caja está llena, no se puede agregar el pokemon.");
+	    }
 	}
 
+	/**
+	 * Mueve un Pokémon del equipo de reserva al equipo principal.
+	 *
+	 * @param pokemon El Pokémon a mover al equipo principal.
+	 */
 	public void moverAPrincipal(Pokemon pokemon) {
-		if (this.equipo.size() < 6) {
-			equipo.add(pokemon);
-			caja.remove(pokemon);
-			System.out.println(
-					nombre + " ha movido a " + pokemon.getNombre() + " del equipo de reserva al equipo principal.");
-		} else {
-			System.out.println(nombre + ", ya tienes un equipo principal completo.");
-		}
+	    if (this.equipo.size() < 6) {
+	        equipo.add(pokemon);
+	        caja.remove(pokemon);
+	        System.out.println(nombre + " ha movido a " + pokemon.getNombre() + " del equipo de reserva al equipo principal.");
+	    } else {
+	        System.out.println(nombre + ", ya tienes un equipo principal completo.");
+	    }
 	}
 
+	/**
+	 * Mueve un Pokémon del equipo principal al equipo de reserva.
+	 *
+	 * @param pokemon El Pokémon a mover al equipo de reserva.
+	 */
 	public void moverACaja(Pokemon pokemon) {
-		if (equipo.size() > 1) {
-			equipo.remove(pokemon);
-			caja.add(pokemon);
-			System.out.println(
-					nombre + " ha movido a " + pokemon.getNombre() + " del equipo principal al equipo de reserva.");
-		} else {
-			System.out.println(nombre + ", no puedes tener un equipo principal vacío.");
-		}
+	    if (equipo.size() > 1) {
+	        equipo.remove(pokemon);
+	        caja.add(pokemon);
+	        System.out.println(nombre + " ha movido a " + pokemon.getNombre() + " del equipo principal al equipo de reserva.");
+	    } else {
+	        System.out.println(nombre + ", no puedes tener un equipo principal vacío.");
+	    }
 	}
 
 	public void entrenar(Pokemon pokemon, int tipoEntrenamiento) {
@@ -281,70 +303,98 @@ public class Entrenador {
 
 	}
 
+	/**
+	 * Realiza la compra de un objeto.
+	 *
+	 * @param objeto El objeto a comprar.
+	 */
 	public void comprar(Objeto objeto) {
-		int costo = objeto.getCosto();
-		if (dinero < costo) {
-			System.out.println("No tienes suficiente dinero para comprar " + objeto.getNombre());
-			return;
-		}
+	    int costo = objeto.getCosto();
+	    if (dinero < costo) {
+	        System.out.println("No tienes suficiente dinero para comprar " + objeto.getNombre());
+	        return;
+	    }
 
-		dinero -= costo;
-		mochila.add(objeto);
-		System.out.println(nombre + " ha comprado " + objeto.getNombre());
+	    dinero -= costo;
+	    mochila.add(objeto);
+	    System.out.println(nombre + " ha comprado " + objeto.getNombre());
 	}
 
+	/**
+	 * Utiliza un objeto en un Pokémon.
+	 *
+	 * @param pokemon El Pokémon en el que se usará el objeto.
+	 * @param objeto El objeto a usar.
+	 */
 	public void usarObjeto(Pokemon pokemon, Objeto objeto) {
-		if (mochila.contains(objeto)) {
+	    if (mochila.contains(objeto)) {
+	        if (pokemon.getObjeto() != null) {
+	            pokemon.setObjeto(null);
+	            pokemon.setObjeto(objeto);
+	        } else {
+	            pokemon.setObjeto(objeto);
+	        }
 
-			if (pokemon.getObjeto() != null) {
-				pokemon.setObjeto(null);
-				pokemon.setObjeto(objeto);
-
-			} else {
-				pokemon.setObjeto(objeto);
-			}
-
-			mochila.remove(objeto);
-			System.out.println(nombre + " ha usado " + objeto.getNombre() + " en " + pokemon.getNombre());
-
-		} else {
-			System.out.println(nombre + " no tiene " + objeto.getNombre() + " en su mochila.");
-		}
+	        mochila.remove(objeto);
+	        System.out.println(nombre + " ha usado " + objeto.getNombre() + " en " + pokemon.getNombre());
+	    } else {
+	        System.out.println(nombre + " no tiene " + objeto.getNombre() + " en su mochila.");
+	    }
 	}
 
+	/**
+	 * Muestra los Pokémon en el equipo principal del entrenador.
+	 */
 	public void mostrarEquipo() {
-		System.out.println(nombre + " tiene " + equipo.size() + " pokemon en su equipo principal:");
-		for (Pokemon pokemon : equipo) {
-			System.out.println("- " + pokemon.getNombre() + " (Nivel " + pokemon.getNivel() + ")");
-		}
+	    System.out.println(nombre + " tiene " + equipo.size() + " Pokémon en su equipo principal:");
+	    for (Pokemon pokemon : equipo) {
+	        System.out.println("- " + pokemon.getNombre() + " (Nivel " + pokemon.getNivel() + ")");
+	    }
 	}
 
+	/**
+	 * Muestra los Pokémon en la caja del entrenador.
+	 */
 	public void mostrarCaja() {
-		System.out.println(nombre + " tiene " + caja.size() + " pokemon en su equipo de reserva:");
-		for (Pokemon pokemon : caja) {
-			System.out.println("- " + pokemon.getNombre() + " (Nivel " + pokemon.getNivel() + ")");
-		}
+	    System.out.println(nombre + " tiene " + caja.size() + " Pokémon en su equipo de reserva:");
+	    for (Pokemon pokemon : caja) {
+	        System.out.println("- " + pokemon.getNombre() + " (Nivel " + pokemon.getNivel() + ")");
+	    }
 	}
 
+	/**
+	 * Muestra los objetos en la mochila del entrenador.
+	 */
 	public void mostrarMochila() {
-		System.out.println(nombre + " tiene los siguientes objetos en su mochila:");
-		for (Objeto objeto : mochila) {
-			System.out.println("- " + objeto.getNombre());
-		}
+	    System.out.println(nombre + " tiene los siguientes objetos en su mochila:");
+	    for (Objeto objeto : mochila) {
+	        System.out.println("- " + objeto.getNombre());
+	    }
 	}
 
+	/**
+	 * Muestra la cantidad de dinero que tiene el entrenador.
+	 */
 	public void mostrarDinero() {
-		System.out.println(nombre + " tiene " + dinero + " monedas.");
+	    System.out.println(nombre + " tiene " + dinero + " monedas.");
 	}
 
+	/**
+	 * Suma dinero al entrenador.
+	 *
+	 * @param entrenador El entrenador al que se le sumará el dinero.
+	 */
 	public void sumarDinero(Entrenador entrenador) {
-		entrenador.setDinero(entrenador.getDinero() + (entrenador.getDinero() / 3));
-
+	    entrenador.setDinero(entrenador.getDinero() + (entrenador.getDinero() / 3));
 	}
 
+	/**
+	 * Resta dinero al entrenador.
+	 *
+	 * @param entrenador El entrenador al que se le restará el dinero.
+	 */
 	public void restarDinero(Entrenador entrenador) {
-		entrenador.setDinero(entrenador.getDinero() - (entrenador.getDinero() / 3));
-
+	    entrenador.setDinero(entrenador.getDinero() - (entrenador.getDinero() / 3));
 	}
 
 	@Override
@@ -358,27 +408,8 @@ public class Entrenador {
 		return equipo.get(pokemonSelecPelea);
 	}
 
-	Pokemon elegirPokemonActivo(int indice) {
-		if (equipo.size() < indice) {
-			return null;
-		}
-		return equipo.get(indice - 1);
-	}
-
-	public int getPokédollars() {
-		return dinero;
-	}
-
-	public void incrementarPokédollars(int cantidad) {
-		dinero += cantidad;
-	}
-
-	public void setPokemonActivo(Pokemon pokemon) {
-		int indice = equipo.indexOf(pokemon);
-		if (indice != -1) {
-			equipo.set(indice, pokemon);
-		}
+	
 
 	}
 
-}
+

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.print.Doc;
+
 import modelo.MovimientoPokemon.Estado;
 import modelo.MovimientoPokemon.TipoMovimiento;
 
@@ -303,6 +305,16 @@ public class Pokemon {
 
 		}
 	}
+	
+	/**
+	 * 
+	 * 
+	 * Este metodo recopila la informacion en texto de base de datos y lo 
+	 * transforma en un objeto de tipo pokemon .
+	 * 
+	 * @param String del tipo del pokemon
+	 * @return tipo
+	 */
 
 	public TipoPokemon setTipoPokemon(String str) {
         switch(str) {
@@ -342,6 +354,16 @@ public class Pokemon {
 		}
 		return null;
 	}
+	
+	/**
+	 * 
+	 * 
+	 * Este metodo recopila la informacion en texto de base de datos y lo 
+	 * transforma en un objeto de tipo pokemon .
+	 * 
+	 * @param String del tipo del pokemon
+	 * @return tipo
+	 */
 
 	public TipoPokemon setTipoPokemon2(String str) {
         switch(str) {
@@ -382,6 +404,13 @@ public class Pokemon {
 		return null;
 	}
 	
+	
+	/**
+	 * Realiza una mejora de las estadísticas al subir de nivel.
+	 * Incrementa el nivel en 1 y actualiza las estadísticas del objeto según valores aleatorios.
+	 * Las estadísticas actualizadas incluyen vitalidad, ataque, defensa, ataque especial,
+	 * defensa especial y velocidad.
+	 */		
 
 	public void upgradeStatsNivel() {
 		nivel += 1;
@@ -395,6 +424,15 @@ public class Pokemon {
 
 	}
 
+	/**
+	 * Permite al Pokémon aprender un nuevo ataque en función de su nivel y la selección de ataque.
+	 * Si el nivel del Pokémon es divisible por 3, se le permite aprender un nuevo ataque.
+	 * El ataque seleccionado se asigna al Pokémon en una de las cuatro posiciones de movimiento disponibles.
+	 * 
+	 * @param pkEvolucion El Pokémon al que se le permite aprender el nuevo ataque.
+	 * @param ataqueSeleccionado El número del ataque seleccionado (1, 2, 3 o 4).
+	 */
+	
 	public void aprenderAtaque(Pokemon pkEvolucion, int ataqueSeleccionado) {
 
 		if (nivel % 3 == 0) {
@@ -433,14 +471,14 @@ public class Pokemon {
 		}
 	}
 
-	// Selecciona el ataque y verifica si puede usarlo o no
+	
 
 	/**
+	 * Realiza un ataque utilizando un movimiento seleccionado en un Pokémon objetivo.
+	 * Verifica si el Pokémon tiene suficiente estamina para usar el movimiento antes de realizar el ataque.
 	 * 
-	 * @param objetivo
-	 * @param movimiento
-	 * @param ataqueSeleccionado
-	 * @return
+	 * @param objetivo El Pokémon objetivo del ataque.
+	 * @param movimiento El movimiento que se utilizará en el ataque.
 	 */
 	
 	public void atacar(Pokemon objetivo, MovimientoPokemon movimiento) {
@@ -477,6 +515,7 @@ public class Pokemon {
 		this.vitalidad -= movimiento.getPotencia();
 	}
 
+	//Metodo para usarlo cuando se necesite recuperar la estamina del pokemon
 	public void descansar() {
 		setEstamina(100);
 

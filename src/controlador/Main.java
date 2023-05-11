@@ -21,7 +21,7 @@ public class Main extends Application {
 
 			Scene scene = new Scene(root);
 			
-			primaryStage.setTitle("Captura Pokemon");
+			primaryStage.setTitle("Bienvenido");
 
 			// Agregar ícono
 

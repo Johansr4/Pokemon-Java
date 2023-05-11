@@ -125,4 +125,57 @@ public class Captura {
 		return pokemonlbl;
 	}
 
+	public static int getPokeballs() {
+		return pokeballs;
+	}
+
+	public static void setPokeballs(int pokeballs) {
+		Captura.pokeballs = pokeballs;
+	}
+
+	public static Pokemon[] getCaja() {
+		return caja;
+	}
+
+	public static void setCaja(Pokemon[] caja) {
+		Captura.caja = caja;
+	}
+
+	public static int getIndiceCaja() {
+		return indiceCaja;
+	}
+
+	public static void setIndiceCaja(int indiceCaja) {
+		Captura.indiceCaja = indiceCaja;
+	}
+
+	public static Scanner getScanner() {
+		return scanner;
+	}
+
+	public static void setScanner(Scanner scanner) {
+		Captura.scanner = scanner;
+	}
+
+	public static Random getRandom() {
+		return random;
+	}
+
+	public static void setRandom(Random random) {
+		Captura.random = random;
+	}
+
+	public static String[] getPalabrasProhibidas() {
+		return PALABRAS_PROHIBIDAS;
+	}
+
+	public static Pattern getPatronMote() {
+		return PATRON_MOTE;
+	}
+
+	public static void setNuevoPokemon(Pokemon nuevoPokemon) {
+		Captura.nuevoPokemon = nuevoPokemon;
+	}
+	
+
 }

@@ -5,8 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+
+import javafx.scene.control.TextField;
+
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import modelo.Captura;
@@ -20,9 +24,19 @@ public class CapturaPokemonController {
 	private Label lblPokemonCapturar;
 	@FXML
 	private Label lblPokemonEncontrado;
+	
+	@FXML
+	private TextField txtmote;
 
 	@FXML
 	private Button btnsalir;
+	
+	
+	@FXML
+	private Button btnMote;
+	
+	
+	
 
 	private Captura cap = new Captura();
 
@@ -64,6 +78,10 @@ public class CapturaPokemonController {
 				if (cap.capturarPokemon()) {
 					lblPokemonCapturar.setText(cap.mostrarPokemon() + " fue capturado!");
 					buscarRealizado = false;
+					 txtmote.setDisable(false);
+					 btnBuscar.setDisable(true);
+					 
+					
 
 				} else {
 
@@ -78,5 +96,16 @@ public class CapturaPokemonController {
 			lblPokemonCapturar.setText("No tienes pokeballs, compra mas en la tienda");
 			buscarRealizado = false;
 		}
+
 	}
+	
+	
+	public void btnPonerMote(ActionEvent event) {
+		
+		
+	}
+	
+
+	
+
 }

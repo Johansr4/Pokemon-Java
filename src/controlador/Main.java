@@ -18,7 +18,6 @@ public class Main extends Application {
 			
 			//Parent root = FXMLLoader.load(getClass().getResource("/vista/menu.fxml"));
 			
-
 			Scene scene = new Scene(root);
 			
 			primaryStage.setTitle("Bienvenido");

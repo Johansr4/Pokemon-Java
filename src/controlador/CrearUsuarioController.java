@@ -34,7 +34,7 @@ public class CrearUsuarioController {
         String password = "";
 
         // Consulta SQL para comprobar el usuario
-        String query = "SELECT * FROM usuario WHERE nombre_usuario = ? AND contraseña = ?";
+        String query = "SELECT * FROM entrenador WHERE nombre = ? AND pass = ?";
 
         try (Connection conn = DriverManager.getConnection(url, username, password);
              PreparedStatement stmt = conn.prepareStatement(query)) {

@@ -16,7 +16,7 @@
       <Button fx:id="btnMcaptura" layoutX="104.0" layoutY="67.0" mnemonicParsing="false" onAction="#btnMcapturar" prefHeight="60.0" prefWidth="189.0" text="Capturar" />
       <Button fx:id="btnMentrenar" layoutX="104.0" layoutY="264.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Entrenar" />
       <Button fx:id="btnMtienda" layoutX="402.0" layoutY="167.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Tienda" />
-      <Button fx:id="btnMcaja" layoutX="402.0" layoutY="67.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Caja" />
+      <Button fx:id="btnMcaja" layoutX="402.0" layoutY="67.0" mnemonicParsing="false" onAction="#btnAbrirCaja" prefHeight="60.0" prefWidth="189.0" text="Caja" />
       <Button fx:id="btnMcombate" layoutX="402.0" layoutY="264.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="189.0" text="Combate" />
    </children>
 </AnchorPane>

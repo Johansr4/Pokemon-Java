@@ -39,7 +39,27 @@ public class MenuController {
 			AnchorPane root = loader.load();
 			Stage menuStage = new Stage();
 			menuStage.setScene(new Scene(root));
-			menuStage.setTitle("Menú");
+			menuStage.setTitle("Captura");
+			menuStage.show();
+		} catch (IOException e) {
+
+		}
+	}
+	
+	
+	@FXML
+	public void btnAbrirCaja(ActionEvent event) {
+		try {
+			Node sourceNode = (Node) event.getSource();
+			Stage currentStage = (Stage) sourceNode.getScene().getWindow();
+			currentStage.close();
+
+			// Abrir la ventana 
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Caja.fxml"));
+			AnchorPane root = loader.load();
+			Stage menuStage = new Stage();
+			menuStage.setScene(new Scene(root));
+			menuStage.setTitle("Caja");
 			menuStage.show();
 		} catch (IOException e) {
 

@@ -1,5 +1,6 @@
 package controlador;
 
+import carga.PokemonCRUD;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,6 +29,10 @@ public class Main extends Application {
 
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+			//PokemonCRUD pokeprueba = new PokemonCRUD();
+			
+			//System.out.println(pokeprueba.readPokemonById(1));
 
 		} catch (Exception e) {
 			e.printStackTrace();

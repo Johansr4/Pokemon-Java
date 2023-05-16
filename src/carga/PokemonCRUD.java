@@ -9,19 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.Pokemon;
+import carga.ConexionBBDD;
+import java.sql.Connection;
+
+
+
 
 public class PokemonCRUD {
-    private Connection connection;
+	
+	 private Connection connection;
 
-    public PokemonCRUD() {
-        try {
-            // Establecer la conexión con la base de datos
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tu_basedatos", "usuario", "contraseña");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+	    public PokemonCRUD() {
+	        // Establecer la conexión con la base de datos
+	        ConexionBBDD conexionBBDD = new ConexionBBDD();
+	        connection = conexionBBDD.getConnection();
+	    }
 
+
+   
     // Create
     public void createPokemon(Pokemon pokemon) {
         try {
@@ -38,15 +43,15 @@ public class PokemonCRUD {
     }
 
     // Read
-    public Pokemon getPokemonById(int id) {
+    public Pokemon readPokemonById(int id) {
         try {
-            String query = "SELECT * FROM pokemon WHERE id = ?";
+            String query = "SELECT * FROM pokemon WHERE IdPokemon = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 Pokemon pokemon = new Pokemon();
-                pokemon.setIdPokemon(resultSet.getInt("id"));
+                pokemon.setIdPokemon(resultSet.getInt("IdPokemon"));
                 pokemon.setNombre(resultSet.getString("nombre"));
                 pokemon.setVitalidad(resultSet.getInt("vitalidad"));
                 pokemon.setAtaque(resultSet.getInt("ataque"));
@@ -55,7 +60,7 @@ public class PokemonCRUD {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null; // Pokemon not found
+        return null; // Pokemon no encontrado
     }
 
     public List<Pokemon> getAllPokemon() {

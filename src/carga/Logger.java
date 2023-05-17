@@ -10,17 +10,22 @@ public class Logger {
 
     private static BufferedWriter bufferedWriter;
     private static String logPath = "logger/";
+    private static String logFilePath; // Variable para almacenar la ruta del archivo de log
 
     public static BufferedWriter getOrCreateFileWriter() {
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-        String fechaFormateada = simpleDateFormat.format(new Date());
-        logPath += fechaFormateada + ".log";
-
         if (bufferedWriter != null)
             return bufferedWriter;
+        
+        // Verificar si la ruta completa del archivo de log no está establecida
+        if (logFilePath == null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+            String fechaFormateada = simpleDateFormat.format(new Date());
+            logFilePath = logPath + fechaFormateada + ".log";
+        }
+
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(logPath, true));
+            bufferedWriter = new BufferedWriter(new FileWriter(logFilePath, true));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -33,14 +38,11 @@ public class Logger {
             String mensajeFormateado = "[" + fechaFormateada + "] " + line;
             getOrCreateFileWriter().write(mensajeFormateado);
             getOrCreateFileWriter().newLine(); // Agregar una nueva línea después del mensaje
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static void close(){
-        try {
-            bufferedWriter.close();
+            
+            if (bufferedWriter != null) {
+                bufferedWriter.close();
+                bufferedWriter = null;
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

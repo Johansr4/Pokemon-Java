@@ -41,7 +41,7 @@ public class PokemonCRUD {
 
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace();  
         }
     }
 

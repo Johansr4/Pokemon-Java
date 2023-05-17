@@ -33,5 +33,6 @@
       <Button fx:id="btnsalir" layoutX="506.0" layoutY="45.0" mnemonicParsing="false" onAction="#SalirCaptura" prefHeight="26.0" prefWidth="80.0" text="Salir" />
       <TextField fx:id="txtmote" layoutX="301.0" layoutY="316.0" promptText="Introduce su mote aqui" />
       <Button fx:id="btnMote" layoutX="359.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnPonerMote" text="OK" />
+      <ImageView fx:id="imgCap" fitHeight="150.0" fitWidth="200.0" layoutX="151.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

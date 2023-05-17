@@ -57,7 +57,7 @@ public class Pokemon {
 		this.defensaEspecial = (int) (Math.random() * 10) + 1;
 		this.velocidad = (int) (Math.random() * 10) + 1;
 		this.estamina = (int) (Math.random() * 10) + 1;
-		this.nivel = 1;
+		this.nivel = (int) (Math.random() * 100) + 1;
 		this.fertilidad = 0;
 		this.sexo = ' ';
 		this.tipo = tipo;
@@ -90,7 +90,7 @@ public class Pokemon {
 		this.defensaEspecial = (int) (Math.random() * 10) + 1;
 		this.velocidad = (int) (Math.random() * 10) + 1;
 		this.estamina = (int) (Math.random() * 10) + 1;
-		this.nivel = 1;
+		this.nivel = (int) (Math.random() * 100) + 1;
 		this.fertilidad = 0;
 		this.sexo = ' ';
 		this.tipo = tipo;

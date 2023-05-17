@@ -36,7 +36,6 @@ public class PokemonCRUD {
             statement.setString(2, pokemon.getNombre());
             statement.setInt(3, pokemon.getVitalidad());
             statement.setInt(4, pokemon.getAtaque());
-            statement.setString(5, pokemon.getImg());
            
 
             statement.executeUpdate();
@@ -46,9 +45,9 @@ public class PokemonCRUD {
     }
 
     // Read
-    public Pokemon readPokemonById(int id) {
+    public Pokemon readPokemonByPokedex(int id) {
         try {
-            String query = "SELECT * FROM pokemon WHERE IdPokemon = ?";
+            String query = "SELECT * FROM pokemon WHERE NumPokedex = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
@@ -57,8 +56,7 @@ public class PokemonCRUD {
                 pokemon.setIdPokemon(resultSet.getInt("IdPokemon"));
                 pokemon.setNombre(resultSet.getString("nombre"));
                 pokemon.setVitalidad(resultSet.getInt("vitalidad"));
-                pokemon.setAtaque(resultSet.getInt("ataque"));
-                pokemon.setImg(resultSet.getString("img_frontal"));
+                pokemon.setAtaque(resultSet.getInt("ataque"));    
                 return pokemon;
             }
         } catch (SQLException e) {

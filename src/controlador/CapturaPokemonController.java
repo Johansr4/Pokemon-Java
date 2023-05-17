@@ -75,7 +75,7 @@ public class CapturaPokemonController {
 
 	@FXML
 	public void buscar(ActionEvent event) {
-	    cap.asignarPokemon(pk.readPokemonById(seleccionAleatoria));
+	    cap.asignarPokemon(pk.readPokemonByPokedex(seleccionAleatoria));
 	    lblPokemonCapturar.setText(null);
 	    lblPokemonEncontrado.setText(cap.mostrarPokemon() + " apareció !!!");
 	    buscarRealizado = true;

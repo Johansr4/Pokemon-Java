@@ -32,7 +32,7 @@ public class Main extends Application {
 			
 			PokemonCRUD pokeprueba = new PokemonCRUD();
 			
-			System.out.println(pokeprueba.readPokemonById(1));
+			//System.out.println(pokeprueba.readPokemonByPokedex(1));
 
 		} catch (Exception e) {
 			e.printStackTrace();

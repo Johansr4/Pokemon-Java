@@ -47,7 +47,7 @@ public class CapturaPokemonController {
 	
 	PokemonCRUD pk = new PokemonCRUD();
 
-	int seleccionAleatoria = (int) (Math.random() * 151) + 1;
+	  private int seleccionAleatoria; // Variable de instancia para mantener el mismo número
 
 	private boolean buscarRealizado = false;
 	
@@ -84,7 +84,7 @@ public class CapturaPokemonController {
 	    try {
 	        
 	        int randomIndex = seleccionAleatoria;
-	        String imagePath = "img151/1.png";
+	        String imagePath = "img151/" + randomIndex + ".png";
 	        File file = new File (imagePath);
 
 
@@ -145,7 +145,7 @@ public class CapturaPokemonController {
 
 	public void initialize() {
 	    try {
-
+	    	 seleccionAleatoria = (int) (Math.random() * 151) + 1; // Generar número aleatorio
 	        txtmote.setVisible(false); // Hacer invisible el campo
 	        btnMote.setVisible(false);
 	    } catch (Exception e) {

@@ -19,6 +19,12 @@ public class Captura {
 	public Captura() {
 		nuevoPokemon = new Pokemon();
 	}
+	
+	public Pokemon asignarPokemon(Pokemon pokemonAsignar) {
+		
+		nuevoPokemon= pokemonAsignar;
+		return pokemonAsignar ;
+	}
 
 	public void capturarPokemonWhile() {
 		boolean capturado = false;

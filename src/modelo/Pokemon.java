@@ -19,7 +19,7 @@ import modelo.MovimientoPokemon.TipoMovimiento;
 //hashmap en aprender ataque/movimiento
 
 public class Pokemon {
-
+	
 	private int IdPokemon;
 	private int NumPokedex;
 	private int IdEntrenador;
@@ -44,6 +44,7 @@ public class Pokemon {
 	private MovimientoPokemon Movimiento4;
 	private Estado estado;
 	private Objeto objeto; // Objeto de tipo Objeto
+	private String img;
 
 	public Pokemon() {
 		this.experiencia = (int) (Math.random() * 10) + 1;
@@ -70,13 +71,14 @@ public class Pokemon {
 		this.NumPokedex = NumPokedex;
 		this.IdPokemon = IdPokemon;
 		this.tipo2 = tipo2;
+		this.img=img;
 	}
 
 	public Pokemon(int idPokemon, int numPokedex, int idEntrenador, int experiencia, String nombre, String mote,
 			int vitalidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad,
 			int estamina, int nivel, int fertilidad, char sexo, TipoPokemon tipo, TipoPokemon tipo2,
 			MovimientoPokemon movimiento1, MovimientoPokemon movimiento2, MovimientoPokemon movimiento3,
-			MovimientoPokemon movimiento4, Estado estado, Objeto objeto) {
+			MovimientoPokemon movimiento4, Estado estado, Objeto objeto, String img) {
 		super();
 		this.experiencia = (int) (Math.random() * 10) + 1;
 		this.nombre = nombre;
@@ -102,6 +104,7 @@ public class Pokemon {
 		this.NumPokedex = NumPokedex;
 		this.IdPokemon = IdPokemon;
 		this.tipo2 = tipo2;
+		this.img=img;
 	}
 	
 
@@ -295,6 +298,16 @@ public class Pokemon {
 
 	public void setObjeto(Objeto objeto) {
 		this.objeto = objeto;
+	}
+	
+	
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public void subirNivel() {
@@ -529,12 +542,9 @@ public class Pokemon {
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
 				+ ", nivel=" + nivel + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", tipo=" + tipo + ", tipo2="
 				+ tipo2 + ", Movimiento1=" + Movimiento1 + ", Movimiento2=" + Movimiento2 + ", Movimiento3="
-				+ Movimiento3 + ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + "]";
+				+ Movimiento3 + ", Movimiento4=" + Movimiento4 + ", estado=" + estado + ", objeto=" + objeto + ", img="
+				+ img + "]";
 	}
-	
-
-
 
 	
-
 }

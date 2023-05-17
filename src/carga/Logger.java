@@ -9,7 +9,7 @@ import java.util.Date;
 public class Logger {
 
     private static BufferedWriter bufferedWriter;
-    private static String logPath = "src/main/files/";
+    private static String logPath = "logger/";
 
     public static BufferedWriter getOrCreateFileWriter() {
 
@@ -29,7 +29,10 @@ public class Logger {
 
     public static void write(String line) {
         try {
-            getOrCreateFileWriter().write(line);
+            String fechaFormateada = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            String mensajeFormateado = "[" + fechaFormateada + "] " + line;
+            getOrCreateFileWriter().write(mensajeFormateado);
+            getOrCreateFileWriter().newLine(); // Agregar una nueva línea después del mensaje
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

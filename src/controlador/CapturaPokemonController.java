@@ -7,14 +7,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
-
+import carga.PokemonCRUD;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import modelo.Captura;
-
+import carga.*;
 public class CapturaPokemonController {
 	@FXML
 	private Button btnCapturar;
@@ -35,6 +35,10 @@ public class CapturaPokemonController {
 	private Button btnMote;
 
 	private Captura cap = new Captura();
+	
+	PokemonCRUD pk = new PokemonCRUD();
+
+	
 
 	private boolean buscarRealizado = false;
 
@@ -59,6 +63,9 @@ public class CapturaPokemonController {
 
 	@FXML
 	public void buscar(ActionEvent event) {
+		//pk.readPokemonById(1); //(int) (Math.random() * 151) + 1;
+		cap.asignarPokemon(pk.readPokemonById(1));
+		
 		lblPokemonCapturar.setText(null);
 		lblPokemonEncontrado.setText(cap.mostrarPokemon() + " apareció !!!");
 		buscarRealizado = true;
@@ -72,6 +79,7 @@ public class CapturaPokemonController {
 
 			if (buscarRealizado) {
 				if (cap.capturarPokemon()) {
+					
 					lblPokemonCapturar.setText(cap.mostrarPokemon() + " fue capturado!");
 					buscarRealizado = false;
 					txtmote.setDisable(false);
@@ -80,6 +88,8 @@ public class CapturaPokemonController {
 					txtmote.setVisible(true); // Hacer visible el campo
 					btnMote.setVisible(true);
 					
+					 Logger.write(cap.mostrarPokemon()+" fue capturado !!!");
+					 Logger.close();
 					
 
 				} else {

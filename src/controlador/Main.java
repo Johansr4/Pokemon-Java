@@ -30,9 +30,9 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			//PokemonCRUD pokeprueba = new PokemonCRUD();
+			PokemonCRUD pokeprueba = new PokemonCRUD();
 			
-			//System.out.println(pokeprueba.readPokemonById(1));
+			System.out.println(pokeprueba.readPokemonById(1));
 
 		} catch (Exception e) {
 			e.printStackTrace();

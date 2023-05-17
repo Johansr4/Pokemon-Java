@@ -38,7 +38,7 @@ public class MainPokemon {
 
 		Pokemon pokemon = new Pokemon(0,0,0,60, "charmander", "charrrr", 400, 30, 60, 1, 1, 1, 100, 100, 0, 'h',
 				TipoPokemon.PLANTA, null, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4,
-				movimientoPokemon5, Estado.CONGELADO, baston);
+				movimientoPokemon5, Estado.CONGELADO, baston, null);
 
 				
 
@@ -50,7 +50,7 @@ public class MainPokemon {
 		// POKEMON RIVAL
 		Pokemon pokemon2 = new Pokemon(0,0,0, 30, "squirtle", "sssql", 100, 60, 20, 0, 0, 0, 100, 60, 0, 'h',
 				TipoPokemon.AGUA, null, movimientoPokemon1, movimientoPokemon2, movimientoPokemon3, movimientoPokemon4, null,
-				baston);
+				baston, null);
 
 		pokemon2.setMovimiento1(movimientoPokemon1);
 		pokemon2.setMovimiento2(movimientoPokemon2);

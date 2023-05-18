@@ -23,6 +23,7 @@ public class Captura {
 	public Pokemon asignarPokemon(Pokemon pokemonAsignar) {
 		
 		nuevoPokemon= pokemonAsignar;
+		pokemonAsignar.setNivel((int) (Math.random() * 100) + 1);
 		return pokemonAsignar ;
 	}
 

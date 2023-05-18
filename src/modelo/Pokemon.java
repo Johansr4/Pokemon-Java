@@ -51,13 +51,13 @@ public class Pokemon {
 		this.nombre = "TESTEO";
 		this.mote = mote;
 		this.vitalidad = (int) (Math.random() * 10) + 1;
-		this.ataque = (int) (Math.random() * 10) + 1;
+		this.ataque = 0;
 		this.defensa = (int) (Math.random() * 10) + 1;
 		this.ataqueEspecial = (int) (Math.random() * 10) + 1;
 		this.defensaEspecial = (int) (Math.random() * 10) + 1;
 		this.velocidad = (int) (Math.random() * 10) + 1;
 		this.estamina = (int) (Math.random() * 10) + 1;
-		this.nivel = (int) (Math.random() * 100) + 1;
+		this.nivel = 0;
 		this.fertilidad = 0;
 		this.sexo = ' ';
 		this.tipo = tipo;
@@ -84,13 +84,13 @@ public class Pokemon {
 		this.nombre = nombre;
 		this.mote = mote;
 		this.vitalidad = (int) (Math.random() * 10) + 1;
-		this.ataque = (int) (Math.random() * 10) + 1;
+		this.ataque = 0;
 		this.defensa = (int) (Math.random() * 10) + 1;
 		this.ataqueEspecial = (int) (Math.random() * 10) + 1;
 		this.defensaEspecial = (int) (Math.random() * 10) + 1;
 		this.velocidad = (int) (Math.random() * 10) + 1;
 		this.estamina = (int) (Math.random() * 10) + 1;
-		this.nivel = (int) (Math.random() * 100) + 1;
+		this.nivel = 0;
 		this.fertilidad = 0;
 		this.sexo = ' ';
 		this.tipo = tipo;
@@ -453,7 +453,7 @@ public class Pokemon {
 
 			if (ataqueSeleccionado >= 1 && ataqueSeleccionado <= 4) {
 
-				// LLAMADA A BBDD PARA INSERTAR EL MOVIMIENTO A APRENDER?
+				// LLAMADA A BBDD PARA INSERTAR EL MOVIMIENTO A APRENDER
 
 				MovimientoPokemon movimiento = new MovimientoPokemon();
 
@@ -516,14 +516,6 @@ public class Pokemon {
 	}
 
 	public void recibirAtaque(MovimientoPokemon movimiento) {
-
-		/*
-		 * TablaTipoPokemon tablaTipoPokemon= new TablaTipoPokemon();
-		 * 
-		 * tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo, tipo)
-		 * 
-		 * tablaTipoPokemon.mostrarEficaciaTipo(tipo, tipo)
-		 */
 
 		this.vitalidad -= movimiento.getPotencia();
 	}

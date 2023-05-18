@@ -112,9 +112,35 @@ public class MovimientoPokemon {
                 return 0;
         }
     }
+    
+    
 
-    // Métodos getters
-    public TipoMovimiento getTipo() {
+    
+    public TipoPokemon getTipoPokemon() {
+		return tipoPokemon;
+	}
+
+
+
+
+
+	public void setTipoPokemon(TipoPokemon tipoPokemon) {
+		this.tipoPokemon = tipoPokemon;
+	}
+
+
+
+
+
+	public void setTipo(TipoMovimiento tipo) {
+		this.tipo = tipo;
+	}
+
+
+
+
+
+	public TipoMovimiento getTipo() {
 
         return tipo;
     }

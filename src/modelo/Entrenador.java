@@ -20,7 +20,7 @@ public class Entrenador {
 		this.equipo = equipo;
 		this.caja = caja;
 		this.mochila = mochila;
-		this.dinero = (int) (Math.random() * 200) + 800;
+		this.dinero = 0;
 		;
 	}
 
@@ -29,7 +29,7 @@ public class Entrenador {
 		this.equipo = new ArrayList<Pokemon>();
 		this.caja = new ArrayList<Pokemon>();
 		this.mochila = new ArrayList<Objeto>();
-		this.dinero = (int) (Math.random() * 200) + 800;
+		this.dinero = 0;
 	}
 
 	public int getIdEntrenador() {

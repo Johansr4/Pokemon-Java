@@ -16,6 +16,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import modelo.Captura;
+import modelo.Pokemon;
+
 
 import java.io.File;
 
@@ -51,8 +53,12 @@ public class CapturaPokemonController {
 
 	private boolean buscarRealizado = false;
 	
-	
-	
+	private void guardarPokemonCapturado() {
+	    Pokemon pokemonCapturado = cap.getNuevoPokemon(); // Obtener el Pokémon capturado
+	    PokemonCRUD pkCRUD = new PokemonCRUD();
+	    pkCRUD.createPokemon(pokemonCapturado); // Guardar el Pokémon capturado en la base de datos
+	}
+
 
 	@FXML
 	public void SalirCaptura(ActionEvent event) {
@@ -102,40 +108,33 @@ public class CapturaPokemonController {
 	
 	@FXML
 	public void capturar(ActionEvent event) {
-		lblPokemonEncontrado.setText(null);
+	    lblPokemonEncontrado.setText(null);
 
-		if (cap.comprobarPokeball()) {
-
-			if (buscarRealizado) {
-				if (cap.capturarPokemon()) {
-					
-					lblPokemonCapturar.setText(cap.mostrarPokemon() + " fue capturado!");
-					buscarRealizado = false;
-					txtmote.setDisable(false);
-					btnBuscar.setDisable(true);
-
-					txtmote.setVisible(true); // Hacer visible el campo
-					btnMote.setVisible(true);
-					
-					 Logger.write(cap.mostrarPokemon()+" fue capturado !!!");
-					 
-					
-
-				} else {
-
-					lblPokemonCapturar.setText(cap.mostrarPokemon() + " se ha escapado!");
-					buscarRealizado = true;
-				}
-			} else {
-				// Acción cuando se intenta capturar sin haber buscado primero
-				lblPokemonCapturar.setText(" Debes buscar un Pokémon antes de capturar!");
-			}
-		} else {
-			lblPokemonCapturar.setText("No tienes pokeballs, compra mas en la tienda");
-			buscarRealizado = false;
-		}
-
+	    if (cap.comprobarPokeball()) {
+	        if (buscarRealizado) {
+	            if (cap.capturarPokemon()) {
+	                lblPokemonCapturar.setText(cap.mostrarPokemon() + " fue capturado!");
+	                buscarRealizado = false;
+	                txtmote.setDisable(false);
+	                btnBuscar.setDisable(true);
+	                txtmote.setVisible(true);
+	                btnMote.setVisible(true);
+	                Logger.write(cap.mostrarPokemon() + " fue capturado !!!");
+	                
+	                guardarPokemonCapturado(); // Guardar el Pokémon capturado en la base de datos
+	            } else {
+	                lblPokemonCapturar.setText(cap.mostrarPokemon() + " se ha escapado!");
+	                buscarRealizado = true;
+	            }
+	        } else {
+	            lblPokemonCapturar.setText("Debes buscar un Pokémon antes de capturar!");
+	        }
+	    } else {
+	        lblPokemonCapturar.setText("No tienes pokeballs, compra más en la tienda");
+	        buscarRealizado = false;
+	    }
 	}
+
 
 	public void btnPonerMote(ActionEvent event) {
 		  String mote = txtmote.getText(); // Obtener el texto del TextField

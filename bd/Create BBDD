@@ -1,3 +1,214 @@
+
+
+CREATE TABLE Pokedex (
+  NumPokedex INT PRIMARY KEY,
+  nombre VARCHAR(255),
+  tipo1 VARCHAR(255),
+  tipo2 VARCHAR(255),
+  nivel_evo INT
+);
+
+
+
+INSERT INTO Pokedex (NumPokedex, nombre, tipo1, tipo2, nivel_evo) VALUES
+(1, 'Bulbasaur', 'Planta', 'Veneno', 16),
+(2, 'Ivysaur', 'Planta', 'Veneno', 32),
+(3, 'Venusaur', 'Planta', 'Veneno', NULL),
+(4, 'Charmander', 'Fuego', NULL, 16),
+(5, 'Charmeleon', 'Fuego', NULL, 36),
+(6, 'Charizard', 'Fuego', 'Volador', NULL),
+(7, 'Squirtle', 'Agua', NULL, 16),
+(8, 'Wartortle', 'Agua', NULL, 36),
+(9, 'Blastoise', 'Agua', NULL, NULL),
+(10, 'Caterpie', 'Bicho', NULL, 7),
+(11, 'Metapod', 'Bicho', NULL, 10),
+(12, 'Butterfree', 'Bicho', 'Volador', NULL),
+(13, 'Weedle', 'Bicho', 'Veneno', 7),
+(14, 'Kakuna', 'Bicho', 'Veneno', 10),
+(15, 'Beedrill', 'Bicho', 'Veneno', NULL),
+(16, 'Pidgey', 'Normal', 'Volador', 18),
+(17, 'Pidgeotto', 'Normal', 'Volador', 36),
+(18, 'Pidgeot', 'Normal', 'Volador', NULL),
+(19, 'Rattata', 'Normal', NULL, 20),
+(20, 'Raticate', 'Normal', NULL, NULL),
+(21, 'Spearow', 'Normal', 'Volador', 20),
+(22, 'Fearow', 'Normal', 'Volador', NULL),
+(23, 'Ekans', 'Veneno', NULL, 22),
+(24, 'Arbok', 'Veneno', NULL, NULL),
+(25, 'Pikachu', 'Eléctrico', NULL, NULL),
+(26, 'Raichu', 'Eléctrico', NULL, NULL),
+(27, 'Sandshrew', 'Tierra', NULL, 22),
+(28, 'Sandslash', 'Tierra', NULL, NULL),
+(29, 'Nidoran♀', 'Veneno', NULL, 16),
+(30, 'Nidorina', 'Veneno', NULL, 36),
+(31, 'Nidoqueen', 'Veneno', 'Tierra', NULL),
+(32, 'Nidoran♂', 'Veneno', NULL, 16),
+(33, 'Nidorino', 'Veneno', NULL, 36),
+(34, 'Nidoking', 'Veneno', 'Tierra', NULL),
+(35, 'Clefairy', 'Hada', NULL, NULL),
+(36, 'Clefable', 'Hada', NULL, NULL),
+(37, 'Vulpix', 'Fuego', NULL, NULL),
+(38, 'Ninetales', 'Fuego', NULL, NULL),
+(39, 'Jigglypuff', 'Normal', 'Hada', NULL),
+(40, 'Wigglytuff', 'Normal', 'Hada', NULL),
+(41, 'Zubat', 'Veneno', 'Volador', 22),
+(42, 'Golbat', 'Veneno', 'Volador', NULL),
+(43, 'Oddish', 'Planta', 'Veneno', 21),
+(44, 'Gloom', 'Planta', 'Veneno', NULL),
+(45, 'Vileplume', 'Planta', 'Veneno', NULL),
+(46, 'Paras', 'Bicho', 'Planta', 24),
+(47, 'Parasect', 'Bicho', 'Planta', NULL),
+(48, 'Venonat', 'Bicho', 'Veneno', 31),
+(49, 'Venomoth', 'Bicho', 'Veneno', NULL),
+(50, 'Diglett', 'Tierra', NULL, 26),
+(51, 'Dugtrio', 'Tierra', NULL, NULL),
+(52, 'Meowth', 'Normal', NULL, 28),
+(53, 'Persian', 'Normal', NULL, NULL),
+(54, 'Psyduck', 'Agua', NULL, 33),
+(55, 'Golduck', 'Agua', NULL, NULL),
+(56, 'Mankey', 'Lucha', NULL, 28),
+(57, 'Primeape', 'Lucha', NULL, NULL),
+(58, 'Growlithe', 'Fuego', NULL, NULL),
+(59, 'Arcanine', 'Fuego', NULL, NULL),
+(60, 'Poliwag', 'Agua', NULL, 25),
+(61, 'Poliwhirl', 'Agua', NULL, 40),
+(62, 'Poliwrath', 'Agua', 'Lucha', NULL),
+(63, 'Abra', 'Psíquico', NULL, 16),
+(64, 'Kadabra', 'Psíquico', NULL, 36),
+(65, 'Alakazam', 'Psíquico', NULL, NULL),
+(66, 'Machop', 'Lucha', NULL, 28),
+(67, 'Machoke', 'Lucha', NULL, 40),
+(68, 'Machamp', 'Lucha', NULL, NULL),
+(69, 'Bellsprout', 'Planta', 'Veneno', 21),
+(70, 'Weepinbell', 'Planta', 'Veneno', NULL),
+(71, 'Victreebel', 'Planta', 'Veneno', NULL),
+(72, 'Tentacool', 'Agua', 'Veneno', 30),
+(73, 'Tentacruel', 'Agua', 'Veneno', NULL),
+(74, 'Geodude', 'Roca', 'Tierra', 25),
+(75, 'Graveler', 'Roca', 'Tierra', NULL),
+(76, 'Golem', 'Roca', 'Tierra', NULL),
+(77, 'Ponyta', 'Fuego', NULL, 40),
+(78, 'Rapidash', 'Fuego', NULL, NULL),
+(79, 'Slowpoke', 'Agua', 'Psíquico', 37),
+(80, 'Slowbro', 'Agua', 'Psíquico', NULL),
+(81, 'Magnemite', 'Eléctrico', 'Acero', 30),
+(82, 'Magneton', 'Eléctrico', 'Acero', NULL),
+(83, 'Farfetch’d', 'Normal', 'Volador', NULL),
+(84, 'Doduo', 'Normal', 'Volador', 31),
+(85, 'Dodrio', 'Normal', 'Volador', NULL),
+(86, 'Seel', 'Agua', NULL, 34),
+(87, 'Dewgong', 'Agua', 'Hielo', NULL),
+(88, 'Grimer', 'Veneno', NULL, 38),
+(89, 'Muk', 'Veneno', NULL, NULL),
+(90, 'Shellder', 'Agua', NULL, 34),
+(91, 'Cloyster', 'Agua', 'Hielo', NULL),
+(92, 'Gastly', 'Fantasma', 'Veneno', 25),
+(93, 'Haunter', 'Fantasma', 'Veneno', NULL),
+(94, 'Gengar', 'Fantasma', 'Veneno', NULL),
+(95, 'Onix', 'Roca', 'Tierra', NULL),
+(96, 'Drowzee', 'Psíquico', NULL, 26),
+(97, 'Hypno', 'Psíquico', NULL, NULL),
+(98, 'Krabby', 'Agua', NULL, 28),
+(99, 'Kingler', 'Agua', NULL, NULL),
+(100, 'Voltorb', 'Eléctrico', NULL, 30),
+(101, 'Electrode', 'Eléctrico', NULL, NULL),
+(102, 'Exeggcute', 'Planta', 'Psíquico', NULL),
+(103, 'Exeggutor', 'Planta', 'Psíquico', NULL),
+(104, 'Cubone', 'Tierra', NULL, 28),
+(105, 'Marowak', 'Tierra', NULL, NULL),
+(106, 'Hitmonlee', 'Lucha', NULL, NULL),
+(107, 'Hitmonchan', 'Lucha', NULL, NULL),
+(108, 'Lickitung', 'Normal', NULL, NULL),
+(109, 'Koffing', 'Veneno', NULL, 35),
+(110, 'Weezing', 'Veneno', NULL, NULL),
+(111, 'Rhyhorn', 'Tierra', 'Roca', 42),
+(112, 'Rhydon', 'Tierra', 'Roca', NULL),
+(113, 'Chansey', 'Normal', NULL, NULL),
+(114, 'Tangela', 'Planta', NULL, NULL),
+(115, 'Kangaskhan', 'Normal', NULL, NULL),
+(116, 'Horsea', 'Agua', NULL, 32),
+(117, 'Seadra', 'Agua', NULL, NULL),
+(118, 'Goldeen', 'Agua', NULL, 33),
+(119, 'Seaking', 'Agua', NULL, NULL),
+(120, 'Staryu', 'Agua', NULL, NULL),
+(121, 'Starmie', 'Agua', 'Psíquico', NULL),
+(122, 'Mr. Mime', 'Psíquico', 'Hada', NULL),
+(123, 'Scyther', 'Bicho', 'Volador', NULL),
+(124, 'Jynx', 'Hielo', 'Psíquico', NULL),
+(125, 'Electabuzz', 'Eléctrico', NULL, NULL),
+(126, 'Magmar', 'Fuego', NULL, NULL),
+(127, 'Pinsir', 'Bicho', NULL, NULL),
+(128, 'Tauros', 'Normal', NULL, NULL),
+(129, 'Magikarp', 'Agua', NULL, 20),
+(130, 'Gyarados', 'Agua', 'Volador', NULL),
+(131, 'Lapras', 'Agua', 'Hielo', NULL),
+(132, 'Ditto', 'Normal', NULL, NULL),
+(133, 'Eevee', 'Normal', NULL, NULL),
+(134, 'Vaporeon', 'Agua', NULL, NULL),
+(135, 'Jolteon', 'Eléctrico', NULL, NULL),
+(136, 'Flareon', 'Fuego', NULL, NULL),
+(137, 'Porygon', 'Normal', NULL, NULL),
+(138, 'Omanyte', 'Roca', 'Agua', 40),
+(139, 'Omastar', 'Roca', 'Agua', NULL),
+(140, 'Kabuto', 'Roca', 'Agua', 40),
+(141, 'Kabutops', 'Roca', 'Agua', NULL),
+(142, 'Aerodactyl', 'Roca', 'Volador', NULL),
+(143, 'Snorlax', 'Normal', NULL, NULL),
+(144, 'Articuno', 'Hielo', 'Volador', NULL),
+(145, 'Zapdos', 'Eléctrico', 'Volador', NULL),
+(146, 'Moltres', 'Fuego', 'Volador', NULL),
+(147, 'Dratini', 'Dragón', NULL, 30),
+(148, 'Dragonair', 'Dragón', NULL, 55),
+(149, 'Dragonite', 'Dragón', 'Volador', NULL),
+(150, 'Mewtwo', 'Psíquico', NULL, NULL),
+(151, 'Mew', 'Psíquico', NULL, NULL);
+
+
+
+CREATE TABLE Entrenador (
+  idEntrenador INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(255),
+  dinero INT
+);
+
+CREATE TABLE Objeto (
+  idObjeto INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(255),
+  estadisticaPrueba INT,
+  tipo VARCHAR(255),
+  aumentoAtaque INT,
+  aumentoDefensa INT,
+  aumentoDefensaEspecial INT,
+  aumentoVelocidad INT,
+  aumentoEstamina INT,
+  disminucionAtaque INT,
+  disminucionDefensa INT,
+  disminucionDefensaEspecial INT,
+  disminucionVelocidad INT,
+  disminucionEstamina INT
+);
+
+CREATE TABLE MovimientoPokemon (
+  idMovimiento INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(255),
+  tipoPokemon INT,
+  tipo INT,
+  potencia INT,
+  estado INT,
+  duracionEstado INT,
+  mejora INT,
+  duracionMejora INT
+  );
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE Pokemon (
   IdPokemon INT PRIMARY KEY AUTO_INCREMENT,
   NumPokedex INT,
@@ -185,40 +396,11 @@ VALUES
 
 
 
+ALTER TABLE Pokemon
+ADD FOREIGN KEY (NumPokedex) REFERENCES Pokedex(NumPokedex);
 
 
 
-CREATE TABLE Entrenador (
-  idEntrenador INT PRIMARY KEY AUTO_INCREMENT,
-  nombre VARCHAR(255),
-  dinero INT
-);
 
-CREATE TABLE Objeto (
-  idObjeto INT PRIMARY KEY AUTO_INCREMENT,
-  nombre VARCHAR(255),
-  estadisticaPrueba INT,
-  tipo VARCHAR(255),
-  aumentoAtaque INT,
-  aumentoDefensa INT,
-  aumentoDefensaEspecial INT,
-  aumentoVelocidad INT,
-  aumentoEstamina INT,
-  disminucionAtaque INT,
-  disminucionDefensa INT,
-  disminucionDefensaEspecial INT,
-  disminucionVelocidad INT,
-  disminucionEstamina INT
-);
 
-CREATE TABLE MovimientoPokemon (
-  idMovimiento INT PRIMARY KEY AUTO_INCREMENT,
-  nombre VARCHAR(255),
-  tipoPokemon INT,
-  tipo INT,
-  potencia INT,
-  estado INT,
-  duracionEstado INT,
-  mejora INT,
-  duracionMejora INT
-  );
+

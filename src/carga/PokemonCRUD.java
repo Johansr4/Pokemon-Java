@@ -30,12 +30,12 @@ public class PokemonCRUD {
     // Create
     public void createPokemon(Pokemon pokemon) {
         try {
-            String query = "INSERT INTO pokemon (IdPokemon, Nombre, Vitalidad, Ataque) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO pokemon (IdPokemon, Nombre, Vitalidad, mote) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, pokemon.getIdPokemon());
             statement.setString(2, pokemon.getNombre());
             statement.setInt(3, pokemon.getVitalidad());
-            statement.setInt(4, pokemon.getAtaque());
+            statement.setString(4, pokemon.getMote());
            
 
             statement.executeUpdate();
@@ -47,16 +47,15 @@ public class PokemonCRUD {
     // Read
     public Pokemon readPokemonByPokedex(int id) {
         try {
-            String query = "SELECT * FROM pokemon WHERE NumPokedex = ?";
+            String query = "SELECT * FROM pokedex WHERE NumPokedex = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 Pokemon pokemon = new Pokemon();
-                pokemon.setIdPokemon(resultSet.getInt("IdPokemon"));
+                pokemon.setNumPokedex(resultSet.getInt("NumPokedex"));
                 pokemon.setNombre(resultSet.getString("nombre"));
-                pokemon.setVitalidad(resultSet.getInt("vitalidad"));
-                pokemon.setAtaque(resultSet.getInt("ataque"));    
+               
                 return pokemon;
             }
         } catch (SQLException e) {

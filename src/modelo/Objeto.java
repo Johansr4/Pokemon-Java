@@ -15,12 +15,13 @@ public class Objeto {
 	private int disminucionDefensaEspecial;
 	private int disminucionVelocidad;
 	private int disminucionEstamina;
+	private int costo;
 
 	public Objeto(String nombre, String tipo, int aumentoAtaque, int aumentoDefensa, int aumentoDefensaEspecial,
 
 			int aumentoVelocidad, int aumentoEstamina, int disminucionAtaque, int disminucionDefensa,
 
-			int disminucionDefensaEspecial, int disminucionVelocidad, int disminucionEstamina) {
+			int disminucionDefensaEspecial, int disminucionVelocidad, int disminucionEstamina,int costo) {
 
 		this.nombre = nombre;
 
@@ -45,6 +46,8 @@ public class Objeto {
 		this.disminucionVelocidad = disminucionVelocidad;
 
 		this.disminucionEstamina = disminucionEstamina;
+		
+		this.costo= costo;
 
 	}
 
@@ -230,6 +233,20 @@ public class Objeto {
 		this.disminucionEstamina = disminucionEstamina;
 	}
 
+	
+
+
+	public int getCosto() {
+		return costo;
+	}
+
+
+
+
+	public void setCosto(int costo) {
+		this.costo = costo;
+	}
+
 
 
 
@@ -247,9 +264,7 @@ public class Objeto {
 
 
 
-	public int getCosto() {
-		return 0;
-	}
+	
 
 
 

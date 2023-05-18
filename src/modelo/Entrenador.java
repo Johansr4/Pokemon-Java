@@ -403,10 +403,6 @@ public class Entrenador {
 				+ ", dinero=" + dinero + "]";
 	}
 
-	public Pokemon elegirPokemonActivo1(int pokemonSelecPelea) {
-		// Obtener un dentro del rango de la lista
-		return equipo.get(pokemonSelecPelea);
-	}
 
 	
 

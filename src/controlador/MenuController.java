@@ -25,6 +25,29 @@ public class MenuController {
 	private Button btnMcaja;
 	@FXML
 	private Button btnMcombate;
+	
+	
+	
+	
+		@FXML
+		public void btnAbrirTienda(ActionEvent event) {
+			try {
+				Node sourceNode = (Node) event.getSource();
+				Stage currentStage = (Stage) sourceNode.getScene().getWindow();
+				currentStage.close();
+
+				// Abrir la ventana 
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Tienda.fxml"));
+				AnchorPane root = loader.load();
+				Stage menuStage = new Stage();
+				menuStage.setScene(new Scene(root));
+				menuStage.setTitle("Captura");
+				menuStage.show();
+			} catch (IOException e) {
+
+			}
+		}
+		
 
 	// Event Listener on Button[#btnMcaptura].onAction
 	@FXML

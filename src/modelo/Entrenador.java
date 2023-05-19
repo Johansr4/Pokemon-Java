@@ -79,6 +79,8 @@ public class Entrenador {
 	public void setDinero(int dinero) {
 		this.dinero = dinero;
 	}
+	
+	
 
 	/**
 	 * Obtiene el costo por nivel de entrenamiento.

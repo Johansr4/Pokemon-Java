@@ -8,22 +8,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CajaController">
-    <children>
-      <ImageView fitHeight="407.0" fitWidth="600.0" layoutY="-5.0" pickOnBounds="true">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../Pokemon/img/cajaPokemon.jpg" />
          </image>
       </ImageView>
-        <TableView fx:id="TablaCaja" layoutX="14.0" layoutY="38.0" prefHeight="324.0" prefWidth="223.0">
-            <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn fx:id="nombreCaja" prefWidth="75.0" text="C2" />
-            <TableColumn prefWidth="75.0" text="asd" />
-            </columns>
-        </TableView>
-        <Button layoutX="482.0" layoutY="157.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Liberar" />
-        <Button layoutX="444.0" layoutY="217.0" mnemonicParsing="false" text="Mover a equipo" />
-        <Button layoutX="444.0" layoutY="267.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Mover a caja" />
-        <Button fx:id="btnAtrasCaja" layoutX="482.0" layoutY="79.0" mnemonicParsing="false" onAction="#btnAccionAtrasCaja" prefHeight="26.0" prefWidth="62.0" text="Salir" />
-    </children>
+     <TableView fx:id="tblCaja" layoutX="38.0" layoutY="33.0" prefHeight="275.0" prefWidth="306.0">
+    <columns>
+        <TableColumn fx:id="CajaPokemon" prefWidth="154.4000244140625" text="Caja Pokemon" />
+        <TableColumn fx:id="EquipoPokemon" prefWidth="151.20001220703125" text="Equipo Pokemon" />
+    </columns>
+</TableView>
+
+      <Button layoutX="482.0" layoutY="157.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Liberar" />
+      <Button layoutX="444.0" layoutY="217.0" mnemonicParsing="false" text="Mover a equipo" />
+      <Button layoutX="444.0" layoutY="267.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Mover a caja" />
+      <Button fx:id="btnSalirCaja" layoutX="482.0" layoutY="79.0" mnemonicParsing="false" onAction="#btnSalirCaja" prefHeight="26.0" prefWidth="62.0" text="Salir" />
+   </children>
 </AnchorPane>

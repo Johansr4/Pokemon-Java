@@ -396,9 +396,9 @@ VALUES
 
 
 
-ALTER TABLE Pokemon
-ADD FOREIGN KEY (NumPokedex) REFERENCES Pokedex(NumPokedex);
+ALTER TABLE Pokemon ADD FOREIGN KEY (NumPokedex) REFERENCES Pokedex(NumPokedex);
 
+ALTER TABLE Pokemon ADD CONSTRAINT fk_entrenador FOREIGN KEY (idEntrenador) REFERENCES Entrenador (idEntrenador);
 
 
 
